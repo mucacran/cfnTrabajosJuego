@@ -10,6 +10,8 @@
 	
 	<!-- BootstrapCDN 4 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+
 	<!-- bootstrap 4 js -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
@@ -17,13 +19,18 @@
 
 	<!-- iconos -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/css/site.css">
 
 	<!-- normalize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+	<!-- mi estilo -->
+	
+
+	<link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
-	<!-- hola -->
 	<div class="container">
 		<h1>
 			BIENVENIDO AL JUEVO DE VALORACIÓN EXPERIMENTAL DE PROYECTOS DE CFN.
@@ -42,31 +49,75 @@
 					<div>
 						<h5><i class="fa fa-file-text" aria-hidden="true"></i> FORMULARIO</h5>
 					</div>
-					<div class="form-group">
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre y Apellido">
-						<select class="form-control form-control-lg">
-							<option>0 - 10</option>
-							<option>11 - 17</option>
-							<option>18 - 24</option>
-							<option>25 - 32</option>
-						</select>
-						<select class="form-control form-control-lg">
-							<option>Large select</option>
-						</select>
-						<select class="form-control form-control-lg">
-							<option>Large select</option>
-						</select>
-						<select class="form-control form-control-lg">
-						  <option>Large select</option>
-						</select>
-						<select class="form-control form-control-lg">
-						  <option>Large select</option>
-						</select>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dirección de Linkedin">
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+							<input type="text" class="form-control form-control-lg" id="nombre" aria-describedby="emailHelp" placeholder="Nombre y Apellido">
+						<!--<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>-->
+						<!-- <span class="fa fa-search form-control-feedback"></span> -->
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<select class="form-control form-control-lg" id="edad">
+							<option value="" selected>Rango de edad</option>
+							<option value="0">11 - 17</option>
+							<option value="1">18 - 24</option>
+							<option value="2">25 - 32</option>
+						</select>
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<select class="custom-select custom-select-lg mb-3" name="" id="">
+						<!-- <select class="form-control form-control-lg" id="economia"> -->
+							<option value="" selected>Sector económico</option>
+							<option value="tecnologo">Tecnológo</option>
+							<option value="educacion">Educación</option>
+							<option value="primario">Primario</option>
+							<option value="Secundario">Secundario</option>
+						</select>
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<select class="form-control form-control-lg" id="experiencia">
+							<option value="" selected>Años de experiencia</option>
+							<option value="1">Un año o menos</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="5">5</option>
+							<option value="6">6 y mas</option>
+						</select>
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<select class="form-control form-control-lg" id="trabajo">
+							<option value="" selected>Tipo de trabajo</option>
+							<option value="Administrativo">Administrativo</option>
+							<option value="tecnología">Técnologia</option>
+							<option value="Otro">Otro</option>
+						</select>
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<select class="form-control form-control-lg" id="instruccion">
+							<option value="" selected>Nivel de instrucción</option>
+							<option value="primaria">Primaria</option>
+							<option value="secundaria">Secundaría</option>
+							<option value="universitaria">Universitaria</option>
+							<option value="otra">Otra</option>
+						</select>
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<input type="text" class="form-control form-control-lg" id="linkedin" aria-describedby="linkedin" placeholder="Dirección de Linkedin">
+					</div>
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					</div>
+					<button type="submit" class="btn btn-primary"><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
 				</form>
+				<!---->
+
+				<!---->
 			</div>
 		</div>
 	</div>
