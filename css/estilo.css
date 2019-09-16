@@ -11,8 +11,7 @@ select
     text-overflow: '';
     -moz-appearance:none  ;
     -webkit-appearance:none;
-    appearance: none;
-    
+    appearance: none; /* para quitarle la flecha por defecto */
 }
 
 .form-control-lg
@@ -70,4 +69,23 @@ select::-ms-expand {
     background-color: rgba(0, 101, 149, 1);;
     border: 0px;
     color: white;
+}
+
+.content-btn
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.btn-primary
+{
+    background-color: rgba(0, 101, 149, 1);
+}
+
+.btn-primary:hover
+{
+    background-color: rgba(0, 159, 194, 1);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
 }
