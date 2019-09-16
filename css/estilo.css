@@ -4,6 +4,12 @@ alias: Mucacran
 
 */
 
+select
+{
+    cursor: pointer;
+    appearance: none; 
+}
+
 .form-control-lg
 {
 	
@@ -11,4 +17,41 @@ alias: Mucacran
 .form-control
 {
     color:#8c8989;
+}
+
+.tituloFormulario
+{
+    background-color: rgba(0, 101, 149, 1) ;
+    color: aliceblue;
+    padding: 2em 0;
+    
+}
+.tituloFormulario h5
+{
+    text-align: center;
+    font-size: 2em;
+}
+
+form
+{
+    margin: 0 auto;
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+}
+
+form .preguntasForm
+{
+    background-color: rgba(0, 159, 194, 1);
+    padding: 2em 3em;
+}
+
+.input-group
+{
+    margin-bottom: 1.5em !important;
+}
+
+select::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+    font-size: 2em;
 }

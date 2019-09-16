@@ -2,16 +2,20 @@
 <html>
 <head>
 
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.ico"/>
+
 	<title>CFN - Juega</title>
 
-<!-- Required meta tags -->
+	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<!-- BootstrapCDN 4 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
-
 	<!-- bootstrap 4 js -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
@@ -41,88 +45,86 @@
 		</h1>
 		<div class="row">
 			<div class="col">
-				<p>
-					En este aplicativo podras estimar el valor necesario para implementar un proyecto de inversión y seras puntuado de acuerdo a tu precisión con respecto a valores reales.	
-				</p>
-				<p>
-					El juego consiste en dos partes en las cuales podras ganar puntos para luego (Incentivo) 
-				</p>
-		<h2>
-			En este aplicativo podras estimar el valor necesario para implementar un proyecto de inversión y seras puntuado de acuerdo a tu precisión con respecto a valores reales.
-		</h2>
-		<h2>
-			El juego consiste en dos partes en las cuales podras ganar puntos para luego (Incentivo)
-		</h2>
+				<h2>
+					En este aplicativo podras estimar el valor necesario para implementar un proyecto de inversión y seras puntuado de acuerdo a tu precisión con respecto a valores reales.
+				</h2>
+				<h3>
+					El juego consiste en dos partes en las cuales podras ganar puntos para luego (Incentivo)
+				</h3>
+			</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<form>
-					<div>
+					<div class="tituloFormulario">
 						<h5><i class="fa fa-file-text" aria-hidden="true"></i> FORMULARIO</h5>
 					</div>
-					<div class="input-group margin-bottom-sm">
-							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+					<div class="preguntasForm">
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
 							<input type="text" class="form-control form-control-lg" id="nombre" aria-describedby="emailHelp" placeholder="Nombre y Apellido">
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
+							<select class="form-control form-control-lg" id="edad">
+								<option value="" selected>Rango de edad</option>
+								<option value="0">11 - 17</option>
+								<option value="1">18 - 24</option>
+								<option value="2">25 - 32</option>
+							</select>
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-cog fa-fw"></i></span>
+							<select class="form-control form-control-lg" id="economia">
+								<option value="" selected>Sector económico</option>
+								<option value="tecnologo">Tecnológo</option>
+								<option value="educacion">Educación</option>
+								<option value="primario">Primario</option>
+								<option value="Secundario">Secundario</option>
+							</select>
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-eye fa-fw"></i></span>
+							<select class="form-control form-control-lg" id="experiencia">
+								<option value="" selected>Años de experiencia</option>
+								<option value="1">Un año o menos</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="5">5</option>
+								<option value="6">6 y mas</option>
+							</select>
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
+							<select class="form-control form-control-lg" id="trabajo">
+								<option value="" selected>Tipo de trabajo</option>
+								<option value="Administrativo">Administrativo</option>
+								<option value="tecnología">Técnologia</option>
+								<option value="Otro">Otro</option>
+							</select>
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-graduation-cap fa-fw"></i></span>
+							<select class="form-control form-control-lg" id="instruccion">
+								<option value="" selected>Nivel de instrucción</option>
+								<option value="primaria">Primaria</option>
+								<option value="secundaria">Secundaría</option>
+								<option value="universitaria">Universitaria</option>
+								<option value="otra">Otra</option>
+							</select>
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-linkedin fa-fw"></i></span>
+							<input type="text" class="form-control form-control-lg" id="linkedin" aria-describedby="linkedin" placeholder="Dirección de Linkedin">
+						</div>
+						<div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+							<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						</div>
+						<button type="submit" class="btn btn-primary"><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
 					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<select class="form-control form-control-lg" id="edad">
-							<option value="" selected>Rango de edad</option>
-							<option value="0">11 - 17</option>
-							<option value="1">18 - 24</option>
-							<option value="2">25 - 32</option>
-						</select>
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<select class="form-control form-control-lg" id="economia">
-							<option value="" selected>Sector económico</option>
-							<option value="tecnologo">Tecnológo</option>
-							<option value="educacion">Educación</option>
-							<option value="primario">Primario</option>
-							<option value="Secundario">Secundario</option>
-						</select>
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<select class="form-control form-control-lg" id="experiencia">
-							<option value="" selected>Años de experiencia</option>
-							<option value="1">Un año o menos</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="5">5</option>
-							<option value="6">6 y mas</option>
-						</select>
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<select class="form-control form-control-lg" id="trabajo">
-							<option value="" selected>Tipo de trabajo</option>
-							<option value="Administrativo">Administrativo</option>
-							<option value="tecnología">Técnologia</option>
-							<option value="Otro">Otro</option>
-						</select>
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<select class="form-control form-control-lg" id="instruccion">
-							<option value="" selected>Nivel de instrucción</option>
-							<option value="primaria">Primaria</option>
-							<option value="secundaria">Secundaría</option>
-							<option value="universitaria">Universitaria</option>
-							<option value="otra">Otra</option>
-						</select>
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<input type="text" class="form-control form-control-lg" id="linkedin" aria-describedby="linkedin" placeholder="Dirección de Linkedin">
-					</div>
-					<div class="input-group margin-bottom-sm">
-						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-						<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					</div>
-					<button type="submit" class="btn btn-primary"><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
 				</form>
 				<!---->
 
