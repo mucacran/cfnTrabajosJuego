@@ -91,3 +91,23 @@ select::-ms-expand {
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
 }
+
+h2
+{
+    font-family: 'AL';
+    font-size: 20px;
+}
+
+.globo
+{
+    font-size: 10em;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#inflar, #desinflar
+{
+    margin: 10px 0px;
+}
+/*💥*/

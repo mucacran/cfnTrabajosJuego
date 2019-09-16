@@ -1,1 +1,88 @@
-💥 🎈
+<!DOCTYPE html>
+<html lang="es">
+<head >
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.ico"/>
+
+	<title>CFN - Juega</title>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- BootstrapCDN 4 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<!-- bootstrap 4 js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+	<!-- iconos -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/css/site.css">
+
+	<!-- normalize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+	<!-- mi estilo animacion -->
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+
+	<!-- animación css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<!-- Mi estilos -->
+	<link rel="stylesheet" href="css/fuente.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    
+    
+	
+	
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/js/th/thumb.php?src=https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg&w=1366&h=368&zc=1&q=100&a=c" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    El globo a continuación puede ser inflado un número aleatorio de veces
+                    entre 1 y 10. Cada vez que pulses “Inflar” y el globo no explote acumularás
+                    10 puntos.; si explota, pierdes todos los puntos acumulados. Pulsando
+                    “Detener”, ´te quedas con los puntos acumulados hasta el momento.
+                    Podrás jugar 3 veces este juego. 
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <div class="globo" id="globoJuego">
+                        🎈
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <button class="btn btn-primary btn-lg btn-block" id="inflar" onclick="cuentaClicks()">Inflar</a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <button class="btn btn-primary btn-lg btn-block" id="desinflar" onclick="cuentaClicks()">Desinflar</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/jsglobo.js"></script>
+</body>
+
+</html>
+
