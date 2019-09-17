@@ -92,7 +92,10 @@ select::-ms-expand {
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.40);
 }
 
-h2
+h1{
+    font-family: 'AH';
+}
+h2,h3
 {
     font-family: 'AL';
     font-size: 20px;
@@ -111,3 +114,14 @@ h2
     margin: 10px 0px;
 }
 /*💥*/
+
+.centrar
+{
+    text-align: center;
+}
+.cabeceraIndex
+{
+    margin: 30px auto;
+    width: 800px;
+    max-width: 100%;
+}
