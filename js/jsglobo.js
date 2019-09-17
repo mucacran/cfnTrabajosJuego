@@ -1,9 +1,25 @@
-var clickPun = Math.floor((Math.random() * 10) + 1);
-console.log(clickPun);
-var globoJuego = document.getElementById('globoJuego');
-var inflar = document.getElementById('inflar');
-var num = 10;
-var contador = 1;
+// declarando variables constantes
+var num = 0;
+var contador = 0;
+var clickPun = 0;
+var numeroIntento = 0;
+var visualizaNumeroIntento;
+
+arrancaValoresDelJuego();
+
+function arrancaValoresDelJuego()
+{
+    clickPun = Math.floor((Math.random() * 10) + 1);
+    console.log(clickPun);
+    var globoJuego = document.getElementById('globoJuego');
+    var inflar = document.getElementById('inflar');
+    num = 10;
+    contador = 1;
+    numeroIntento = 2;
+    visualizaNumeroIntento = document.getElementById('n_intento');
+    visualizaNumeroIntento.innerHTML = numeroIntento;
+}
+
 
 function cuentaClicks(){
     globoJuego.style.fontSize = '12px';
@@ -26,10 +42,14 @@ $('#inflar').click(function(){// primera forma
 });
 
 $('#desinflar').click(function(){// primera forma
-    var ancho = globoJuego.style.fontSize;
-    num -= 1;
-    var n = num.toString();
-    globoJuego.style.fontSize = n + 'em';
+    --numeroIntento;
+    if(numeroIntento < 0)
+    {
+        console.log('se acabaron los intentos y debes ir a la siguiente página');
+    }
+    else{
+        visualizaNumeroIntento.innerHTML = numeroIntento;
+    }
     
 });
 
