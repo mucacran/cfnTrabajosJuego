@@ -124,3 +124,12 @@ h2,h3
     width: 800px;
     max-width: 100%;
 }
+
+.contenedorGlobo
+{
+    height:400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
