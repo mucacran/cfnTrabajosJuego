@@ -40,9 +40,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/js/th/thumb.php?src=https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg&w=1366&h=368&zc=1&q=100&a=c" alt="">
-            </div>
+            <img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/js/th/thumb.php?src=https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg&w=1366&h=368&zc=1&q=100&a=c" alt="">
         </div>
     </div>
     <div class="container">
@@ -53,18 +51,18 @@
                         El globo a continuación puede ser inflado un número aleatorio de veces
                         entre 1 y 10. Cada vez que pulses “Inflar” y el globo no explote acumularás
                         10 puntos.; si explota, pierdes todos los puntos acumulados. Pulsando
-                        “Detener”, ´te quedas con los puntos acumulados hasta el momento.
+                        “Detener”, te quedas con los puntos acumulados hasta el momento.
                         Podrás jugar 3 veces este juego.
                     </h4>
                 </div>   
             </div>
         </div>
     </div>
-    <div class="container contenedorGlobo">
-        <div class="row">
-            <div class="col">
-                    <div class="globo" id="globoJuego">
-                    </div>
+    <div class="container ">
+        <div class="row cabeceraIndex">
+            <div class="punto" id="click-Veses">0</div>
+            <div class="col contenedorGlobo">
+                <div class="globo" id="globoJuego"></div>
             </div>
         </div>
     </div>
@@ -74,7 +72,7 @@
                 <button class="btn btn-primary btn-lg btn-block" id="inflar" >Inflar</a>
             </div>
             <div class="col-xs-12 col-md-6">
-                <button class="btn btn-primary btn-lg btn-block" id="desinflar">Guarda | Te quedan <span id="n_intento"></span> intento</a>
+                <button class="btn btn-primary btn-lg btn-block" id="desinflar">Detener | Te quedan <span id="n_intento"></span> intento</a>
             </div>
         </div>
     </div>

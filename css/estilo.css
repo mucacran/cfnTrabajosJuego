@@ -103,6 +103,7 @@ h2,h3
 
 .globo
 {
+    position: relative;
     font-size: 10em;
     width: 300px;
     margin: 0 auto;
@@ -120,16 +121,30 @@ h2,h3
 }
 .cabeceraIndex
 {
+    display: block;
     margin: 30px auto;
     width: 800px;
     max-width: 100%;
+    height: auto;
+    position: relative;
 }
 
 .contenedorGlobo
 {
-    height:400px;
+    height:300px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+/*estilo para el elemento span que donde se
+imprimirà por pantalla el numero de veses que hace clik en el boton inflar*/
+.punto
+{
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px;
+    font-size: 5em;
+    z-index: 99;
 }

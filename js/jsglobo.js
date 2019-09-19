@@ -31,6 +31,7 @@ $('#inflar').click(function(){
     else
     {
         contador++;
+        prinPantallaNumero(contador);
     }
     var n = num.toString();
     globoJuego.style.fontSize = n + 'em';
@@ -42,6 +43,7 @@ $('#desinflar').click(function(){// primera forma
     if(numeroIntento < 0)
     {
         console.log('se acabaron los intentos y debes ir a la siguiente página');
+        window.location = "encuesta.html"
         return;
     }
     else{
@@ -58,4 +60,11 @@ function cambiarPum()
     globoJuego.innerHTML = '💥';
 }
 
+
+//este hace que se imprima por pantalla el numero de veses que hace click
+function prinPantallaNumero(contador)
+{
+    var numero = document.getElementById('click-Veses');
+    numero.innerHTML = contador;
+}
 //https://codepen.io/julkapuk/pen/vjpZRW
