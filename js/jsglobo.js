@@ -7,7 +7,7 @@ var globoJuego = document.getElementById('globoJuego');
 
 var visualizaNumeroIntento;
 visualizaNumeroIntento = document.getElementById('n_intento');
-visualizaNumeroIntento.innerHTML = numeroIntento;
+//visualizaNumeroIntento.innerHTML = numeroIntento;
 
 arrancaValoresDelJuego(contador);
 
@@ -68,3 +68,4 @@ function prinPantallaNumero(contador)
     numero.innerHTML = contador;
 }
 //https://codepen.io/julkapuk/pen/vjpZRW
+

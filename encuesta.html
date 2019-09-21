@@ -79,75 +79,147 @@
 			</div>
 		</div>
 	</div>
+	<div style="width: 100%;height:100px"></div>
 	<div class="container">
 		<div class="row">
-			<form>
-				<div class="row">
-					<div class="col">Capital de trabajo</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
+			<div class="col-xs-12">
+				<form action="">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								
+								<th scope="col">Rubros</th>
+								<th scope="col">Barra de Monto </th>
+								<th scope="col">Valoración</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									Capital de trabajo
+								</td>
+								<td>
+									<input type="range" class="custom-range" id="capitalTrabajoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint1">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>Obra</td>
+								<td>
+									<input type="range" class="custom-range" id="obraForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint2">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>Terreno</td>
+								<td>
+									<input type="range" class="custom-range" id="terrenoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint3">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>Computación y Seguridad</td>
+								<td>
+									<input type="range" class="custom-range" id="comSegForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint4">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>Vehículo</td>
+								<td>
+									<input type="range" class="custom-range" id="vehiculoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint5">
+									
+								</td>
+							</tr>
+							<tr>
+								<td>Equipo acondicionador de aire</td>
+								<td>
+									<input type="range" class="custom-range" id="formControlRange" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
+								</td>
+								<td id="valorPrint6">
+									
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">Subtotal Activos Fijos</td>
+								<td id="valorPrint7">0</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="content-btn" > 
+						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
 					</div>
-					<div class="col">20,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Obra</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Terreno</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Computación y Seguridad</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Vehículo</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Equipo acondicionador de aire</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-					<div class="w-100"></div>
-					<div class="col">Sub total activos fijos</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="formControlRange">Example Range input</label>
-							<input type="range" class="form-control-range" id="formControlRange">
-						</div>
-					</div>
-					<div class="col">21,915.00</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	</div>
+	<script >
+
+
+function sumaTotal()
+{
+	var printRango1 = parseInt(document.getElementById('capitalTrabajoForm').value);
+	var printRango2 = parseInt(document.getElementById('obraForm').value);
+	var printRango3 = parseInt(document.getElementById('terrenoForm').value);
+	var printRango4 = parseInt(document.getElementById('comSegForm').value);
+	var printRango5 = parseInt(document.getElementById('vehiculoForm').value);
+	var printRango6 = parseInt(document.getElementById('formControlRange').value);
+	//
+	var printRango = document.getElementById('valorPrint7');
+	var total = printRango1 + printRango2 + printRango3 + printRango4 + printRango5 + printRango6;
+	printRango.innerHTML = total;
+}
+
+	function valorAproximado(valor)
+	{
+		var rango = document.getElementById(valor).value;
+		switch (valor) {
+			case "capitalTrabajoForm":
+				var printRango1 = document.getElementById('valorPrint1');
+				printRango1.innerHTML = rango;
+				sumaTotal();
+				break;
+			case "obraForm":
+				var printRango2 = document.getElementById('valorPrint2');
+				printRango2.innerHTML = rango;
+				sumaTotal();
+				break;
+			case "terrenoForm":
+				var printRango3 = document.getElementById('valorPrint3');
+				printRango3.innerHTML = rango;
+				sumaTotal();
+				break;
+			case "comSegForm":
+				var printRango4 = document.getElementById('valorPrint4');
+				printRango4.innerHTML = rango;
+				sumaTotal();
+				break;
+			case "vehiculoForm":
+				var printRango5 = document.getElementById('valorPrint5');
+				printRango5.innerHTML = rango;
+				sumaTotal();
+				break;
+			case "formControlRange":
+				var printRango6 = document.getElementById('valorPrint6');
+				printRango6.innerHTML = rango;
+				sumaTotal();
+				break;
+			default:
+				sumaTotal();
+				break;
+		}
+	}
+	
+	</script>
 </body>
 </html>

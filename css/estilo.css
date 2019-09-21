@@ -148,3 +148,8 @@ imprimirà por pantalla el numero de veses que hace clik en el boton inflar*/
     font-size: 5em;
     z-index: 99;
 }
+
+p
+{
+    text-align: justify;
+}
