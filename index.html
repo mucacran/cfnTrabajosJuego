@@ -68,28 +68,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<form>
+				<form method="POST" action="basededatos-utilidades.php">
 					<div class="tituloFormulario">
 						<h5 style="font-family: 'AH', venir-Black"><i class="fa fa-file-text" aria-hidden="true"></i> FORMULARIO</h5>
 					</div>
 					<div class="preguntasForm">
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
-							<input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre y Apellido">
+							<input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre y Apellido" name="nombreCompleto" required>
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="edad">
+							<select class="form-control form-control-lg" id="edad" name="edad">
 								<option value="" selected>Rango de edad</option>
-								<option value="0">11 - 17</option>
-								<option value="1">18 - 24</option>
-								<option value="2">25 - 32</option>
+								<option value="11 - 17">11 - 17</option>
+								<option value="18 - 24">18 - 24</option>
+								<option value="25 - 32">25 - 32</option>
 							</select>
 							<span class="input-group-addon"><i class="fa fa-sort-desc fa-fw"></i></span>
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-cog fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="economia">
+							<select class="form-control form-control-lg" id="economia" name="economia">
 								<option value="" selected>Sector económico</option>
 								<option value="tecnologo">Tecnológo</option>
 								<option value="educacion">Educación</option>
@@ -100,19 +100,19 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-eye fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="experiencia">
+							<select class="form-control form-control-lg" id="experiencia" name="experiencia">
 								<option value="" selected>Años de experiencia</option>
-								<option value="1">Un año o menos</option>
+								<option value="Un año o menos">Un año o menos</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="5">5</option>
-								<option value="6">6 y mas</option>
+								<option value="6 o mas">6 y mas</option>
 							</select>
 							<span class="input-group-addon"><i class="fa fa-sort-desc fa-fw"></i></span>
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="trabajo">
+							<select class="form-control form-control-lg" id="trabajo" name="trabajo">
 								<option value="" selected>Tipo de trabajo</option>
 								<option value="Administrativo">Administrativo</option>
 								<option value="tecnología">Técnologia</option>
@@ -122,7 +122,7 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-graduation-cap fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="instruccion">
+							<select class="form-control form-control-lg" id="instruccion" name="instruccion">
 								<option value="" selected>Nivel de instrucción</option>
 								<option value="primaria">Primaria</option>
 								<option value="secundaria">Secundaría</option>
@@ -133,11 +133,11 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-linkedin fa-fw"></i></span>
-							<input type="text" class="form-control form-control-lg" id="linkedin" aria-describedby="linkedin" placeholder="Dirección de Linkedin">
+							<input type="text" class="form-control form-control-lg" id="linkedin" aria-describedby="linkedin" placeholder="Dirección de Linkedin" name="linkedinRegistro" required>
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-							<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Enter email">
+							<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Enter email" name="emailFormulario" required>
 						</div>
 						<div class="content-btn" > 
 							<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
@@ -153,3 +153,11 @@
 	</div>
 </body>
 </html>
+<!--Recursos-->
+<!--
+	https://www.youtube.com/watch?v=hazMyK_cnzk
+	https://www.youtube.com/watch?v=SonzvLPjqaA
+
+	https://www.codexworld.com/login-with-linkedin-using-php/
+	https://www.youtube.com/watch?v=-4ggImIvTGQ
+-->
