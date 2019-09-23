@@ -99,10 +99,10 @@
 									Capital de trabajo
 								</td>
 								<td>
-									<input type="range" class="custom-range" id="capitalTrabajoForm" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="capitalTrabajoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td >
-									$ <span id="valorPrint1">0</span>
+								<td id="valorPrint1">
+									$ 0
 								</td>
 							</tr>
 							<tr>
@@ -110,56 +110,54 @@
 									Obra
 								</td>
 								<td>
-									<input type="range" class="custom-range" id="obraForm" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="obraForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td id="">
-									$ <span id="valorPrint2">0</span>
+								<td id="valorPrint2">
+									$ 0
 								</td>
 							</tr>
 							<tr>
 								<td>Terreno</td>
 								<td>
-									<input type="range" class="custom-range" id="terrenoForm" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="terrenoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td id="">
-									$ <span id="valorPrint3">0</span>
+								<td id="valorPrint3">
+									$ 0
 								</td>
 							</tr>
 							<tr>
 								<td>Computación y Seguridad</td>
 								<td>
-									<input type="range" class="custom-range" id="comSegForm" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="comSegForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td id="">
-									$ <span id="valorPrint4">0</span>
+								<td id="valorPrint4">
+									$ 0
 								</td>
 							</tr>
 							<tr>
 								<td>Vehículo</td>
 								<td>
-									<input type="range" class="custom-range" id="vehiculoForm" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="vehiculoForm" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td id="">
-									$ <span id="valorPrint5">0</span>
+								<td id="valorPrint5">
+									$ 0
 								</td>
 							</tr>
 							<tr>
 								<td>Equipo acondicionador de aire</td>
 								<td>
-									<input type="range" class="custom-range" id="formControlRange" nim="100" max="30000" step="100"   value="0">
+									<input type="range" class="custom-range" id="formControlRange" nim="100" max="30000" step="100" onmousemove="valorAproximado(this.id)" value="0">
 								</td>
-								<td id="">
-									$ <span id="valorPrint6">0</span>
+								<td id="valorPrint6">
+									$ 0
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">Subtotal Activos Fijos</td>
-								<td id="valorPrint7">
-										$ <span id="valorPrint7">0</span>
-								</td>
+								<td id="valorPrint7">0</td>
 							</tr>
 						</tbody>
-					</table> 
+					</table>
 					<div class="content-btn" > 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
 					</div>
@@ -185,85 +183,37 @@ function sumaTotal()
 	printRango.innerHTML = '$ ' + total;
 }
 
-	var printRango1 = document.getElementById('capitalTrabajoForm');
-	var outPrintRango1 = document.getElementById('valorPrint1');
-	outPrintRango1.innerHTML = printRango1.value;
-	printRango1.oninput = function() {
-		outPrintRango1.innerHTML = this.value;
-		sumaTotal();
-	}
-
-	var printRango2 = document.getElementById('obraForm');
-	var outPrintRango2 = document.getElementById('valorPrint2');
-	outPrintRango2.innerHTML = printRango2.value;
-	printRango2.oninput = function() {
-		outPrintRango2.innerHTML = this.value;
-		sumaTotal();
-	}
-
-	var printRango3 = document.getElementById('terrenoForm');
-	var outPrintRango3 = document.getElementById('valorPrint3');
-	outPrintRango3.innerHTML = printRango3.value;
-	printRango3.oninput = function() {
-		outPrintRango3.innerHTML = this.value;
-		sumaTotal();
-	}
-
-	var printRango4 = document.getElementById('comSegForm');
-	var outPrintRango4 = document.getElementById('valorPrint4');
-	outPrintRango4.innerHTML = printRango4.value;
-	printRango4.oninput = function() {
-		outPrintRango4.innerHTML = this.value;
-		sumaTotal();
-	}
-
-	var printRango5 = document.getElementById('vehiculoForm');
-	var outPrintRango5 = document.getElementById('valorPrint5');
-	outPrintRango5.innerHTML = printRango5.value;
-	printRango5.oninput = function() {
-		outPrintRango5.innerHTML = this.value;
-		sumaTotal();
-	}
-
-	var printRango6 = document.getElementById('formControlRange');
-	var outPrintRango6 = document.getElementById('valorPrint6');
-	outPrintRango6.innerHTML = printRango6.value;
-	printRango6.oninput = function() {
-		outPrintRango6.innerHTML = this.value;
-		sumaTotal();
-	}
-
 	function valorAproximado(valor)
 	{
-		
+		var rango = document.getElementById(valor).value;
 		switch (valor) {
 			case "capitalTrabajoForm":
-				
+				var printRango1 = document.getElementById('valorPrint1');
 				printRango1.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
 			case "obraForm":
-				
+				var printRango2 = document.getElementById('valorPrint2');
 				printRango2.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
 			case "terrenoForm":
-				
+				var printRango3 = document.getElementById('valorPrint3');
 				printRango3.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
 			case "comSegForm":
-				
+				var printRango4 = document.getElementById('valorPrint4');
 				printRango4.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
 			case "vehiculoForm":
-				
+				var printRango5 = document.getElementById('valorPrint5');
 				printRango5.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
 			case "formControlRange":
-				
+				var printRango6 = document.getElementById('valorPrint6');
 				printRango6.innerHTML = '$ ' + rango;
 				sumaTotal();
 				break;
