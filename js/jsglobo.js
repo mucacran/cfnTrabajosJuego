@@ -17,7 +17,6 @@ function arrancaValoresDelJuego(contador)
     var min = 6;
     var max = 10;
     clickPun =  parseInt(Math.random() * (max - min) + min); // numero aleatorio entre un numero especifico y un numero maximo osea  eje. mayor que 6  y menor que 10
-    
       
     console.log(clickPun);
     globoJuego.innerHTML = '🎈';
@@ -77,8 +76,6 @@ function prinPantallaNumero(contador)
 
 
 /********************CRONOMETRO************************/
-
-
 function cronometro()
 {
     var cronometro = document.getElementById("tiempoCronometro");
