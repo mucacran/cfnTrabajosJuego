@@ -26,6 +26,7 @@ function arrancaValoresDelJuego(contador)
 }
 
 $('#inflar').click(function(){
+    
     var ancho = globoJuego.style.fontSize;
     num += 1;
     if(contador == clickPun)
@@ -77,7 +78,7 @@ function prinPantallaNumero(contador)
 
 /********************CRONOMETRO************************/
 
-cronometro();
+
 function cronometro()
 {
     var cronometro = document.getElementById("tiempoCronometro");
@@ -85,23 +86,23 @@ function cronometro()
     var segundo = 0;
     var minuto = 0;
     
-    setInterval( function()
-    {
-        if(conteo==60)
-       {
-            conteo = 0;
-            ++segundo;
-       }
-       else if(segundo == 60)
-       {
-            segundo = 0;
-            ++minuto;
-       }
-       else
-       {
-            cronometro.innerHTML = "Tiempo: " + minuto + " : " + segundo + " : " + conteo;
-            ++conteo;
-       }
-    },15);
+        setInterval( function()
+        {
+            if(conteo==60)
+            {
+                conteo = 0;
+                ++segundo;
+            }
+            else if(segundo == 60)
+            {
+                segundo = 0;
+                ++minuto;
+            }
+            else
+            {
+                cronometro.innerHTML = "Tiempo: " + minuto + " : " + segundo + " : " + conteo;
+                ++conteo;
+            }
+        },15);
+    
 }
-
