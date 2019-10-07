@@ -154,3 +154,14 @@ p
     text-align: justify;
     font-family: 'AR', Arial, Helvetica, sans-serif;
 }
+
+/*
+    Formulario de range
+*/
+.custom-range::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0, 101, 149, 1);
+    cursor: pointer;
+  }

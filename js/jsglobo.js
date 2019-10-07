@@ -13,7 +13,11 @@ arrancaValoresDelJuego(contador);
 
 function arrancaValoresDelJuego(contador)
 {
-    clickPun = Math.floor((Math.random() * 10) + 1);
+    //clickPun = Math.floor((Math.random() * 10) + 1); numero aleatorio entre 0 y 10
+    var min = 6;
+    var max = 10;
+    clickPun =  parseInt(Math.random() * (max - min) + min); // numero aleatorio entre un numero especifico y un numero maximo osea  eje. mayor que 6  y menor que 10
+      
     console.log(clickPun);
     globoJuego.innerHTML = '🎈';
     num = 10;
@@ -21,6 +25,7 @@ function arrancaValoresDelJuego(contador)
 }
 
 $('#inflar').click(function(){
+    
     var ancho = globoJuego.style.fontSize;
     num += 1;
     if(contador == clickPun)
@@ -69,3 +74,32 @@ function prinPantallaNumero(contador)
 }
 //https://codepen.io/julkapuk/pen/vjpZRW
 
+
+/********************CRONOMETRO************************/
+function cronometro()
+{
+    var cronometro = document.getElementById("tiempoCronometro");
+    var conteo = 0;
+    var segundo = 0;
+    var minuto = 0;
+    
+        setInterval( function()
+        {
+            if(conteo==60)
+            {
+                conteo = 0;
+                ++segundo;
+            }
+            else if(segundo == 60)
+            {
+                segundo = 0;
+                ++minuto;
+            }
+            else
+            {
+                cronometro.innerHTML = "Tiempo: " + minuto + " : " + segundo + " : " + conteo;
+                ++conteo;
+            }
+        },15);
+    
+}

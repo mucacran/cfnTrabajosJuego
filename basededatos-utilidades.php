@@ -1,5 +1,7 @@
 <?php
 require_once('database-credenciales.php');
+
+
 //$result = '';
 //variables
     $nombre1 =	isset($_POST["nombreCompleto"]) ? $_POST["nombreCompleto"] : '';
@@ -8,8 +10,6 @@ require_once('database-credenciales.php');
     $experiencia =	isset($_POST["experiencia"]) ? $_POST["experiencia"] : '';
     $trabajo=	isset($_POST["trabajo"]) ? $_POST["trabajo"] : '';
     $instruxion=	isset($_POST["instruccion"]) ? $_POST["instruccion"] : '';
-    $linkedingRegistro =	isset($_POST["linkedinRegistro"]) ? $_POST["linkedinRegistro"] : '';
-    $emailformulario =	isset($_POST["emailFormulario"]) ? $_POST["emailFormulario"] : '';
     
  
 $conectarse = new mysqli(BD_HOST,BD_USER,DB_PASSWORD,BD_DATABASE);
@@ -20,7 +20,7 @@ if($conectarse->connect_error)
     exit;
 }
 
-$baseDeDatos="INSERT INTO cfn_formulariosinlinkedin(id,nombrecompleto,rangodeedad,sectoreconomico,tiempoexperiencia,tipodetrabajo,niveldeinstruccion,direccionlinkedin,email) VALUES(NULL,'$nombre1','$edad2','$economia3','$experiencia','$trabajo','$instruxion','$linkedingRegistro','$emailformulario')";
+$baseDeDatos="INSERT INTO cfn_formulariosinlinkedin(id,nombrecompleto,rangodeedad,sectoreconomico,tiempoexperiencia,tipodetrabajo,niveldeinstruccion) VALUES(NULL,'$nombre1','$edad2','$economia3','$experiencia','$trabajo','$instruxion')";
 
 $resultado = $conectarse->query($baseDeDatos);
 
@@ -31,3 +31,5 @@ else
 {
     header("Location: globo.html");
 }
+
+require_once('user.class.php');
