@@ -1,10 +1,6 @@
 
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-=======
 <html lang="es">
->>>>>>> 38b772cb03ec9cefb865c64989867d0fb638b2bd
 <head>
 	<meta charset="UTF-8">
 	<title>Lista de Contactos de Loinde S.A.</title>

@@ -40,7 +40,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg" alt="">
+            <img style="width: 100%;height: auto;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg" alt="">
         </div>
     </div>
     <div class="container">
@@ -54,15 +54,19 @@
                         “Detener”, te quedas con los puntos acumulados hasta el momento.
                         Podrás jugar 3 veces este juego.
                     </h4>
-                    <p style="text-align: center">
-                            <a href="#" class="btn-loco">boton De locos</a>
-                        </p>
                 </div>   
             </div>
         </div>
     </div>
-    <div class="container ">
-            <p id="tiempoCronometro" style="font-size: 20PX">Tiempo</p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p id="tiempoCronometro" style="font-size: 20px">Tiempo</p>
+            </div>
+            <div class="col">
+                <p id="puntoGanPer" style="font-size: 20px">Puntos Ganados: </p>
+            </div>
+        </div>
         <div class="row cabeceraIndex">
             <div class="punto" id="click-Veses">0</div>
             <div class="col contenedorGlobo">
@@ -72,17 +76,14 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col col-md-6 col-sm-12">
                 <button class="btn btn-primary btn-lg btn-block" id="inflar" >Inflar</a>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col col-md-6 col-sm-12">
                 <button class="btn btn-primary btn-lg btn-block" id="desinflar">Detener | Te quedan <span id="n_intento"></span> intento</a>
             </div>
-           
         </div>
     </div>
-    
     <script src="js/jsglobo.js"></script>
 </body>
-
 </html>

@@ -4,6 +4,8 @@ var contador = 0;
 var clickPun = 0;
 var numeroIntento = 2;
 var globoJuego = document.getElementById('globoJuego');
+var icoGlobo ='🎈';
+var icoBun = '💥';
 
 var visualizaNumeroIntento;
 visualizaNumeroIntento = document.getElementById('n_intento');
@@ -11,6 +13,10 @@ visualizaNumeroIntento = document.getElementById('n_intento');
 
 arrancaValoresDelJuego(contador);
 
+/************************************************ */
+// Funcion que crea un numero a penas se carga la pagina entre 6 y 10
+// tambien le da un valor a un div para que inicie con un globo en pantalla
+/************************************************ */
 function arrancaValoresDelJuego(contador)
 {
     //clickPun = Math.floor((Math.random() * 10) + 1); numero aleatorio entre 0 y 10
@@ -19,14 +25,15 @@ function arrancaValoresDelJuego(contador)
     clickPun =  parseInt(Math.random() * (max - min) + min); // numero aleatorio entre un numero especifico y un numero maximo osea  eje. mayor que 6  y menor que 10
       
     console.log(clickPun);
-    globoJuego.innerHTML = '🎈';
+    globoJuego.innerHTML = icoGlobo;
     num = 10;
     contador = contador;
 }
 
+/************************************************ */
+//cada vez que se apreta el boton se infla el globo
+/************************************************ */
 $('#inflar').click(function(){
-    
-    var ancho = globoJuego.style.fontSize;
     num += 1;
     if(contador == clickPun)
     {
@@ -43,12 +50,15 @@ $('#inflar').click(function(){
     console.log(num);
 });
 
-$('#desinflar').click(function(){// primera forma
+/************************************************ */
+//este boton hace que pare de jugar en una secion y balla a la siguiente
+/************************************************ */
+$('#desinflar').click(function(){
     --numeroIntento;
     if(numeroIntento < 0)
     {
         console.log('se acabaron los intentos y debes ir a la siguiente página');
-        window.location = "encuesta.html"
+        window.location = "encuestaFuncionarios.html"
         return;
     }
     else{
@@ -60,13 +70,17 @@ $('#desinflar').click(function(){// primera forma
     globoJuego.style.fontSize = '10em';
 });
 
+/************************************************ */
+//cambia de imagen del globo por la que explota
+/************************************************ */
 function cambiarPum()
 {
-    globoJuego.innerHTML = '💥';
+    globoJuego.innerHTML = icoBun;
 }
 
-
+/************************************************ */
 //este hace que se imprima por pantalla el numero de veses que hace click
+/************************************************ */
 function prinPantallaNumero(contador)
 {
     var numero = document.getElementById('click-Veses');
@@ -76,30 +90,56 @@ function prinPantallaNumero(contador)
 
 
 /********************CRONOMETRO************************/
+cronometro();
 function cronometro()
 {
+    var estaElGlobo = document.getElementById('globoJuego').innerHTML;
     var cronometro = document.getElementById("tiempoCronometro");
     var conteo = 0;
     var segundo = 0;
     var minuto = 0;
+    var cronometroCorriendo;
     
-        setInterval( function()
+    setInterval(function()
+    {
+        if(conteo==60)
         {
-            if(conteo==60)
+            conteo = 0;
+            ++segundo;
+        }
+        else if(segundo == 60)
+        {
+            segundo = 0;
+            ++minuto;
+        }
+        else
+        {
+            cronometroCorriendo = "Tiempo: " + minuto + " : " + segundo + " : " + conteo;
+            if(cronometroCorriendo == "Tiempo: 1 : 0 : 1")
             {
-                conteo = 0;
-                ++segundo;
-            }
-            else if(segundo == 60)
-            {
-                segundo = 0;
-                ++minuto;
+                return;
             }
             else
             {
-                cronometro.innerHTML = "Tiempo: " + minuto + " : " + segundo + " : " + conteo;
+                cronometro.innerHTML = cronometroCorriendo;
                 ++conteo;
             }
-        },15);
-    
+        }
+    },15);
+}
+//////////////////////////////////////////////////////////
+/* Funcion que imprime por pantalla los puntos ganados  */
+//////////////////////////////////////////////////////////
+function puntoGanados()
+{
+    var printPant = document.getElementById('puntoGanPer');
+
+    if (globoJuego.innerHTML == icoBun)
+    {
+        printPant.innerHTML = 'se acabaron los intentos y debes ir a la siguiente página';
+    }
+    else
+    {
+        console.log('no se exploto');
+    }
 }

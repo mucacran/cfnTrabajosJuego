@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head >
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.png"/>
+	<link rel="icon" href="https://www.cfn.fin.ec/wp-content/themes/cfn/img/favicon.ico"/>
+
+	<title>CFN - Juega</title>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- BootstrapCDN 4 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<!-- bootstrap 4 js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+	<!-- iconos -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/css/site.css">
+
+	<!-- normalize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+	<!-- mi estilo animacion -->
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+
+	<!-- animación css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<!-- Mi estilos -->
+	<link rel="stylesheet" href="css/fuente.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg" alt="corporacion financiera nacional">
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>
+					VALORACIÓN EXPERIMENTAL DE PROYECTOS
+				</h1>
+				<h2>
+                    <strong> Proyecto 2: Compra de Excavadora para Alquiler </strong>
+				</h2>
+				<h3>
+					Capacidad
+                </h3>
+                <p>
+                    Un negocio dedicado al alquiler de grúas con operador y otros equipos de construcción, necesita para el giro de su negocio una excavadora hidráulica y capital trabajo operativo/administración. Se proyecta que la nueva máquina labore 8 horas, a un precio de $45 la hora, con 6 días a la semana y 24 días al mes, lo que generaría ingresos mensuales de USD $ 8,640 e ingresos anuales de USD $103,680
+                </p>
+                <section>
+                        <p>
+                                <b >Especificaciones y valorización</b>
+                            </p>
+                </section>
+                <section>
+                </section>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<form class="estadisticaFuncionarios" action="" >
+                    <div>
+
+                        <p>
+                            <b>Maquinaria: </b>
+                            Excavadora Modelo 320 D2L de Motor mecánico de C7.1 /152 HP, cilindraje de 7011 (428 pulg3), velocidad de giro 10.9 rpm.
+                        </p>
+                        <input type="radio" id="a1"> a) < 150 mil
+                        <input type="radio" id="a2"> b) entre 150 mil y 200 mil
+                        <input type="radio" id="a3"> c) entre 200 mil y 250 mil
+                        <input type="radio" id="a4"> d) entre 250 mil y 300 mil
+                        <input type="radio" id="a5"> e) > 300 mil
+                    </div>
+                    <div>
+                        <p></p>
+                        <p>
+                            <b>Capital de Trabajo Operativo/Administración:  </b>
+                            mano de obra directa (operario) y materiales directos (aceites, mantenimiento y reparación, combustible, y póliza de seguro); se considera un factor caja de 45 días
+                        </p>
+                        <input type="radio" id="b1"> a) < 5 mil
+                        <input type="radio" id="b2"> b) entre 5 mil y 6 mil
+                        <input type="radio" id="b3"> c) entre 6 mil y 7 mil
+                        <input type="radio" id="b4"> d) entre 7 mil y 8 mil
+                        <input type="radio" id="b5"> e) > 8 mil
+                    </div>
+
+
+                    <div>
+                        <p> VALOR TOTAL</p>
+                        <input type='text' value='3' disabled style="padding: 10px" id="sumando">
+                    </div>
+					<div class="content-btn" > 
+						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div style="width: 100%;height:100px"></div>
+	<script >
+        var aUno     = document.getElementById('a1');
+        var aDos     = document.getElementById('a2');
+        var aTres    = document.getElementById('a3');
+        var aCuatro  = document.getElementById('a4');
+        var aCinco   = document.getElementById('a5');
+
+        var bUno     = document.getElementById('b1');
+        var bDos     = document.getElementById('b2');
+        var bTres    = document.getElementById('b3');
+        var bCuatro  = document.getElementById('b4');
+        var bCinco   = document.getElementById('b5');
+
+        var cUno     = document.getElementById('c1');
+        var cDos     = document.getElementById('c2');
+        var cTres    = document.getElementById('c3');
+        var cCuatro  = document.getElementById('c4');
+        var cCinco   = document.getElementById('c5');
+
+        var dUno     = document.getElementById('d1');
+        var dDos     = document.getElementById('d2');
+        var dTres    = document.getElementById('d3');
+        var dCuatro  = document.getElementById('d4');
+        var dCinco   = document.getElementById('d5');
+
+        sumaTotal();
+        function sumaTotal()
+        {
+            var sumando = document.getElementById('sumando');
+            setInterval(function()
+            {
+                
+            sumando.innerHTML = 
+            });
+
+            
+
+        }
+	</script>
+</body>
+</html>
