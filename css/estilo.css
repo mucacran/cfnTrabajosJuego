@@ -264,9 +264,21 @@ p
 {
 font-weight: normal;
 }
-
+/************************************************************************/
 /* Responsive */
+/***************************************************************************/
 @media screen and (max-width: 400px) {
+    #alinearTypeRadios1,
+    #alinearTypeRadios2,
+    #alinearTypeRadios3,
+    #alinearTypeRadios4
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 720px) {
     #alinearTypeRadios1,
     #alinearTypeRadios2,
     #alinearTypeRadios3,
