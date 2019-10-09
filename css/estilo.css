@@ -289,3 +289,15 @@ font-weight: normal;
         align-items: flex-start;
     }
 }
+
+@media screen and (min-width: 721px) and (max-width: 1280px) {
+    #alinearTypeRadios1,
+    #alinearTypeRadios2,
+    #alinearTypeRadios3,
+    #alinearTypeRadios4
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }   
+}
