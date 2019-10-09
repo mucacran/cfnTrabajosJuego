@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="cabeceraIndex">
+                <div style="padding: 20px 0px;text-align: justify;font-family: 'Abk'; ">
                     <h4>
                         El globo a continuación puede ser inflado un número aleatorio de veces
                         entre 1 y 10. Cada vez que pulses “Inflar” y el globo no explote acumularás
@@ -57,15 +57,15 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <p id="tiempoCronometro" style="font-size: 20px">Tiempo</p>
+                <p id="tiempoCronometro" style="font-size: 20px">Tiempo: </p>
             </div>
             <div class="col">
                 <p id="puntoGanPer" style="font-size: 20px">Puntos Ganados: </p>
             </div>
         </div>
         <div class="row cabeceraIndex">
-            <div class="punto" id="click-Veses">0</div>
             <div class="col contenedorGlobo">
+                <div class="punto" id="click-Veses">0</div>
                 <div class="globo" id="globoJuego" >🎈</div>
             </div>
         </div>
@@ -77,6 +77,9 @@
             </div>
             <div class="col col-md-6 col-sm-12">
                 <button class="btn btn-primary btn-lg btn-block" id="desinflar">Detener | Te quedan <span id="n_intento"></span> intento</a>
+            </div>
+            <div class="col-sm-12">
+                <button class="btn btn-primary btn-lg btn-block" id="empezar">Empezar</a>
             </div>
         </div>
     </div>

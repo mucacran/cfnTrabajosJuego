@@ -11,7 +11,7 @@ let icoBun = '💥';
 var visualizaNumeroIntento;
 visualizaNumeroIntento = document.getElementById('n_intento');
 
-cronometro();
+
 arrancaValoresDelJuego(contador);
 
 /************************************************ */
@@ -94,12 +94,13 @@ function prinPantallaNumero(contador)
 
 /********************CRONOMETRO************************/
 
-function cronometro()
+$('#empezar').on('click',function()
 {
     var conteo = 0;
     var segundo = 0;
     var minuto = 0;
     var cronometroCorriendo;
+    
     
     setInterval(function()
     {
@@ -122,25 +123,32 @@ function cronometro()
             }
             else
             {
-                cronometro.innerHTML = cronometroCorriendo;
+                cronometro.innerHTML = cronometroCorriendo ;
                 ++conteo;
             }
         }
     },15);
-}
+    $('#empezar').hide();
+});
 //////////////////////////////////////////////////////////
 /* Funcion que imprime por pantalla los puntos ganados  */
 //////////////////////////////////////////////////////////
+var numero = 0;
 function puntoGanados()
-{
+{   
+    
     var printPant = document.getElementById('puntoGanPer');
 
     if (globoJuego.innerHTML == icoBun)
     {
-        printPant.innerHTML = 'Haz perdido 10 puntos';
+        var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
+        numero -= numeroPantalla; 
+        printPant.innerHTML = 'Haz perdido ' + numeroPantalla + ' puntos' + ' | Acumulado: ' +  numero ;
     }
     else
     {
-        printPant.innerHTML = 'Haz ganado 10 puntos';
+        var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
+        numero += numeroPantalla;
+        printPant.innerHTML = 'Haz ganado '  + numeroPantalla + ' puntos' + ' | Acumulado: ' +  numero;
     }
 }
