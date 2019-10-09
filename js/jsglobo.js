@@ -3,14 +3,15 @@ var num = 0;
 var contador = 0;
 var clickPun = 0;
 var numeroIntento = 2;
-var globoJuego = document.getElementById('globoJuego');
-var icoGlobo ='🎈';
-var icoBun = '💥';
+var globoJuego = document.getElementById('globoJuego'); // este es el lugar donde se imprime el globo por pantalla
+var cronometro = document.getElementById('tiempoCronometro'); // este es el cronometro
+let icoGlobo ='🎈';
+let icoBun = '💥';
 
 var visualizaNumeroIntento;
 visualizaNumeroIntento = document.getElementById('n_intento');
-//visualizaNumeroIntento.innerHTML = numeroIntento;
 
+cronometro();
 arrancaValoresDelJuego(contador);
 
 /************************************************ */
@@ -38,6 +39,7 @@ $('#inflar').click(function(){
     if(contador == clickPun)
     {
         cambiarPum();
+        puntoGanados();
         return;
     }
     else
@@ -62,6 +64,7 @@ $('#desinflar').click(function(){
         return;
     }
     else{
+        puntoGanados();
         globoJuego.style.fontSize =  '10 em';
         contador = 0;
         arrancaValoresDelJuego(contador);
@@ -90,11 +93,9 @@ function prinPantallaNumero(contador)
 
 
 /********************CRONOMETRO************************/
-cronometro();
+
 function cronometro()
 {
-    var estaElGlobo = document.getElementById('globoJuego').innerHTML;
-    var cronometro = document.getElementById("tiempoCronometro");
     var conteo = 0;
     var segundo = 0;
     var minuto = 0;
@@ -136,10 +137,10 @@ function puntoGanados()
 
     if (globoJuego.innerHTML == icoBun)
     {
-        printPant.innerHTML = 'se acabaron los intentos y debes ir a la siguiente página';
+        printPant.innerHTML = 'Haz perdido 10 puntos';
     }
     else
     {
-        console.log('no se exploto');
+        printPant.innerHTML = 'Haz ganado 10 puntos';
     }
 }
