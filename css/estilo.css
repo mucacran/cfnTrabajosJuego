@@ -257,6 +257,14 @@ p
     justify-content: space-between;
 }
 
+#alinearTypeRadios1 label,
+#alinearTypeRadios2 label,
+#alinearTypeRadios3 label,
+#alinearTypeRadios4 label
+{
+font-weight: normal;
+}
+
 /* Responsive */
 @media screen and (max-width: 400px) {
     #alinearTypeRadios1,

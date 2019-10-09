@@ -152,7 +152,7 @@
                     </div>
                     <div>
                         <p> VALOR TOTAL</p>
-                        <input type='text' value='3' disabled style="padding: 10px" id="sumando">
+                        <input type='text' value='0' disabled style="padding: 10px" id="sumando">
                     </div>
 					<div class="content-btn" > 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
@@ -163,38 +163,48 @@
 	</div>
 	<div style="width: 100%;height:100px"></div>
 	<script >
-        var aUno     = document.getElementById('a1');
-        var aDos     = document.getElementById('a2');
-        var aTres    = document.getElementById('a3');
-        var aCuatro  = document.getElementById('a4');
-        var aCinco   = document.getElementById('a5');
+        var aUno     = document.getElementById('a1').value;
+        var aDos     = document.getElementById('a2').value;
+        var aTres    = document.getElementById('a3').value;
+        var aCuatro  = document.getElementById('a4').value;
+        var aCinco   = document.getElementById('a5').value;
 
-        var bUno     = document.getElementById('b1');
-        var bDos     = document.getElementById('b2');
-        var bTres    = document.getElementById('b3');
-        var bCuatro  = document.getElementById('b4');
-        var bCinco   = document.getElementById('b5');
+        var bUno     = document.getElementById('b1').value;
+        var bDos     = document.getElementById('b2').value;
+        var bTres    = document.getElementById('b3').value;
+        var bCuatro  = document.getElementById('b4').value;
+        var bCinco   = document.getElementById('b5').value;
 
-        var cUno     = document.getElementById('c1');
-        var cDos     = document.getElementById('c2');
-        var cTres    = document.getElementById('c3');
-        var cCuatro  = document.getElementById('c4');
-        var cCinco   = document.getElementById('c5');
+        var cUno     = document.getElementById('c1').value;
+        var cDos     = document.getElementById('c2').value;
+        var cTres    = document.getElementById('c3').value;
+        var cCuatro  = document.getElementById('c4').value;
+        var cCinco   = document.getElementById('c5').value;
 
-        var dUno     = document.getElementById('d1');
-        var dDos     = document.getElementById('d2');
-        var dTres    = document.getElementById('d3');
-        var dCuatro  = document.getElementById('d4');
-        var dCinco   = document.getElementById('d5');
+        var dUno     = document.getElementById('d1').value;
+        var dDos     = document.getElementById('d2').value;
+        var dTres    = document.getElementById('d3').value;
+        var dCuatro  = document.getElementById('d4').value;
+        var dCinco   = document.getElementById('d5').value;
 
         sumaTotal();
         function sumaTotal()
         {
-            var sumando = document.getElementById('sumando');
-            setInterval(function()
-            {  
-                sumando.innerHTML = 'nada';
-            });
+            console.log(dTres);
+            var textoDelate = 'entre ';
+            var textoEnmedio = ' mil y ';
+            var textoFinal = ' mil';
+            var sumando   = document.getElementById('sumando');
+            sumando.value = textoDelate + 100 + textoEnmedio + 54654 + textoFinal;
+        }
+
+        function recorrer(parametro)
+        {
+            console.log('Esta leyendo la funcion');
+            for( var i = 0; i < parametro.length; i++)
+            {
+                console.log(parametro[i]);
+            }
         }
 	</script>
 </body>
