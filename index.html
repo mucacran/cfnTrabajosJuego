@@ -27,8 +27,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/css/site.css">
 
-	
-
 	<!-- mi estilo animacion -->
 	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 
@@ -54,7 +52,7 @@
 				<h1 class="centrar">
 					BIENVENIDO AL JUEGO DE VALORACIÓN EXPERIMENTAL DE PROYECTOS DE CFN. 
 				</h1>
-				<div class="row">
+				<d	iv class="row">
 					<div class="col">
 						<h2 class="centrar">
 							En este aplicativo podras estimar el valor necesario para implementar un proyecto de inversión y seras puntuado de acuerdo a tu precisión con respecto a valores reales.
@@ -81,7 +79,7 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="edad" name="edad">
+							<select class="form-control form-control-lg" id="edad" name="edad" required>
 								<option value="" selected>Edad</option>
 								<option value="< 25"> < 25 </option>
 								<option value="36 - 45">36 - 45</option>
@@ -89,10 +87,9 @@
 							</select>
 							<span class="input-group-addon"><i class="fa fa-sort-desc fa-fw"></i></span>
 						</div>
-						
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-eye fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="experiencia" name="experiencia">
+							<select class="form-control form-control-lg" id="experiencia" name="experiencia" required>
 								<option value="" selected>Años de experiencia en Banca</option>
 								<option value="<1"> < 1 </option>
 								<option value="1-4">1 - 4</option>
@@ -103,7 +100,7 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="trabajo" name="trabajo">
+							<select class="form-control form-control-lg" id="trabajo" name="trabajo" required>
 								<option value="" selected>Eliga su área de trabajo</option>
 								<option value="Presidencia">Presidencia</option>
 								<option value="Gerencia General"> Gerencia General</option>
@@ -147,7 +144,7 @@
 						</div>
 						<div class="input-group margin-bottom-sm">
 							<span class="input-group-addon"><i class="fa fa-graduation-cap fa-fw"></i></span>
-							<select class="form-control form-control-lg" id="instruccion" name="instruccion">
+							<select class="form-control form-control-lg" id="instruccion" name="instruccion" required>
 								<option value="" selected>Nivel de instrucción</option>
 								<option value="Estudiante Universitario">Estudiante Universitario</option>
 								<option value="Tercer Nivel">Tercer Nivel</option>
