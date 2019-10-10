@@ -18,11 +18,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
 	<!-- bootstrap 4 js -->
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 	<!-- mi estilo animacion -->
-	<!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 
 	<!-- iconos -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -103,12 +103,12 @@
                         <p><b>Predio camaronera: </b>
                             11 hectáreas de espejo de agua para engorde, 2 hectáreas de campamento, muros carrozables, reservorio y canal, vías internas, estación de bombeo y rebombeo, casa de hacienda en remodelación, compuertas de ingreso de agua y pesca, red eléctrica, entre otros.
                         </p>
-                        <div id="alinearTypeRadios1" oninput="esteEstaSelecionado(this.childNodes[1])">
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a1" name="camarones" data-valor1="150" data-valor2="0" value="150" required> a) < 150 mil</label>
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a2" name="camarones" data-valor1="150" data-valor2="250" value="150-250">    b) entre 150 mil y 250 mil </label>
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a3" name="camarones" data-valor1="250" data-valor2="350" value="250-350">    c) entre 250 mil y 350 mil </label>
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a4" name="camarones" data-valor1="350" data-valor2="450" value="350-450">    d) entre 350 mil y 450 mil </label>
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a5" name="camarones" data-valor1="450" data-valor2="0" value="450">          e) más de 450 mil </label>
+                        <div id="alinearTypeRadios1" onclick="esteEstaSelecionado(this.childNodes)">
+                            <label onclick="irSumando(this.childNodes[0])"> <input type="radio" id="a1" name="camarones" data-valor1="150" data-valor2="0" value="150" required> a) < 150 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"> <input type="radio" id="a2" name="camarones" data-valor1="150" data-valor2="250" value="150-250">    b) entre 150 mil y 250 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"> <input type="radio" id="a3" name="camarones" data-valor1="250" data-valor2="350" value="250-350">    c) entre 250 mil y 350 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"> <input type="radio" id="a4" name="camarones" data-valor1="350" data-valor2="450" value="350-450">    d) entre 350 mil y 450 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"> <input type="radio" id="a5" name="camarones" data-valor1="450" data-valor2="0" value="450">          e) más de 450 mil </label>
                         </div>     
                     </div>
                     <div class="contenedores">
@@ -154,7 +154,7 @@
                         <p> VALOR TOTAL</p>
                         <input type='text' value='0' disabled style="padding: 10px" id="sumando">
                     </div>
-					<div class="content-btn" > 
+					<div class="content-btn"> 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
 					</div>
 				</form>
@@ -195,7 +195,10 @@
             //if (objForm.opcion[x].checked)
             //var a = e.camarones[0].length;
 
-            console.log(e.childNodes[0].camarones.length);
+            for (var i = 0; i < e.length; i++)
+            {
+                console.log(e[i]);
+            }
 
             // if(e.childNodes[0].checked)
             // {
@@ -213,3 +216,8 @@
 <!-- https://www.htmlquick.com/es/reference/tags/input-radio.html  para hacer un formulio con type="radio"-->
 <!-- https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset -->
 <!-- https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=804:acceder-a-nodos-hijos-javascript-y-atributos-nodename-nodetype-y-nodevalue-o-texto-ejemplos-cu01126e&catid=78&Itemid=206 --->
+<!-- https://www.w3schools.com/jsref/event_oninput.asp
+    https://www.w3schools.com/jsref/prop_node_childnodes.asp
+    http://www.forosdelweb.com/f13/saber-que-radio-button-esta-seleccionado-188404/
+    https://www.lawebdelprogramador.com/foros/JavaScript/332436-como-se-si-un-boton-de-radio-esta-seleccionado.html
+    https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
