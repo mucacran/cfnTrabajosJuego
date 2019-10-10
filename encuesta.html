@@ -170,20 +170,28 @@
 	<div style="width: 100%;height:100px"></div>
 	<script >
 
+/**********************************************/
+/* CALCULA LA SUMA
+/**********************************************/
+	function sumaTotal()
+	{
+		// son los valores por cada tipo de rango
+		var printRango1 = parseInt(document.getElementById('capitalTrabajoForm').value);
+		var printRango2 = parseInt(document.getElementById('obraForm').value);
+		var printRango3 = parseInt(document.getElementById('terrenoForm').value);
+		var printRango4 = parseInt(document.getElementById('comSegForm').value);
+		var printRango5 = parseInt(document.getElementById('vehiculoForm').value);
+		var printRango6 = parseInt(document.getElementById('formControlRange').value);
+		
+		//aqui atrapamos el div que imprimira por pantalla la suma total
+		var printRango = document.getElementById('valorPrint7');
+		// el valor tota de la suma de los valores
+		var total = printRango1 + printRango2 + printRango3 + printRango4 + printRango5 + printRango6;
+		// se ingresa en el div el valor total de la suma
+		printRango.innerHTML = '$ ' + total;
+	}
 
-function sumaTotal()
-{
-	var printRango1 = parseInt(document.getElementById('capitalTrabajoForm').value);
-	var printRango2 = parseInt(document.getElementById('obraForm').value);
-	var printRango3 = parseInt(document.getElementById('terrenoForm').value);
-	var printRango4 = parseInt(document.getElementById('comSegForm').value);
-	var printRango5 = parseInt(document.getElementById('vehiculoForm').value);
-	var printRango6 = parseInt(document.getElementById('formControlRange').value);
-	//
-	var printRango = document.getElementById('valorPrint7');
-	var total = printRango1 + printRango2 + printRango3 + printRango4 + printRango5 + printRango6;
-	printRango.innerHTML = '$ ' + total;
-}
+
 
 	var printRango1 = document.getElementById('capitalTrabajoForm');
 	var outPrintRango1 = document.getElementById('valorPrint1');

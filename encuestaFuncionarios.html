@@ -18,11 +18,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
 	<!-- bootstrap 4 js -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script> -->
 	<!-- mi estilo animacion -->
-	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+	<!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
 
 	<!-- iconos -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -103,12 +103,12 @@
                         <p><b>Predio camaronera: </b>
                             11 hectáreas de espejo de agua para engorde, 2 hectáreas de campamento, muros carrozables, reservorio y canal, vías internas, estación de bombeo y rebombeo, casa de hacienda en remodelación, compuertas de ingreso de agua y pesca, red eléctrica, entre otros.
                         </p>
-                        <div id="alinearTypeRadios1">
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="a1" name="camarones" value="150" required> a) < 150 mil </label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="a2" name="camarones" value="150-250">      b) entre 150 mil y 250 mil </label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="a3" name="camarones" value="250-350">      c) entre 250 mil y 350 mil </label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="a4" name="camarones" value="350-450">      d) entre 350 mil y 450 mil </label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="a5" name="camarones" value="450">          e) más de 450 mil </label>
+                        <div id="alinearTypeRadios1" oninput="esteEstaSelecionado(this.childNodes[1])">
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a1" name="camarones" data-valor1="150" data-valor2="0" value="150" required> a) < 150 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a2" name="camarones" data-valor1="150" data-valor2="250" value="150-250">    b) entre 150 mil y 250 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a3" name="camarones" data-valor1="250" data-valor2="350" value="250-350">    c) entre 250 mil y 350 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a4" name="camarones" data-valor1="350" data-valor2="450" value="350-450">    d) entre 350 mil y 450 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="a5" name="camarones" data-valor1="450" data-valor2="0" value="450">          e) más de 450 mil </label>
                         </div>     
                     </div>
                     <div class="contenedores">
@@ -116,12 +116,12 @@
                         <p><b>Motor: </b>
                             estacionario industrial a diesel  6 cilindros (7146 cc, 241 hp, 1800 rpm continuos), 4 tiempos, diámetro por carrera 108 mm x 130 mm, turbo e intercooler, inyección mecánica, enfriamiento por agua con radiador, 12 voltios, 510 kg. 
                         </p>
-                        <div id="alinearTypeRadios2">
-                            <label onclick="irSumando1(this.childNodes[0])"> <input type="radio" id="b1" name="motorcapital" valor1="90" valor2="0" value="90" required>  a) > 90 mil </label>
-                            <label onclick="irSumando1(this.childNodes[0])"> <input type="radio" id="b2" name="motorcapital" valor1="5" valor2="15" value="5-15">         b) entre 5 mil y 15 mil </label>
-                            <label onclick="irSumando1(this.childNodes[0])"> <input type="radio" id="b3" name="motorcapital" valor1="15" valor2="25" value="15-25">        c) entre 15 mil y 25 mil </label>
-                            <label onclick="irSumando1(this.childNodes[0])"> <input type="radio" id="b4" name="motorcapital" valor1="25" valor2="35" value="25-35">        d) entre 25 mil y 35 mil </label>
-                            <label onclick="irSumando1(this.childNodes[0])"> <input type="radio" id="b5" name="motorcapital" valor1="35" valor2="0" value="35">           e) > 35 mil </label>
+                        <div id="alinearTypeRadios2" >
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="b1" name="motorcapital" data-valor1="90" data-valor2="0" value="90" required>    a) > 90 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="b2" name="motorcapital" data-valor1="5" data-valor2="15" value="5-15">           b) entre 5 mil y 15 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="b3" name="motorcapital" data-valor1="15" data-valor2="25" value="15-25">         c) entre 15 mil y 25 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="b4" name="motorcapital" data-valor1="25" data-valor2="35" value="25-35">         d) entre 25 mil y 35 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="b5" name="motorcapital" data-valor1="35" data-valor2="0" value="35">             e) > 35 mil </label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -129,12 +129,12 @@
                         <p><b> Capital de trabajo operativo:</b>
                             Compra de larvas, balanceado, insumos, suministros y servicios, mano de obra directa, mantenimiento y seguros, etc; considerando un factor caja de 135 días.
                         </p>
-                        <div id="alinearTypeRadios3">
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="c1" name="capital" value="60" required> a) < 60 mil</label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="c2" name="capital" value="60-70">      b) entre 60 mil y 70 mil</label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="c3" name="capital" value="70-80">      c) entre 70 mil y 80 mil</label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="c4" name="capital" value="80-90">      d) entre 80 mil y 90 mil</label>
-                            <label onclick="irSumando(this.childNodes[0].value)"><input type="radio" id="c5" name="capital" value="90">         e) > 90 mil</label>
+                        <div id="alinearTypeRadios3" >
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="c1" name="capital" data-valor1="60" data-valor2="0" value="60" required> a) < 60 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="c2" name="capital" data-valor1="60" data-valor2="70" value="60-70">      b) entre 60 mil y 70 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="c3" name="capital" data-valor1="70" data-valor2="80" value="70-80">      c) entre 70 mil y 80 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="c4" name="capital" data-valor1="80" data-valor2="90" value="80-90">      d) entre 80 mil y 90 mil</label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="c5" name="capital" data-valor1="90" data-valor2="0" value="90">          e) > 90 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -142,12 +142,12 @@
                         <p><b> Casa de trabajadores:</b>
                             140 m2 con 2 plantas, 2 bodegas, 1 oficina, 5 dormitorios, 3 baños,  cocina, comedor, recibidor, lavandería y patio. La construcción utilizará piedra, hormigón armado, bloques, aluminio y vidrio, paneles de madera, gypsum, cerámica y hierro.   
                         </p>
-                        <div id="alinearTypeRadios4">
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d1" name="casa" data-valor1="14" data-valor2="0" value="15" required>   a) < 15 mil </label>
+                        <div id="alinearTypeRadios4" >
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d1" name="casa" data-valor1="15" data-valor2="0" value="15" required>    a) < 15 mil </label>
                             <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d2" name="casa" data-valor1="15" data-valor2="25" value="15-25">         b) entre 15 mil y 25 mil </label>
                             <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d3" name="casa" data-valor1="25" data-valor2="35" value="25-35">         c) entre 25 mil y 35 mil </label>
                             <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d4" name="casa" data-valor1="35" data-valor2="45" value="35-45">         d) entre 35 mil y 45 mil </label>
-                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="0" value="45">            e) > 45 mil </label>
+                            <label onclick="irSumando(this.childNodes[0])"><input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="0" value="45">             e) > 45 mil </label>
                         </div>
                     </div>
                     <div>
@@ -164,35 +164,52 @@
 	<div style="width: 100%;height:100px"></div>
 	<script >
 
-        
+         var v1 = 0;
+         var v2 = 0;
+
         function sumaTotal(valor1,valor2)
         {
-            var textoDelate = 'entre ';
-            var textoEnmedio = ' mil y ';
-            var textoFinal = ' mil';
-            var sumando   = document.getElementById('sumando');
-            sumando.value = textoDelate + valor1 + textoEnmedio + valor2 + textoFinal;
-        }
+            // v1 += valor1;
+            // v2 += valor2;
 
-        function recorrer(parametro)
-        {
-            console.log('Esta leyendo la funcion');
-            for( var i = 0; i < parametro.length; i++)
-            {
-                console.log(parametro[i]);
-            }
+            // var textoDelate = 'entre ';
+            // var textoEnmedio = ' mil y ';
+            // var textoFinal = ' mil';
+
+            // var sumando   = document.getElementById('sumando');
+            // sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
         }
 
         function irSumando(e)
         {
-            var v1 = e.dataset.valor1;
-            var v2 = e.dataset.valor2;
+            // var v1 = parseInt(e.dataset.valor1);
+            // var v2 = parseInt(e.dataset.valor2);
 
-            console.log(v1 + v2);
+            // console.log(v1 + v2);
+
+            // sumaTotal(v1,v2);
         }
+
+        function esteEstaSelecionado(e)
+        {
+            //if (objForm.opcion[x].checked)
+            //var a = e.camarones[0].length;
+
+            console.log(e.childNodes[0].camarones.length);
+
+            // if(e.childNodes[0].checked)
+            // {
+            //     console.log('true');
+            // }
+            // else{
+            //     console.log('false');
+            // }
+        }
+
 	</script>
 </body>
 </html>
 
 <!-- https://www.htmlquick.com/es/reference/tags/input-radio.html  para hacer un formulio con type="radio"-->
 <!-- https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset -->
+<!-- https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=804:acceder-a-nodos-hijos-javascript-y-atributos-nodename-nodetype-y-nodevalue-o-texto-ejemplos-cu01126e&catid=78&Itemid=206 --->
