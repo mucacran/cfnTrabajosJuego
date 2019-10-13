@@ -71,38 +71,42 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<form class="estadisticaFuncionarios" action="" >
-                    <div>
+				<form class="estadisticaFuncionarios" action="" method="POST">
+                    <div class="contenedores">
 
                         <p>
                             <b>Maquinaria: </b>
                             Excavadora Modelo 320 D2L de Motor mecánico de C7.1 /152 HP, cilindraje de 7011 (428 pulg3), velocidad de giro 10.9 rpm.
                         </p>
-                        <input type="radio" id="a1" data-valor1="150" data-valor2="0"> a) < 150 mil
-                        <input type="radio" id="a2" data-valor1="150" data-valor2="200"> b) entre 150 mil y 200 mil
-                        <input type="radio" id="a3" data-valor1="200" data-valor2="150"> c) entre 200 mil y 250 mil
-                        <input type="radio" id="a4" data-valor1="250" data-valor2="300"> d) entre 250 mil y 300 mil
-                        <input type="radio" id="a5" data-valor1="300" data-valor2="0"> e) > 300 mil
+                        <div id="alinearTypeRadios1" onclick="todosLosSeleccionados(this.childNodes,this.id)">
+                            <label><input type="radio" name="maquinaria" id="a1" data-valor1="150" data-valor2="0"    value="< 150 mil" required       >a) < 150 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a2" data-valor1="150" data-valor2="200"  value="entre 150 mil y 200 mil"  >b) entre 150 mil y 200 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a3" data-valor1="200" data-valor2="150"  value="entre 200 mil y 250 mil"  >c) entre 200 mil y 250 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a4" data-valor1="250" data-valor2="300"  value="entre 250 mil y 300 mil"  >d) entre 250 mil y 300 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a5" data-valor1="300" data-valor2="0"    value="> 300 mil"                >e) > 300 mil</label>
+                        </div>
                     </div>
-                    <div>
+                    <div class="contenedores">
                         <p></p>
                         <p>
                             <b>Capital de Trabajo Operativo/Administración:  </b>
                             mano de obra directa (operario) y materiales directos (aceites, mantenimiento y reparación, combustible, y póliza de seguro); se considera un factor caja de 45 días
                         </p>
-                        <input type="radio" id="b1" data-valor1="5" data-valor2="0"> a) < 5 mil
-                        <input type="radio" id="b2" data-valor1="5" data-valor2="6"> b) entre 5 mil y 6 mil
-                        <input type="radio" id="b3" data-valor1="6" data-valor2="7"> c) entre 6 mil y 7 mil
-                        <input type="radio" id="b4" data-valor1="7" data-valor2="8"> d) entre 7 mil y 8 mil
-                        <input type="radio" id="b5" data-valor1="8" data-valor2="0"> e) > 8 mil
+                        <div id="alinearTypeRadios2" onclick="todosLosSeleccionados(this.childNodes,this.id)">
+                            <label><input type="radio" name="capital" id="b1" data-valor1="5" data-valor2="0" value="< 5 mil" required     >a) < 5 mil</label>
+                            <label><input type="radio" name="capital" id="b2" data-valor1="5" data-valor2="6" value="entre 5 mil y 6 mil"  >b) entre 5 mil y 6 mil</label>
+                            <label><input type="radio" name="capital" id="b3" data-valor1="6" data-valor2="7" value="entre 6 mil y 7 mil"  >c) entre 6 mil y 7 mil</label>
+                            <label><input type="radio" name="capital" id="b4" data-valor1="7" data-valor2="8" value="entre 7 mil y 8 mil"  >d) entre 7 mil y 8 mil</label>
+                            <label><input type="radio" name="capital" id="b5" data-valor1="8" data-valor2="0" value="> 8 mil"              >e) > 8 mil</label>
+                        </div>
                     </div>
 
 
-                    <div>
+                    <div class="resultado">
                         <p> VALOR TOTAL</p>
-                        <input type='text' value='3' disabled style="padding: 10px" id="sumando">
+                        <input type='text' value='0' disabled id="sumando">
                     </div>
-					<div class="content-btn" > 
+					<div class="content-btn"> 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
 					</div>
 				</form>
@@ -111,43 +115,60 @@
 	</div>
 	<div style="width: 100%;height:100px"></div>
 	<script >
-        var aUno     = document.getElementById('a1');
-        var aDos     = document.getElementById('a2');
-        var aTres    = document.getElementById('a3');
-        var aCuatro  = document.getElementById('a4');
-        var aCinco   = document.getElementById('a5');
+        let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2'];
+        let idValor1 = [0,0];
+        let idValor2 = [0,0];
 
-        var bUno     = document.getElementById('b1');
-        var bDos     = document.getElementById('b2');
-        var bTres    = document.getElementById('b3');
-        var bCuatro  = document.getElementById('b4');
-        var bCinco   = document.getElementById('b5');
-
-        var cUno     = document.getElementById('c1');
-        var cDos     = document.getElementById('c2');
-        var cTres    = document.getElementById('c3');
-        var cCuatro  = document.getElementById('c4');
-        var cCinco   = document.getElementById('c5');
-
-        var dUno     = document.getElementById('d1');
-        var dDos     = document.getElementById('d2');
-        var dTres    = document.getElementById('d3');
-        var dCuatro  = document.getElementById('d4');
-        var dCinco   = document.getElementById('d5');
-
-        sumaTotal();
-        function sumaTotal()
+        function sumaTotal(v1,v2)
         {
-            var sumando = document.getElementById('sumando');
-            setInterval(function()
-            {
-                
-            sumando.innerHTML = 
-            });
+            var textoDelate = 'entre ';
+            var textoEnmedio = ' mil y ';
+            var textoFinal = ' mil';
 
-            
-
+            var sumando   = document.getElementById('sumando');
+            sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
         }
+    
+        function irSumando(e,id)
+        {
+            var idVl1 = 0;
+            var idVl2 = 0;
+
+            var v1 = parseInt(e.dataset.valor1);
+            var v2 = parseInt(e.dataset.valor2);
+
+            switch (id) {
+                case idArray[0]:
+                    idValor1 = [v1,v2];
+                    idVl1 = idValor1[0] + idValor2[0] ;
+                    idVl2 = idValor1[1] + idValor2[1] ;
+                    sumaTotal(idVl1,idVl2);
+                    break;
+                case idArray[1]:
+                    idValor2 = [v1,v2];
+                    idVl1 = idValor1[0] + idValor2[0] ;
+                    idVl2 = idValor1[1] + idValor2[1] ;
+                    sumaTotal(idVl1,idVl2);
+                    break;
+                default:
+                    console.log('aun no hay valores');
+            }
+        }
+
+       function todosLosSeleccionados(a,b)
+       {
+            for(var i = 0; i < a.length ;i++)
+            {
+                var input = a[i].childNodes;
+                for(var j = 0; j < input.length ;j++)
+                {
+                    if(input[j].checked)
+                    {
+                        irSumando(input[j],b);
+                    }
+                }
+            }
+       }
 	</script>
 </body>
 </html>
