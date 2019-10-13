@@ -151,9 +151,9 @@
                             <label > <input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="0" value="45">             e) > 45 mil</label>
                         </div>
                     </div>
-                    <div>
+                    <div class="resultado">
                         <p> VALOR TOTAL</p>
-                        <input type='text' value='0' disabled style="padding: 10px" id="sumando" >
+                        <input type='text' value='0' disabled id="sumando" >
                     </div>
 					<div class="content-btn"> 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
@@ -165,11 +165,11 @@
 	<div style="width: 100%;height:100px"></div>
 	<script >
 
-            let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4'];
-            let idValor1 = [0,0];
-            let idValor2 = [0,0];
-            let idValor3 = [0,0];
-            let idValor4 = [0,0];
+        let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4'];
+        let idValor1 = [0,0];
+        let idValor2 = [0,0];
+        let idValor3 = [0,0];
+        let idValor4 = [0,0];
 
         function sumaTotal(v1,v2)
         {

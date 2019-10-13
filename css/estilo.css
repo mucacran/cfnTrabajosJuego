@@ -262,7 +262,24 @@ p
 #alinearTypeRadios3 label,
 #alinearTypeRadios4 label
 {
-font-weight: normal;
+    font-weight: normal;
+}
+
+.resultado,
+.resultado p
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.resultado input
+{
+    margin: 15px 0px;
+    border-radius: 5px;
+    border: 0px;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
 }
 /************************************************************************/
 /* Responsive */
