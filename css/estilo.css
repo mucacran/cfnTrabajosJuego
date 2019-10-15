@@ -54,7 +54,10 @@ form.estadisticaFuncionarios
     max-width: 100%;
     height: auto;
 }
-
+form
+{
+    position: relative;
+}
 form .preguntasForm
 {
     background-color: rgba(0, 159, 194, 1);

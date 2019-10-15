@@ -152,9 +152,8 @@
                             <label > <input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="45" value="45">             e) > 45 mil</label>
                         </div>
                     </div>
-                    <div class="resultado">
-                        <p> VALOR TOTAL</p>
-                        <input type='text' value='0' disabled id="sumando" >
+                    <div class="resultado" style="border: 1px solid #000;display: inline-block;position: absolute;top: 0px;right: 0px;">
+                        <input type='text' value='0' disabled id="sumando" style="position: fixed;" >
                     </div>
 					<div class="content-btn"> 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
@@ -174,12 +173,26 @@
 
         function sumaTotal(v1,v2)
         {
-            var textoDelate = 'entre ';
+            var textoDelate = 'Entre ';
             var textoEnmedio = ' mil y ';
             var textoFinal = ' mil';
 
-            var sumando   = document.getElementById('sumando');
-            sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
+            if(v1 == 315 && v2 == 315)
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = 'Menos de ' + v1 + ' mil';
+            }
+            else if(v1 == 620 && v2 == 620)
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = 'Mas de ' + v2 + ' mil';
+            }
+            else
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
+            }
+            
         }
 
         function irSumando(e,id)
