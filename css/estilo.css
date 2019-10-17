@@ -254,7 +254,9 @@ p
 #alinearTypeRadios1,
 #alinearTypeRadios2,
 #alinearTypeRadios3,
-#alinearTypeRadios4
+#alinearTypeRadios4,
+#alinearTypeRadios5,
+#alinearTypeRadios6
 {
     display: flex;
     justify-content: space-between;
@@ -263,7 +265,9 @@ p
 #alinearTypeRadios1 label,
 #alinearTypeRadios2 label,
 #alinearTypeRadios3 label,
-#alinearTypeRadios4 label
+#alinearTypeRadios4 label,
+#alinearTypeRadios5 label,
+#alinearTypeRadios6 label
 {
     font-weight: normal;
 }
@@ -291,7 +295,9 @@ p
     #alinearTypeRadios1,
     #alinearTypeRadios2,
     #alinearTypeRadios3,
-    #alinearTypeRadios4
+    #alinearTypeRadios4,
+    #alinearTypeRadios5,
+    #alinearTypeRadios6
     {
         display: flex;
         flex-direction: column;
@@ -302,7 +308,9 @@ p
     #alinearTypeRadios1,
     #alinearTypeRadios2,
     #alinearTypeRadios3,
-    #alinearTypeRadios4
+    #alinearTypeRadios4,
+    #alinearTypeRadios5,
+    #alinearTypeRadios6
     {
         display: flex;
         flex-direction: column;
@@ -314,7 +322,9 @@ p
     #alinearTypeRadios1,
     #alinearTypeRadios2,
     #alinearTypeRadios3,
-    #alinearTypeRadios4
+    #alinearTypeRadios4,
+    #alinearTypeRadios5,
+    #alinearTypeRadios6
     {
         display: flex;
         flex-direction: column;
