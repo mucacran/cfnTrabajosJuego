@@ -90,8 +90,6 @@ function prinPantallaNumero(contador)
     numero.innerHTML = contador;
 }
 //https://codepen.io/julkapuk/pen/vjpZRW
-
-
 /********************CRONOMETRO************************/
 
 $('#empezar').on('click',function()
@@ -100,7 +98,6 @@ $('#empezar').on('click',function()
     var segundo = 0;
     var minuto = 0;
     var cronometroCorriendo;
-    
     
     setInterval(function()
     {
