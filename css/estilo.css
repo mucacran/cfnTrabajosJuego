@@ -288,6 +288,12 @@ p
     padding: 15px;
     text-align: center;
 }
+
+.centrarLogoTexto
+{
+    display: flex;
+    align-items: center;
+}
 /************************************************************************/
 /* Responsive */
 /***************************************************************************/
@@ -316,6 +322,7 @@ p
         flex-direction: column;
         align-items: flex-start;
     }
+    
 }
 
 @media screen and (min-width: 721px) and (max-width: 1280px) {
@@ -330,4 +337,15 @@ p
         flex-direction: column;
         align-items: flex-start;
     }   
+}
+
+@media (max-width: 767px)
+{
+    .centrarLogoTexto
+    {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        background-color: red;
+    }
 }

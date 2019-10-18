@@ -41,38 +41,27 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="row">
-			<img style="width: 100%;" src="https://www.cfn.fin.ec/wp-content/themes/cfn/img/nuevosTamanosDeBaners.jpg" alt="">
-		</div>
-	</div>
+	<div class="separacion"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-12" style="display: flex;align-items: center;">
-				<h1 class="centrar">
-					BIENVENIDO AL JUEGO DE VALORACIÓN EXPERIMENTAL DE PROYECTOS DE CFN. 
-				</h1>
+				<div>
+					<p style="text-align: center;">
+						<img src="images/logo.svg" alt="corporacion financiera nacional" style="width: 200px;">
+					</p>
+					<h1 class="centrar">
+						BIENVENIDO AL JUEGO DE VALORACIÓN EXPERIMENTAL DE PROYECTOS DE CFN. 
+					</h1>
+				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
-				<h2 class="centrar">
-					En este aplicativo podrás estimar el valor necesario para implementar un proyecto de inversión y serás puntuado de acuerdo a tu precisión con respecto a valores reales.
-				</h2>
-				<h3 class="centrar">
-					El juego consiste en dos partes en las cuales podrás ganar puntos para Ingresar al Top 20 de Ranking CFN de Mejores Evaluadores de Proyectos de Inversión
-				</h3>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
 				<form method="POST" action="basededatos-utilidadesFuncionarios.php">
 					<div class="tituloFormulario">
 						<h5 style="font-family: 'AH', venir-Black"><i class="fa fa-file-text" aria-hidden="true"></i> FORMULARIO</h5>
 					</div>
 					<div class="preguntasForm">
 						<div class="row">
-							<div class="col-sm-12 col-md-6">
+							<div class="col-sm-12 ">
 								<div class="input-group margin-bottom-sm">
 									<span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
 									<input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre y Apellido" name="nombreCompleto" required>
@@ -81,7 +70,7 @@
 									<span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
 									<select class="form-control form-control-lg" id="edad" name="edad" required>
 										<option value="" selected>Edad</option>
-										<option value="< 25"> < 25 </option>
+										<option value="menos de 25"> menos de 25 </option>
 										<option value="25 - 35"> 25 - 35 </option></25>
 										<option value="36 - 45">36 - 45</option>
 										<option value=" > 45"> > 45 </option>
@@ -92,7 +81,7 @@
 									<span class="input-group-addon"><i class="fa fa-eye fa-fw"></i></span>
 									<select class="form-control form-control-lg" id="experiencia" name="experiencia" required>
 										<option value="" selected>Años de experiencia en Banca</option>
-										<option value="<1"> < 1 </option>
+										<option value="menos de 1"> menos de 1 </option>
 										<option value="1-4">1 - 4</option>
 										<option value="5-8">5 - 8</option>
 										<option value=">8"> >8 </option>
@@ -100,7 +89,7 @@
 									<span class="input-group-addon"><i class="fa fa-sort-desc fa-fw"></i></span>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-6">
+							<div class="col-sm-12 ">
 								<div class="input-group margin-bottom-sm">
 									<span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
 									<select class="form-control form-control-lg" id="trabajo" name="trabajo" required>
@@ -162,6 +151,18 @@
 						</div>
 					</div>
 				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2 class="centrar">
+					En este aplicativo podrás estimar el valor necesario para implementar un proyecto de inversión y serás puntuado de acuerdo a tu precisión con respecto a valores reales.
+				</h2>
+				<h2 class="centrar">
+					El juego consiste en dos partes en las cuales podrás ganar puntos para Ingresar al Top 20 de Ranking CFN de Mejores Evaluadores de Proyectos de Inversión
+				</h2>
 			</div>
 		</div>
 	</div>
