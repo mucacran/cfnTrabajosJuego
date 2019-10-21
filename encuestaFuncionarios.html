@@ -38,8 +38,8 @@
 <body >
 	<div class="container">
 		<div class="row">
-			<div class="col" style="display: flex; align-items: center; margin: 15px auto;">
-                <p style="text-align: center;padding: 0px;margin: 0px;display: inline-block;padding-right: 15px;">
+			<div class="col cabeceraFormulario">
+                <p>
                     <img src="images/logo.svg" alt="corporacion financiera nacional" style="width: 200px;">
                 </p>
 				<h1 style="padding: 0px;margin: 0px;">
@@ -86,10 +86,10 @@
                     
                 </section>
                 <section>
-                        <b>Ingresos:</b>
-                        <p>
-                            Para el primer año estima ingresos de $215 mil, segundo año $ 226 mil, para los años siguientes estima un crecimiento de 1.3%. En promedio, costos y gastos representan el 90% de las ventas.
-                        </p>
+                    <b>Ingresos:</b>
+                    <p>
+                        Para el primer año estima ingresos de $215 mil, segundo año $ 226 mil, para los años siguientes estima un crecimiento de 1.3%. En promedio, costos y gastos representan el 90% de las ventas.
+                    </p>
                 </section>
             </div>
         </div>
@@ -143,16 +143,14 @@
                             140 m2 con 2 plantas, 2 bodegas, 1 oficina, 5 dormitorios, 3 baños,  cocina, comedor, recibidor, lavandería y patio. La construcción utilizará piedra, hormigón armado, bloques, aluminio y vidrio, paneles de madera, gypsum, cerámica y hierro.   
                         </p>
                         <div id="alinearTypeRadios4" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label > <input type="radio" id="d1" name="casa" data-valor1="15" data-valor2="15" value="15" required>    a) menos de $15 mil</label>
-                            <label > <input type="radio" id="d2" name="casa" data-valor1="15" data-valor2="25" value="15-25">         b) entre $15 mil y $25 mil</label>
-                            <label > <input type="radio" id="d3" name="casa" data-valor1="25" data-valor2="35" value="25-35">         c) entre $25 mil y $35 mil</label>
-                            <label > <input type="radio" id="d4" name="casa" data-valor1="35" data-valor2="45" value="35-45">         d) entre $35 mil y $45 mil</label>
-                            <label > <input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="45" value="45">             e) mas de $45 mil</label>
+                            <label > <input type="radio" id="d1" name="casa" data-valor1="15" data-valor2="15" value="15" required> a) menos de $15 mil</label>
+                            <label > <input type="radio" id="d2" name="casa" data-valor1="15" data-valor2="25" value="15-25">   b) entre $15 mil y $25 mil</label>
+                            <label > <input type="radio" id="d3" name="casa" data-valor1="25" data-valor2="35" value="25-35">   c) entre $25 mil y $35 mil</label>
+                            <label > <input type="radio" id="d4" name="casa" data-valor1="35" data-valor2="45" value="35-45">   d) entre $35 mil y $45 mil</label>
+                            <label > <input type="radio" id="d5" name="casa" data-valor1="45" data-valor2="45" value="45">      e) mas de $45 mil</label>
                         </div>
                     </div>
-                    <div class="resultado" style="border: 1px solid #000;display: inline-block;position: absolute;top: 0px;right: 0px;">
-                        <input type='text' value='0' disabled id="sumando" >
-                    </div>
+                    
 					<div class="content-btn"> 
 						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> ENVIAR</button>
 					</div>
@@ -160,7 +158,10 @@
 			</div>
 		</div>
 	</div>
-	<div style="width: 100%;height:100px"></div>
+    <div style="width: 100%;height:100px"></div>
+    <div class="resultado" style="display: inline-block;position: fixed;top: 100px;right: 0px;">
+        <input type='text' value='0' disabled id="sumando">
+    </div>
 	<script >
         let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4'];
         let idValor1 = [0,0];

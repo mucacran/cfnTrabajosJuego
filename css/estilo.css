@@ -136,6 +136,22 @@ h2,h3
     position: relative;
 }
 
+div.cabeceraFormulario
+{
+    display: flex;
+    align-items: center;
+    margin: 15px auto;
+}
+
+div.cabeceraFormulario p
+{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    padding-right: 15px;
+}
+
 .contenedorGlobo
 {
     height:300px;
@@ -280,13 +296,19 @@ p
 }
 .resultado input
 {
-    margin: 15px 0px;
-    border-radius: 5px;
+    margin: 0px 0px;
+    border-radius: 5px 0px 0px 5px;
     border: 0px;
     box-sizing: border-box;
     font-size: 20px;
     padding: 15px;
     text-align: center;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #4b4b4b;
+    border-bottom: 1px solid #4b4b4b;
+    border-left: 1px solid #4b4b4b;
+    border-right: 0px;
+    /* border-color: #4b4b4b; */
 }
 
 .centrarLogoTexto
@@ -347,5 +369,19 @@ p
         align-items: center;
         margin: 0 auto;
         background-color: red;
+    }
+}
+
+@media (max-width:502px)
+{
+    div.cabeceraFormulario
+    {
+        display: block;
+       text-align: center;
+    }
+    div.cabeceraFormulario p
+    {
+        padding-right: 0px;
+        margin-bottom: 15px;
     }
 }
