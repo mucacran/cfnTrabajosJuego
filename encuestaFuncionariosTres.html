@@ -186,6 +186,7 @@
 	</div>
     <div style="width: 100%;height:100px"></div>
     <div class="resultado">
+        <p style="background-color: white;"> VALOR TOTAL</p>        
         <input type='text' value='Sumando..' disabled id="sumando">
     </div>
 	<script >
@@ -199,8 +200,8 @@
 
         function sumaTotal(v1,v2)
         {
-            var textoDelate = 'entre ';
-            var textoEnmedio = ' mil y ';
+            var textoDelate = 'entre $';
+            var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
             if(v1 == 155 && v2 == 155)
@@ -212,6 +213,11 @@
             {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = 'Mas de ' + v2 + ' mil';
+            }
+            else if(idValor1[0] == idValor1[1] && idValor2[0] == idValor2[1] && idValor3[0] == idValor3[1] && idValor4[0] == idValor4[1] && idValor5[0] == idValor5[1] && idValor6[0] == idValor6[1])
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = '$' + v2 + ' mil';
             }
             else
             {
