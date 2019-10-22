@@ -288,6 +288,14 @@ p
     font-weight: normal;
 }
 
+.resultado
+{
+    display: inline-block;
+    position: fixed;
+    top: 100px;
+    right: 0px;
+}
+
 .resultado,
 .resultado p
 {
