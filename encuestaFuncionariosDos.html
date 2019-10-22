@@ -37,7 +37,7 @@
                 <p>
                     <img src="images/logo.svg" alt="corporacion financiera nacional" style="width: 200px;">
                 </p>
-                <h1 style="padding: 0px;margin: 0px;" class="animated infinite bounce delay-2s">
+                <h1 style="padding: 0px;margin: 0px;" class="animated bounce">
                     VALORACIÓN EXPERIMENTAL DE PROYECTOS
                 </h1>
             </div>
@@ -73,11 +73,11 @@
                             Excavadora Modelo 320 D2L de Motor mecánico de C7.1 /152 HP, cilindraje de 7011 (428 pulg3), velocidad de giro 10.9 rpm.
                         </p>
                         <div id="alinearTypeRadios1" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="maquinaria" id="a1" data-valor1="150" data-valor2="150"    value="menos de $150 mil" required       >a) menos de $150 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a2" data-valor1="150" data-valor2="200"  value="entre $150 mil y $200 mil"  >b) entre $150 mil y $200 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a3" data-valor1="200" data-valor2="150"  value="entre $200 mil y $250 mil"  >c) entre $200 mil y $250 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a4" data-valor1="250" data-valor2="300"  value="entre $250 mil y $300 mil"  >d) entre $250 mil y $300 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a5" data-valor1="300" data-valor2="0"    value="mas de $300 mil"                >e) mas de $300 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a1" data-valor1="150" data-valor2="150"    value="menos de $150 mil" required  > a) menos de $150 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a2" data-valor1="150" data-valor2="200"  value="entre $150 mil y $200 mil"     > b) entre $150 mil y $200 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a3" data-valor1="200" data-valor2="150"  value="entre $200 mil y $250 mil"     > c) entre $200 mil y $250 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a4" data-valor1="250" data-valor2="300"  value="entre $250 mil y $300 mil"     > d) entre $250 mil y $300 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a5" data-valor1="300" data-valor2="300"    value="mas de $300 mil"               > e) mas de $300 mil</label>
                         </div>
                     </div>
                     <div class="contenedores" >
@@ -87,11 +87,11 @@
                             mano de obra directa (operario) y materiales directos (aceites, mantenimiento y reparación, combustible, y póliza de seguro); se considera un factor caja de 45 días
                         </p>
                         <div id="alinearTypeRadios2" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="capital" id="b1" data-valor1="5" data-valor2="5" value="menos de $5 mil" required     >a) menos de $5 mil</label>
-                            <label><input type="radio" name="capital" id="b2" data-valor1="5" data-valor2="6" value="entre $5 mil y $6 mil"  >b) entre $5 mil y $6 mil</label>
-                            <label><input type="radio" name="capital" id="b3" data-valor1="6" data-valor2="7" value="entre $6 mil y $7 mil"  >c) entre $6 mil y $7 mil</label>
-                            <label><input type="radio" name="capital" id="b4" data-valor1="7" data-valor2="8" value="entre $7 mil y $8 mil"  >d) entre $7 mil y $8 mil</label>
-                            <label><input type="radio" name="capital" id="b5" data-valor1="8" data-valor2="0" value="mas de $8 mil"              >e) mas de $8 mil</label>
+                            <label><input type="radio" name="capital" id="b1" data-valor1="5" data-valor2="5" value="menos de $5 mil" required  > a) menos de $5 mil</label>
+                            <label><input type="radio" name="capital" id="b2" data-valor1="5" data-valor2="6" value="entre $5 mil y $6 mil"     > b) entre $5 mil y $6 mil</label>
+                            <label><input type="radio" name="capital" id="b3" data-valor1="6" data-valor2="7" value="entre $6 mil y $7 mil"     > c) entre $6 mil y $7 mil</label>
+                            <label><input type="radio" name="capital" id="b4" data-valor1="7" data-valor2="8" value="entre $7 mil y $8 mil"     > d) entre $7 mil y $8 mil</label>
+                            <label><input type="radio" name="capital" id="b5" data-valor1="8" data-valor2="8" value="mas de $8 mil"             > e) mas de $8 mil</label>
                         </div>
                     </div>
 					<div class="content-btn"> 
@@ -112,12 +112,25 @@
 
         function sumaTotal(v1,v2)
         {
-            var textoDelate = 'entre ';
-            var textoEnmedio = ' mil y ';
+            var textoDelate = 'entre $';
+            var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
-            var sumando   = document.getElementById('sumando');
-            sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
+            if(v1 == 155 && v2 == 155)
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = 'Menos de $' + v1 + ' mil';
+            }
+            else if(v1 == 308 && v2 == 308){
+                var sumando   = document.getElementById('sumando');
+                sumando.value = 'Mas de $' + v1 + ' mil';
+            }
+            else
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
+            }
+            
         }
     
         function irSumando(e,id)
