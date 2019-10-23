@@ -20,13 +20,12 @@
 			elemento.value="Detener";
  
 			// Obtenemos el valor actual
-            inicio=vuelta=new Date().getTime();
+            inicio=new Date().getTime();
  
 			// iniciamos el proceso
 			funcionando();
 		}else{
 			// detemer el cronometro
- 
 			elemento.value="Empezar";
 			clearTimeout(timeout);
 			timeout=0;
@@ -39,7 +38,7 @@
 		var actual = new Date().getTime();
  
 		// obtenemos la diferencia entre la fecha actual y la de inicio
-		var diff=new Date(actual-inicio);
+		var diff = new Date(actual-inicio);
         
         console.log(diff);
 
@@ -49,7 +48,6 @@
  
 		// Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
         timeout=setTimeout("funcionando()",1000);
-        console.log(timeout);
 	}
  
 	/* Funcion que pone un 0 delante de un valor si es necesario */
@@ -59,7 +57,7 @@
 	</script>
  
 	<style>
-	.crono_wrapper {text-align:center;width:200px;}
+		.crono_wrapper {text-align:center;width:200px;}
 	</style>
 </head>
  

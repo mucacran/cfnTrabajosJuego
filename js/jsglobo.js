@@ -127,16 +127,25 @@ function prinPantallaNumero(contador)
 //     },15);
 //     $('#empezar').hide();
 // });
+var tiempoGlobo = 0;
+var a = 0;
 $('#empezar').on('click',function()
 {
-    var a = 1;
-    setTimeout("funcionando(a)",1000);
+    if(tiempoGlobo==0)
+    {
+        funcionando()
+    }
+    else
+    {
+        tiempoGlobo=0;
+    }
 });
- function funcionando(a)
- {
-    a+=1;
-    cronometro.innerHTML = a ;
- }
+function funcionando()
+{
+    ++a;
+    cronometro.innerHTML = a == 60 ? a: 0;
+    tiempoGlobo = setTimeout("funcionando()",100);
+}
 
 
 //////////////////////////////////////////////////////////
