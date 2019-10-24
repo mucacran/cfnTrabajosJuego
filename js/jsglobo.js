@@ -128,7 +128,9 @@ function prinPantallaNumero(contador)
 //     $('#empezar').hide();
 // });
 var tiempoGlobo = 0;
-var a = 0;
+var a = 60;
+var min = 0;
+var seg = 59;
 $('#empezar').on('click',function()
 {
     if(tiempoGlobo==0)
@@ -142,11 +144,27 @@ $('#empezar').on('click',function()
 });
 function funcionando()
 {
-    ++a;
-    cronometro.innerHTML = a == 60 ? a: 0;
-    tiempoGlobo = setTimeout("funcionando()",100);
-}
+    a--;
+    if(a == 0)
+    {
+        --seg
+        a = 59;
+    }
+    else if(seg == 0)
+    {
+        a = 0;
+        return;
+    }
+    else
+    {
 
+    }
+    cronometro.innerHTML = 'Tiempo: ' + LeadingZero(min) + ':' + LeadingZero(seg) + ':' + LeadingZero(a);
+    tiempoGlobo = setTimeout("funcionando()", 18);
+}
+function LeadingZero(Time) {
+    return (Time < 10) ? "0" + Time : + Time;
+}
 
 //////////////////////////////////////////////////////////
 /* Funcion que imprime por pantalla los puntos ganados  */
