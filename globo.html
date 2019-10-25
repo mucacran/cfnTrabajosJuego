@@ -71,13 +71,13 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="inflar" >Inflar</a>
+                <button class="btn btn-primary btn-lg btn-block" id="inflar" onclick="cronometro(this.id)">Inflar</a>
             </div>
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="desinflar" onclick="cronometroResetTrue()">Detener | Tienes <span id="n_intento">3</span> intento</a>
+                <button class="btn btn-primary btn-lg btn-block" id="desinflar" onclick="cronometro(this.id)">Detener | Tienes <span id="n_intento">3</span> intento</a>
             </div>
             <div class="col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="empezar" >Volver a jugar</a>
+                <button class="btn btn-primary btn-lg btn-block" id="empezar" onclick="cronometro(this.id)">Volver a jugar</a>
             </div>
         </div>
     </div>

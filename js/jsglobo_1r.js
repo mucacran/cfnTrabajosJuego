@@ -35,23 +35,22 @@ var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llam
 var a =     60;   // milesegundos
 var min =   0;    // minutos
 var seg =   59;   // segundos
-
-function cronometro(a)
+$btnEmpezar.on('click',function()
 {
     if(tiempoGlobo==0)
     {
-        funcionando(a);
+        funcionando();
     }
     else
     {
         tiempoGlobo=0;
     }
-}
+});
 
 /*Funcion que hace que los */
-function funcionando(a)
+function funcionando()
 {
-    if (globoJuego.innerHTML == icoBun || a == 'desinflar')
+    if (globoJuego.innerHTML == icoBun )
     {
         return;
     }
@@ -77,9 +76,9 @@ function funcionando(a)
 function LeadingZero(Time) {
     return (Time < 10) ? "0" + Time : + Time;
 }
-
+//$('#inflar').reset();
 /************************************************ */
-// cada vez que se apreta el boton se infla el globo
+//cada vez que se apreta el boton se infla el globo
 /************************************************ */
 $('#inflar').click(function(){
     num += 1;
@@ -105,6 +104,7 @@ $('#inflar').click(function(){
 /************************************************ */
 $('#desinflar').click(function(){
     //document.getElementById('empezar').sndToAS("pause");
+
     --numeroIntento;
     if(numeroIntento < 0)
     {
@@ -164,4 +164,12 @@ function puntoGanados()
 */
 function multiplicaXdiez(a) {
     return (a < 10 ) ? a*10 : a;
+}
+
+/////////*          *///////////
+function cronometroResetTrue()
+{
+    $btnEmpezar.reset;
+    $('#inflar')[0].reset;
+    //$('#inflar').trigger("reset");
 }
