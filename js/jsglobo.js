@@ -9,6 +9,8 @@ let icoGlobo ='🎈';
 let icoBun = '💥';
 var printPant = document.getElementById('puntoGanPer');// este id corresponde a los puntos que se imprime por pantalla
 var visualizaNumeroIntento = document.getElementById('n_intento'); // este marca el numero de intentos por pantalla y va restando desde el 3 hasta 0
+var botonDetener = document.getElementById('desinflar');
+var $btnEmpezar = $('#empezar');
 
 arrancaValoresDelJuego(contador);
 
@@ -33,7 +35,7 @@ var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llam
 var a =     60;   // milesegundos
 var min =   0;    // minutos
 var seg =   59;   // segundos
-$('#inflar').on('click',function()
+$btnEmpezar.on('click',function()
 {
     if(tiempoGlobo==0)
     {
@@ -44,28 +46,27 @@ $('#inflar').on('click',function()
         tiempoGlobo=0;
     }
 });
+
+/*Funcion que hace que los */
 function funcionando()
 {
-    if (globoJuego.innerHTML == icoBun)
+    if (globoJuego.innerHTML == icoBun )
     {
-        a =     60;   // milesegundos
-        min =   0;    // minutos
-        seg =   59;   // segundos
-        $('#inflar').reset;
+        return;
     }
-        if(a != 0)
-        {
-        --a;
-        }
-        else if(a == 0 && seg == 0)
-        {
-            return;
-        }
-        else 
-        {
-            --seg;
-            a = 59;
-        }
+    if(a != 0)
+    {
+    --a;
+    }
+    else if(a == 0 && seg == 0)
+    {
+        return;
+    }
+    else 
+    {
+        --seg;
+        a = 59;
+    }
     cronometro.innerHTML = 'Tiempo: ' + LeadingZero(min) + ':' + LeadingZero(seg) + ':' + LeadingZero(a);
     tiempoGlobo = setTimeout("funcionando()", 15);//15 es el tiempo de milesegundos para que cuando llegue a sesenta marque un segundo
 }
@@ -95,13 +96,15 @@ $('#inflar').click(function(){
     var n = num.toString();
     globoJuego.style.fontSize = n + 'em';
     console.log(num);
-    printPant.innerHTML = 'Has ganado: '  + multiplicaXdiez(contador) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
+    printPant.innerHTML = '+'  + multiplicaXdiez(contador) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
 });
 
 /************************************************ */
 //este boton hace que pare de jugar en una secion y balla a la siguiente
 /************************************************ */
 $('#desinflar').click(function(){
+    //document.getElementById('empezar').sndToAS("pause");
+
     --numeroIntento;
     if(numeroIntento < 0)
     {
@@ -114,8 +117,8 @@ $('#desinflar').click(function(){
         globoJuego.style.fontSize =  '10 em';
         contador = 0;
         arrancaValoresDelJuego(contador);
-        $('#inflar').reset;
         visualizaNumeroIntento.innerHTML = numeroIntento;
+        $('#inflar').reset;
     }
     globoJuego.style.fontSize = '10em';
 });
@@ -161,4 +164,12 @@ function puntoGanados()
 */
 function multiplicaXdiez(a) {
     return (a < 10 ) ? a*10 : a;
+}
+
+/////////*          *///////////
+function cronometroResetTrue()
+{
+    $btnEmpezar.reset;
+    $('#inflar')[0].reset;
+    //$('#inflar').trigger("reset");
 }
