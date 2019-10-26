@@ -13,8 +13,6 @@ var cronometroP = '';
 
 var id = '';
 
-var btnDetenido = 0;
-
 //cronometro
 var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
 var min =   0;    // minutos
@@ -40,16 +38,19 @@ function cronometro(id)
 function ejecutaCronometro()
 {
     globoJuego = document.getElementById('globoJuego');
-    if (globoJuego.innerHTML == icoBun || btnDetenido)
+    id = (detenerBtm(presionaBtnDetener) == '') ? detenerBtm(presionaBtnDetener): '';
+    if (globoJuego.innerHTML == icoBun || id == 'desinflar')
     {
+        console.log(id);
         return;
     }
     if(mils != 0)
     {
         --mils;
     }
-    else if(mils == 0 && seg == 0)
+    else if(mils == 0 && seg == 0 || id == 'desinflar')
     {
+        console.log(id);
         return;
     }
     else 
@@ -71,16 +72,5 @@ function LeadingZero(Time) {
 //boton Deener
 function detenerBtm(presionaBtnDetener)
 {
-    btnDetenido = parseInt(presionaBtnDetener);
-    // return presionaBtnDetener;
-}
-
-function hola()
-{
-    tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
-    min =   0;    // minutos
-    seg =   59;   // segundos
-    mils =  60;   // milesegundos
-    btnDetenido = 0;
-    console.log('me presionaron tambien');
+    return presionaBtnDetener;
 }

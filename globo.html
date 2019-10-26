@@ -24,7 +24,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
 	<!-- mi estilo animacion -->
-	<!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
+    <!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
+    <script src="js/jsglobo.js"></script>
 
 	<!-- animación css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -71,17 +72,16 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="inflar" >Inflar</a>
+                <button class="btn btn-primary btn-lg btn-block" id="inflar" onClick="cronometro(this.id)">Inflar</a>
             </div>
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="desinflar" >Detener | Tienes <span id="n_intento">3</span> intento</a>
+                <button class="btn btn-primary btn-lg btn-block" id="desinflar" onClick="detenerBtm(1)">Detener | Tienes <span id="n_intento">3</span> intento</a>
             </div>
             <div class="col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="empezar" onClick="cronometro(this.id)">Volver a jugar</a>
+                <button class="btn btn-primary btn-lg btn-block" id="empezar" onClick="cronometro(this.id), hola()">Volver a jugar</a>
             </div>
         </div>
     </div>
     
-    <script src="js/jsglobo.js"></script>
 </body>
 </html>
