@@ -16,7 +16,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
 	<!-- bootstrap 4 js -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script> Esta librería venía con el bootstrap no se de que me perdí hacer aquí (Osea q no mas podía hacer esta libreria talvez nada por que parece una versión vieja)--> 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <!--Con esta libreria me coge .slideUp() y .slide('show') -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 
@@ -72,13 +73,13 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="inflar" onClick="cronometro(this.id)">Inflar</a>
+                <a class="btn btn-primary btn-lg btn-block" id="inflar" onClick="cronometro()">Inflar</a>
             </div>
             <div class="col col-md-6 col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="desinflar" onClick="detenerBtm(1)">Detener | Tienes <span id="n_intento">3</span> intento</a>
+                <a class="btn btn-primary btn-lg btn-block" id="desinflar" onClick="detenerBtm(1)">Detener | Tienes <span id="n_intento">3</span> intento</a>
             </div>
             <div class="col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="empezar" onClick="cronometro(this.id), hola()">Volver a jugar</a>
+                <a class="btn btn-primary btn-lg btn-block" id="empezar" onClick="empiezaCronometro2()">Volver a jugar</a>
             </div>
         </div>
     </div>

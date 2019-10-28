@@ -11,9 +11,7 @@ var idBtn  = ['inflar','desinflar','empezar']; // nombre de los botones desde do
 //etiqueta p enPantalla
 var cronometroP = '';
 
-var id = '';
-
-var btnDetenido = 0;
+var btnDetenido = 0; //arranca con 0 pero cuando apretan el boton de detener este cambia a 1
 
 //cronometro
 var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
@@ -24,9 +22,9 @@ var mils =  60;   // milesegundos
 //Lugar donde se imprime por pantalla el globo o globo reventado
 var globoJuego = '';
 
-function cronometro(id)
+function cronometro()
 {
-    if(tiempoGlobo==0 || id != 'desinflar')
+    if(tiempoGlobo==0)
     {
         ejecutaCronometro();
     }
@@ -72,15 +70,17 @@ function LeadingZero(Time) {
 function detenerBtm(presionaBtnDetener)
 {
     btnDetenido = parseInt(presionaBtnDetener);
-    // return presionaBtnDetener;
+    $('#empezar').slideDown('show');
 }
 
-function hola()
+function empiezaCronometro2()
 {
     tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
     min =   0;    // minutos
     seg =   59;   // segundos
     mils =  60;   // milesegundos
     btnDetenido = 0;
+    cronometro();
     console.log('me presionaron tambien');
+    $('#empezar').slideUp();
 }
