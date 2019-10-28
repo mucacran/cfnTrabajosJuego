@@ -1,7 +1,7 @@
 /*
-desarrollado: Sergio Bravo
-alias: Mucacran
-
+    desarrollado: Sergio Bravo
+    alias: Mucacran
+    web: http://mucacran.com
 */
 select
 {
@@ -12,6 +12,14 @@ select
     -webkit-appearance:none;
     appearance: none; /* para quitarle la flecha por defecto */
 }
+
+/*Separador de altura*/
+.separador
+{
+    width: 100%;
+    height: 100px;
+}
+
 
 .form-control-lg
 {

@@ -1,6 +1,7 @@
+var idPrintPant = '';
 // declarando variables constantes
 let icoGlobo ='🎈';
-let icoBun = '💥';
+var icoBun = '💥';
 
 //botones
 var btnInflar = '';
@@ -22,8 +23,16 @@ var mils =  60;   // milesegundos
 //Lugar donde se imprime por pantalla el globo o globo reventado
 var globoJuego = '';
 
+//cuenta el numero de seciones jugadas
+var secionesJugadas = 1;
+// este cuenta por pantalla las veses que hace clik en inflar
+var contEnPantallaClicks = 0;
+var idClickVese = '';
+var clickPun_NumeroAleatorio = 0; //numero aleatorio
+
 function cronometro()
 {
+ 
     if(tiempoGlobo==0)
     {
         ejecutaCronometro();
@@ -48,6 +57,7 @@ function ejecutaCronometro()
     }
     else if(mils == 0 && seg == 0)
     {
+        $('#empezar').slideDown('show');
         return;
     }
     else 
@@ -70,6 +80,7 @@ function LeadingZero(Time) {
 function detenerBtm(presionaBtnDetener)
 {
     btnDetenido = parseInt(presionaBtnDetener);
+    puntoGanados();
     $('#empezar').slideDown('show');
 }
 
@@ -79,8 +90,99 @@ function empiezaCronometro2()
     min =   0;    // minutos
     seg =   59;   // segundos
     mils =  60;   // milesegundos
-    btnDetenido = 0;
     cronometro();
+    
+    btnDetenido = 0;
+    contEnPantallaClicks = 0;
+    globoJuego.style.fontSize = '10em;'
+    globoJuego.innerHTML = icoGlobo;
     console.log('me presionaron tambien');
+    numeroAlwatorio();
     $('#empezar').slideUp();
 }
+
+/*****************************************************************************************************************************/
+// Funcion que crea un numero a penas se carga la pagina entre 5 y 10
+// tambien le da un valor a un div para que inicie con un globo en pantalla
+/************************************************ */
+numeroAlwatorio();
+function numeroAlwatorio()
+{
+    //clickPun_NumeroAleatorio = Math.floor((Math.random() * 10) + 1); numero aleatorio entre 0 y 10
+    var min = 5;
+    var max = 10;
+    clickPun_NumeroAleatorio =  parseInt(Math.random() * (max - min) + min); // numero aleatorio entre un numero especifico y un numero maximo osea  eje. mayor que 6  y menor que 10
+      
+    console.log(clickPun_NumeroAleatorio);
+    //globoJuego.innerHTML = icoGlobo;
+}
+/*********************************************************************************************************** */
+//$('#inflar').reset();
+/************************************************ */
+//cada vez que se apreta el boton se infla el globo
+/************************************************ */
+function apretandoParaInflar()
+{
+    globoJuego = document.getElementById('globoJuego');
+    if(secionesJugadas == 1)
+    {  
+        cronometro();
+        $('#empezar').slideUp();
+    }
+    else
+    {
+        ++secionesJugadas;
+    }
+    if(contEnPantallaClicks == clickPun_NumeroAleatorio)
+    {
+        globoJuego.innerHTML = icoBun;
+        btnDetenido = 1;
+        $('#empezar').slideDown('show');
+        puntoGanados();
+        return;
+    }
+    else
+    {
+        ++contEnPantallaClicks;
+        prinPantallaNumero(contEnPantallaClicks);
+    }
+    globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+    idPrintPant = document.getElementById('puntoGanPer');
+    idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
+}
+
+//////////////////////////////////////////////////////////
+/* Funcion que imprime por pantalla los puntos ganados  */
+//////////////////////////////////////////////////////////
+var numero = 0;
+function puntoGanados()
+{
+    if (globoJuego.innerHTML == icoBun)
+    {
+        var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
+        numero -= numeroPantalla; 
+        idPrintPant.innerHTML = 'Has perdido ' + multiplicaXdiez(numeroPantalla) + ' puntos';
+    }
+    else
+    {
+        var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
+        numero += numeroPantalla;
+        idPrintPant.innerHTML = 'Has ganado: '  + multiplicaXdiez(numeroPantalla) + ' puntos';
+    }
+}
+/*Funcion necesaria para que se imprima por pantalla el 0 delante de
+    un numero menos a 10
+*/
+function multiplicaXdiez(a) {
+    return (a < 10 ) ? a*10 : a;
+}
+
+/************************************************ */
+//este hace que se imprima por pantalla el numero de veses que hace click
+/************************************************ */
+function prinPantallaNumero(contador)
+{
+    var numero = document.getElementById('click-Veses');
+    numero.innerHTML = contador;
+}
+/*********************************************************************************************************************** */
