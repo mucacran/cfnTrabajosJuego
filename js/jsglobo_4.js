@@ -86,22 +86,24 @@ function detenerBtm(presionaBtnDetener)
 
 function empiezaCronometro2()
 {
+
     tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
     min =   0;    // minutos
     seg =   59;   // segundos
     mils =  60;   // milesegundos
-
-    globoJuego.innerHTML = icoGlobo; // vuelvo a dejar el globo como estaba 
-    globoJuego.style.fontSize = '10em'; //regresa al globo en el tamaño normal num.toString()
-    numeroAlwatorio(); // declara un nuevo numero aleatorio
-    contEnPantallaClicks = 0 ; //el numero que se imprime por pantalla regresa a sero
-
-    if(btnDetenido != 0)
+    
+    if(btnDetenido == 1)
     {
         btnDetenido = 0;
-        ejecutaCronometro();
-        console.log( tiempoGlobo);
     }
+    
+    // contEnPantallaClicks = 0;
+    // globoJuego.style.fontSize = '10em;'
+    // globoJuego.innerHTML = icoGlobo;
+    // console.log('me presionaron tambien');
+    // numeroAlwatorio();
+    // $('#empezar').slideUp();
+    ejecutaCronometro();
 }
 
 /*****************************************************************************************************************************/
