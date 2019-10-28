@@ -76,11 +76,12 @@ function LeadingZero(Time) {
     return (Time < 10) ? "0" + Time : + Time;
 }
 
-//boton Deener
+//boton Detener
 function detenerBtm(presionaBtnDetener)
 {
     btnDetenido = parseInt(presionaBtnDetener);
     puntoGanados();
+    secionesJugadas--;
     $('#empezar').slideDown('show');
 }
 
