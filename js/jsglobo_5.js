@@ -115,6 +115,7 @@ function empiezaCronometro2()
     }
     else
     {
+        document.getElementById('empezar').innerHTML = 'SIGUIENTE PARA VER TUS PUNTOS';
         document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
     }
     
@@ -128,6 +129,7 @@ function empiezaCronometro2()
         }
         else
         {
+            document.getElementById('empezar').innerHTML = 'SIGUIENTE PARA VER TUS PUNTOS';
             document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
         }
     }
@@ -209,6 +211,7 @@ function apretandoParaInflar()
     }
     else
     {
+        document.getElementById('empezar').innerHTML = 'SIGUIENTE PARA VER TUS PUNTOS';
         document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
     }
 }
