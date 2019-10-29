@@ -55,6 +55,7 @@ function ejecutaCronometro()
     globoJuego = document.getElementById('globoJuego');
     if (globoJuego.innerHTML == icoBun || btnDetenido)
     {
+        numeroSeccion3();
         return;
     }
     if(mils != 0)
@@ -115,10 +116,9 @@ function empiezaCronometro2()
     }
     else
     {
-        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+        siguientePagina();
     }
     
-
     if(btnDetenido != 0)
     {
         btnDetenido = 0;
@@ -128,7 +128,7 @@ function empiezaCronometro2()
         }
         else
         {
-            document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+            siguientePagina();
         }
     }
 }
@@ -164,7 +164,7 @@ function apretandoParaInflar()
         {
             globoJuego.innerHTML = icoBun;
             ++secionesJugadas;
-            console.log(secionesJugadas);
+            numeroSeccion3();
             if(btnDetenido == 0)
             {
                 btnDetenido = 1;
@@ -189,7 +189,7 @@ function apretandoParaInflar()
         {
             globoJuego.innerHTML = icoBun;
             ++secionesJugadas;
-            console.log(secionesJugadas);
+            numeroSeccion3();
             if(btnDetenido == 0)
             {
                 btnDetenido = 1;
@@ -209,7 +209,7 @@ function apretandoParaInflar()
     }
     else
     {
-        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+        siguientePagina();
     }
 }
 
@@ -267,4 +267,24 @@ function valorPorSeciones(numero)
         secion3 = numeroPantalla;
     }
 }
-////////////////////////////////////////
+////////////////////////////////////////CUANDO SE TERMNIA PASA ESTO EMPIEZA A LA SIGUIENTE PAGINA//////////
+
+function siguientePagina()
+{
+    
+    //document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
+    $('#empezar').on(click,function(){
+        window.location.href = "http://www.w3schools.com";
+    });
+}
+
+function numeroSeccion3()
+{
+    if(numero > 2 )
+    {
+        document.getElementById('empezar').innerHTML = 'Siguiente';
+        $('#empezar').click(function(){
+            window.location = "encuestaFuncionarios.html"
+        });
+    }
+}
