@@ -31,14 +31,13 @@ var contEnPantallaClicks = 0;
 var clickPun_NumeroAleatorio = 0; //numero aleatorio
 
 ////////////VALOR DE LAS 3 SESIONES//////////
-var secion1 = '0';
-var secion2 = '0';
-var secion3 = '0';
+var secion1 = '';
+var secion2 = '';
+var secion3 = '';
 /////////////////////////////////////////////
 
 function cronometro()
 {
- 
     if(tiempoGlobo==0)
     {
         ejecutaCronometro();
@@ -87,6 +86,7 @@ function detenerBtm(presionaBtnDetener)
 {
     btnDetenido = parseInt(presionaBtnDetener);
     ++secionesJugadas;
+    
     $('#inflar').slideUp();
     $('#empezar').slideDown('show');
     puntoGanados();
@@ -115,7 +115,7 @@ function empiezaCronometro2()
     }
     else
     {
-        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
     }
     
 
@@ -128,7 +128,7 @@ function empiezaCronometro2()
         }
         else
         {
-            document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+            document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
         }
     }
 }
@@ -209,7 +209,7 @@ function apretandoParaInflar()
     }
     else
     {
-        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion1 + '<br>' + secion1;
+        document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
     }
 }
 
@@ -224,14 +224,16 @@ function puntoGanados()
         var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
         ++numero; 
         idPrintPant.innerHTML = 'Has perdido ' + multiplicaXdiez(numeroPantalla) + ' puntos';
-        valorPorSeciones(numero);
+        valorPorSeciones(numero,idPrintPant);
+        console.log(numero + 'xxxxx <br>' + numeroPantalla);
     }
     else
     {
         ++numero;
         var numeroPantalla = parseInt(document.getElementById('click-Veses').innerHTML);
         idPrintPant.innerHTML = 'Has ganado: '  + multiplicaXdiez(numeroPantalla) + ' puntos';
-        valorPorSeciones(numero);
+        valorPorSeciones(numero,idPrintPant);
+        console.log(numero + 'xxxxx <br>' + numeroPantalla);
     }
 }
 /*Funcion necesaria para que se imprima por pantalla el 0 delante de
@@ -252,19 +254,19 @@ function prinPantallaNumero(contador)
 /*********************************************************************************************************************** */
 
 ////////Guarda el valor por seccines////
-function valorPorSeciones(numero)
+function valorPorSeciones(numero,numeroPantalla)
 {
     if(numero == 1)
     {
-        secion1 = numeroPantalla;
+        secion1 = idPrintPant.innerHTML;
     }
     else if(numero == 2)
     {
-        secion2 = numeroPantalla;
+        secion2 = idPrintPant.innerHTML;
     }
     else
     {
-        secion3 = numeroPantalla;
+        secion3 = idPrintPant.innerHTML;
     }
 }
 ////////////////////////////////////////
