@@ -162,6 +162,7 @@ function apretandoParaInflar()
         $('#empezar').slideUp();
         if(contEnPantallaClicks == clickPun_NumeroAleatorio)
         {
+            $('#inflar').slideUp();
             globoJuego.innerHTML = icoBun;
             ++secionesJugadas;
             numeroSeccion3();
@@ -187,6 +188,7 @@ function apretandoParaInflar()
         //++secionesJugadas;
         if(contEnPantallaClicks == clickPun_NumeroAleatorio)
         {
+            $('#inflar').slideUp();
             globoJuego.innerHTML = icoBun;
             ++secionesJugadas;
             numeroSeccion3();
