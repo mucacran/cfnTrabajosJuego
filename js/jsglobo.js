@@ -1,4 +1,4 @@
-var idPrintPant = '';
+var idPrintPant = ''; //id que represtenta la etiqueta p donde se imprime por pantalla los puntos ganados id = puntoGanPer
 // declarando variables constantes
 let icoGlobo ='🎈';
 var icoBun = '💥';
@@ -7,13 +7,13 @@ var icoBun = '💥';
 var btnInflar = '';
 var btnDetener= '';
 var btnVolJugar = '';
-var idBtn  = ['inflar','desinflar','empezar']; // nombre de los botones desde donde se hará click
+// nombre de los botones desde donde se hará click
+var idBtn  = ['inflar','desinflar','empezar']; 
 
 //etiqueta p enPantalla
 var cronometroP = '';
-
-var btnDetenido = 0; //arranca con 0 pero cuando apretan el boton de detener este cambia a 1
-
+//arranca con 0 pero cuando apretan el boton de detener este cambia a 1
+var btnDetenido = 0; 
 //cronometro
 var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
 var min =   0;    // minutos
@@ -24,10 +24,9 @@ var mils =  60;   // milesegundos
 var globoJuego = '';
 
 //cuenta el numero de seciones jugadas
-var secionesJugadas = 1;
+var secionesJugadas = 0;
 // este cuenta por pantalla las veses que hace clik en inflar
 var contEnPantallaClicks = 0;
-var idClickVese = '';
 var clickPun_NumeroAleatorio = 0; //numero aleatorio
 
 function cronometro()
@@ -81,27 +80,48 @@ function detenerBtm(presionaBtnDetener)
 {
     btnDetenido = parseInt(presionaBtnDetener);
     puntoGanados();
-    secionesJugadas--;
+    ++secionesJugadas;
+    $('#inflar').slideUp();
     $('#empezar').slideDown('show');
 }
 
 function empiezaCronometro2()
 {
-    tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
-    min =   0;    // minutos
-    seg =   59;   // segundos
-    mils =  60;   // milesegundos
+    if(secionesJugadas < 3)
+    {
+        tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
+        min =   0;    // minutos
+        seg =   59;   // segundos
+        mils =  60;   // milesegundos
 
-    globoJuego.innerHTML = icoGlobo; // vuelvo a dejar el globo como estaba 
-    globoJuego.style.fontSize = '10em'; //regresa al globo en el tamaño normal num.toString()
-    numeroAlwatorio(); // declara un nuevo numero aleatorio
-    contEnPantallaClicks = 0 ; //el numero que se imprime por pantalla regresa a sero
+        document.getElementById('click-Veses').innerHTML = '0'; // regresa a cero cuando empiza otra vez
+
+        globoJuego.innerHTML = icoGlobo; // vuelvo a dejar el globo como estaba 
+        globoJuego.style.fontSize = '10em'; //regresa al globo en el tamaño normal num.toString()
+        numeroAlwatorio(); // declara un nuevo numero aleatorio
+        contEnPantallaClicks = 0 ; //el numero que se imprime por pantalla regresa a sero
+
+        console.log(secionesJugadas + ' en el boton de empezar');
+        $('#inflar').slideDown('show');
+        $('#empezar').slideUp();
+    }
+    else
+    {
+        document.getElementById('terminamos').innerHTML = 'Terminastes';
+    }
+    
 
     if(btnDetenido != 0)
     {
         btnDetenido = 0;
-        ejecutaCronometro();
-        console.log( tiempoGlobo);
+        if (secionesJugadas < 3)
+        {
+            ejecutaCronometro();
+        }
+        else
+        {
+            document.getElementById('terminamos').innerHTML = 'Terminastes';
+        }
     }
 }
 
@@ -128,34 +148,61 @@ function numeroAlwatorio()
 function apretandoParaInflar()
 {
     globoJuego = document.getElementById('globoJuego');
-    if(secionesJugadas == 1)
+    if(secionesJugadas == 0)
     {  
         cronometro();
         $('#empezar').slideUp();
-    }
-    else
-    {
-        ++secionesJugadas;
-    }
-    if(contEnPantallaClicks == clickPun_NumeroAleatorio)
-    {
-        globoJuego.innerHTML = icoBun;
-        if(btnDetenido == 0)
+        if(contEnPantallaClicks == clickPun_NumeroAleatorio)
         {
-            btnDetenido = 1;
+            globoJuego.innerHTML = icoBun;
+            ++secionesJugadas;
+            console.log(secionesJugadas);
+            if(btnDetenido == 0)
+            {
+                btnDetenido = 1;
+            }
+            $('#empezar').slideDown('show');
+            puntoGanados();
+            return;
         }
-        $('#empezar').slideDown('show');
-        puntoGanados();
-        return;
+        else
+        {
+            ++contEnPantallaClicks;
+            prinPantallaNumero(contEnPantallaClicks);
+        }
+        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+        idPrintPant = document.getElementById('puntoGanPer');
+        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
+    }
+    else if(secionesJugadas < 3)
+    {
+        //++secionesJugadas;
+        if(contEnPantallaClicks == clickPun_NumeroAleatorio)
+        {
+            globoJuego.innerHTML = icoBun;
+            ++secionesJugadas;
+            console.log(secionesJugadas);
+            if(btnDetenido == 0)
+            {
+                btnDetenido = 1;
+            }
+            $('#empezar').slideDown('show');
+            puntoGanados();
+            return;
+        }
+        else
+        {
+            ++contEnPantallaClicks;
+            prinPantallaNumero(contEnPantallaClicks);
+        }
+        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+        idPrintPant = document.getElementById('puntoGanPer');
+        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
     }
     else
     {
-        ++contEnPantallaClicks;
-        prinPantallaNumero(contEnPantallaClicks);
+        document.getElementById('terminamos').innerHTML = 'Terminastes';
     }
-    globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
-    idPrintPant = document.getElementById('puntoGanPer');
-    idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
 }
 
 //////////////////////////////////////////////////////////
