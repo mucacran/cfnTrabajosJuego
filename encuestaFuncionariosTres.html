@@ -201,26 +201,30 @@
             var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
-            if(v1 == 155 && v2 == 155)
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = 'Menos de ' + v1 + ' mil';
-            }
-            else if(v1 == 533 && v2 == 533)
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = 'Mas de ' + v2 + ' mil';
-            }
-            else if(idValor1[0] == idValor1[1] && idValor2[0] == idValor2[1] && idValor3[0] == idValor3[1] && idValor4[0] == idValor4[1] && idValor5[0] == idValor5[1] && idValor6[0] == idValor6[1])
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = '$' + v2 + ' mil';
-            }
-            else
+            if(v1 != v2)
             {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
             }
+            else
+            {
+                if(v1[0] == 35 || v1[0] == 100 || v1[0] == 5 || v1 == 135 || v1 == 140 || v1 == 145 || v1 == 150 || v1 == 155)
+                {
+                    var sumando   = document.getElementById('sumando');
+                    sumando.value = 'Menos de ' + v1 + ' mil';
+                }
+                else if(idValor1[1] == 65 && idValor2[1] == 400 && idValor3[1] == 20 && idValor4[1] == 20 && idValor5[1] == 20 && idValor6[1] == 8)
+                {
+                    var sumando   = document.getElementById('sumando');
+                    sumando.value = 'Mas de ' + v2 + ' mil';                   
+                }
+                else
+                {
+                    var sumando   = document.getElementById('sumando');
+                    sumando.value = '$' + v2 + ' mil';
+                }
+            }
+            
         }
     
         function irSumando(e,id)
