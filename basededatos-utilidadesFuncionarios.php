@@ -25,10 +25,22 @@ $baseDeDatos = "INSERT INTO cfn_formulariosinlinkedin(id,nombrecompleto,rangodee
 
 $resultado = $conectarse->query($baseDeDatos);
 
+
+
+
 if (!$resultado) {
     echo "No se envio los datos del formulario";
 }
 else
 {
-    header("Location: globo.html");
+    //header("Location: globo.html");
+    //////Funcion para saber el contenido de un string
+    function saberQEs($baseDeDatos)
+    {
+        echo '<pre>';
+        var_dump($baseDeDatos);
+        echo '</pre>';
+    }
 }
+
+

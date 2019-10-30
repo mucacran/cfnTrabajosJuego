@@ -118,26 +118,26 @@
             var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
-            if(v1 == 155 && v2 == 155)
+            if(v1 == 155 && v2 == 155 || v1 == 150 && v2 == 150 || v2 == 5 && v1 == 5)
             {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = 'Menos de $' + v1 + ' mil';
             }
-            else if(v1 == 308 && v2 == 308){
+            else if(v1 == 308 || v2 == 300 || v2 == 8)
+            {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = 'Mas de $' + v1 + ' mil';
             }
-            else if(idValor1[0] == idValor1[1] && idValor2[0] == idValor2[1])
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = '$' + v2 + ' mil';
-            }
-            else
+            else if(idValor1[0] != idValor1[1] || idValor2[0] != idValor2[1])
             {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
             }
-            
+            else 
+            {
+                var sumando   = document.getElementById('sumando');
+                sumando.value = '$' + v2 + ' mil';
+            }
         }
     
         function irSumando(e,id)
