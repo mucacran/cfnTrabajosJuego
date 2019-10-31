@@ -276,7 +276,7 @@ function siguientePagina()
     
     //document.getElementById('terminamos').innerHTML = 'Terminastes <br>' + secion1 + '<br>' + secion2 + '<br>' + secion3;
     $('#empezar').on(click,function(){
-        window.location.href = "http://www.w3schools.com";
+        window.location.href = "http://www.w3schools.com?resultado=" + para1 + para2 + para3 ;
     });
 }
 
