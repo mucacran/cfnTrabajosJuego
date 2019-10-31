@@ -208,20 +208,21 @@
             }
             else
             {
-                if(v1[0] == 35 || v1[0] == 100 || v1[0] == 5 || v1 == 135 || v1 == 140 || v1 == 145 || v1 == 150 || v1 == 155)
+                if(v1 == 35 || v1 == 100 || v1 == 5 || v1 == 135 || v1 == 140 || v1 == 145 || v1 == 150 || v1 == 155 || v1 == 40 || v1 == 10 || v1 == 45 || v1 == 50 || v1 == 55)
                 {
                     var sumando   = document.getElementById('sumando');
                     sumando.value = 'Menos de ' + v1 + ' mil';
                 }
-                else if(idValor1[1] == 65 && idValor2[1] == 400 && idValor3[1] == 20 && idValor4[1] == 20 && idValor5[1] == 20 && idValor6[1] == 8)
-                {
-                    var sumando   = document.getElementById('sumando');
-                    sumando.value = 'Mas de ' + v2 + ' mil';                   
-                }
+                // else if(idValor1[1] == 65 && idValor2[1] == 400 && idValor3[1] == 20 && idValor4[1] == 20 && idValor5[1] == 20 && idValor6[1] == 8)
+                // {
+                //     var sumando   = document.getElementById('sumando');
+                //     sumando.value = 'Mas de ' + v2 + ' mil';
+                // }
                 else
                 {
                     var sumando   = document.getElementById('sumando');
-                    sumando.value = '$' + v2 + ' mil';
+                    //sumando.value = '$' + v2 + ' mil';
+                    sumando.value = 'Mas de ' + v2 + ' mil';
                 }
             }
             
