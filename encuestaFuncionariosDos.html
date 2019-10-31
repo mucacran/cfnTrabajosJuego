@@ -48,15 +48,15 @@
                     <strong> Proyecto 2: Compra de Excavadora para Alquiler </strong>
 				</h2>
 				<h3>
-                    Ubicación: Falta uvicación<br>
+                    Ubicación: Yanzatza, Morona Santiago<br>
                 </h3>
                 <p>
                     <b>Capacidad:</b>
-                    Un negocio dedicado al alquiler de grúas con operador y otros equipos de construcción, necesita para el giro de su negocio una excavadora hidráulica y capital trabajo operativo/administración. Se proyecta que la nueva máquina labore 8 horas, a un precio de $45 la hora, con 6 días a la semana y 24 días al mes, lo que generaría ingresos mensuales de USD $ 8,640 e ingresos anuales de USD $103,680
+                    Un negocio dedicado al alquiler de grúas con operador y otros equipos de construcción, necesita para el giro de su negocio una excavadora hidráulica y capital trabajo operativo/administración. Se proyecta que la nueva máquina labore 8 horas, a un precio de $45 la hora, con 6 días a la semana y 24 días al mes, lo que generaría ingresos mensuales de USD 8,640 e ingresos anuales de USD 103,680
                 </p>
                 <section>
                     <p>
-                        <b >Especificaciones y valorización</b>
+                        <b >Especificaciones y valorización:</b> A continuación elige el valor que consideres adecuado para cada rubro a partir de tus conocimientos, experiencia o estimación personal.
                     </p>
                 </section>
                 <section>
@@ -118,25 +118,23 @@
             var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
-            if(v1 == 155 && v2 == 155 || v1 == 150 && v2 == 150 || v2 == 5 && v1 == 5)
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = 'Menos de $' + v1 + ' mil';
-            }
-            else if(v1 == 308 || v2 == 300 || v2 == 8)
-            {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = 'Mas de $' + v1 + ' mil';
-            }
-            else if(idValor1[0] != idValor1[1] || idValor2[0] != idValor2[1])
+            if(v1 != v2)
             {
                 var sumando   = document.getElementById('sumando');
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
             }
-            else 
+            else
             {
-                var sumando   = document.getElementById('sumando');
-                sumando.value = '$' + v2 + ' mil';
+                if(v1 == 150 || v1 == 5 || v1 == 155)
+                {
+                    var sumando   = document.getElementById('sumando');
+                    sumando.value = 'Menos de $' + v1 + ' mil';
+                }
+                else
+                {
+                    var sumando   = document.getElementById('sumando');
+                    sumando.value = 'Mas de $' + v2 + ' mil';
+                }
             }
         }
     
