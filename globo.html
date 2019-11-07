@@ -13,21 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<!-- BootstrapCDN 4 -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	
 	<!-- bootstrap 4 js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script> Esta librería venía con el bootstrap no se de que me perdí hacer aquí (Osea q no mas podía hacer esta libreria talvez nada por que parece una versión vieja)--> 
     <script src="js/jquery-3.4.1.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script> -->
 
-	<!-- mi estilo animacion -->
-    <!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
-    <script src="js/jsglobo.js"></script>
-
-	<!-- animación css -->
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
+    <script src="js/jsglobo.js" defer></script>
 
 	<!-- Mi estilos -->
 	<link rel="stylesheet" href="css/fuente.css">
@@ -59,7 +50,7 @@
                 <p id="tiempoCronometro" style="font-size: 20px">Tiempo: 01:00:00</p>
             </div>
             <div class="col">
-                <p id="puntoGanPer" style="font-size: 20px">Has ganado: </p>
+                <p id="puntoGanPer" style="font-size: 20px">Has ganado: 0</p>
             </div>
         </div>
         <div class="row cabeceraIndex">
@@ -78,10 +69,18 @@
                 <button class="btn btn-primary btn-lg btn-block" id="desinflar" onclick="detenerBtm(1)">Detener</button>
             </div>
             <div class="col-sm-12">
-                <button class="btn btn-primary btn-lg btn-block" id="empezar" onclick="empiezaCronometro2()">Volver a jugar</button>
+                <button class="btn btn-primary btn-lg btn-block" id="empezar" onclick="empiezaCronometro2()">Empezar a jugar</button>
+            </div>
+            <div class="col-sm-12">
+                <a class="btn btn-primary btn-lg btn-block" id="siguiente" style="display:none;color: white;" href="encuestaFuncionarios.html">siguiente</a>
             </div>
         </div>
     </div>
     <div class="separador"></div>
+
+    <script>
+    $('#inflar').slideUp();
+    $('#desinflar').slideUp();
+    </script>
 </body>
 </html>
