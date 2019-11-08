@@ -25,7 +25,7 @@ function empiezaCronometro2()
     {
         tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
         min =   0;    // minutos
-        seg =   3;   // segundos
+        seg =   10;   // segundos
         mils =  60;   // milesegundos
 
         numClicksPorPantalla.innerHTML = '0'; // regresa a cero cuando empiza otra vez
@@ -151,4 +151,73 @@ function puntoGanados()
 */
 function multiplicaXdiez(a) {
     return (a < 10 ) ? a*10 : a;
+}
+
+///////////////////////////////////////////////////////////////BOTON DE INFLAR
+/************************************************ */
+//cada vez que se apreta el boton se infla el globo
+/************************************************ */
+function apretandoParaInflar()
+{
+    if(secionesJugadas == 0)
+    {
+        $('#empezar').slideUp();
+        if(contEnPantallaClicks == clickPun_NumeroAleatorio)
+        {
+            $('#inflar').slideUp();
+            $('#desinflar').slideUp();
+            globoJuego.innerHTML = icoBun;
+            ++secionesJugadas;
+            numeroSeccion3();
+            if(btnDetenido == 0)
+            {
+                btnDetenido = 1;
+            }
+            $('#empezar').slideDown('show');
+            puntoGanados();
+            return;
+        }
+        else
+        {
+            ++contEnPantallaClicks;
+            prinPantallaNumero(contEnPantallaClicks);
+        }
+        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+        idPrintPant = document.getElementById('puntoGanPer');
+        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
+    }
+    else if(secionesJugadas < 3)
+    {
+        if(contEnPantallaClicks == clickPun_NumeroAleatorio)
+        {
+            $('#inflar').slideUp();
+            $('#desinflar').slideUp();
+            globoJuego.innerHTML = icoBun;
+            ++secionesJugadas;
+            numeroSeccion3();
+            if(btnDetenido == 0)
+            {
+                btnDetenido = 1;
+            }
+            $('#empezar').slideDown('show');
+            puntoGanados();
+            return;
+        }
+        else
+        {
+            ++contEnPantallaClicks;
+            prinPantallaNumero(contEnPantallaClicks);
+        }
+        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+        idPrintPant = document.getElementById('puntoGanPer');
+        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
+    }
+    else
+    {
+        siguientePagina();
+    }
+}
+function prinPantallaNumero(contador)
+{
+    numClicksPorPantalla.innerHTML = contador;
 }
