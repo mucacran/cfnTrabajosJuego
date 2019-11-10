@@ -25,25 +25,9 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body id="terminamos">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 centrarLogoTexto">
-                <p style="text-align: center;">
-                    <img src="images/logo.svg" alt="corporacion financiera nacional" style="width: 200px;">
-                </p>
-            </div>
-            <div class="col-sm-12 col-md-9" style="padding: 20px 0px;text-align: justify;font-family: 'Abk'; ">
-                <p>
-                    El globo puede ser inflado sin explotar un número aleatorio de veces entre 1 y 10.
-                    <br>Acumularás 10 puntos por cada vez que pulses “INFLAR” y el globo no explote.<br>
-                     Si pulsas “DETENER” y el globo sigue intacto te quedarás con los puntos acumulados y pasas al siguiente intento. <br>
-                     Sin embargo, si el globo explota o si se te acaba el tiempo perderás todos los puntos acumulados.
-                    <br>
-                    Cuentas con 60 segundos y 3 oportunidades para obtener el mejor puntaje.
-                </p>
-            </div>
-        </div>
-    </div>
+    <div id="presentarResultado" style="display: flex;position: absolute; background-color: rgba(0, 0, 0, .6);width: 100%;height: 100%;z-index: 999;justify-content:center;
+    align-items:center;">sss</div>
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -72,7 +56,7 @@
                 <button class="btn btn-primary btn-lg btn-block" id="empezar" onclick="empiezaCronometro2()">Empezar a jugar</button>
             </div>
             <div class="col-sm-12">
-                <a class="btn btn-primary btn-lg btn-block" id="siguiente" style="display:none;color: white;" href="encuestaFuncionarios.html">siguiente</a>
+                <button class="btn btn-primary btn-lg btn-block" id="siguiente" style="display:none;color: white;" onclick="presentarValorPorPantalla()">siguiente</button>
             </div>
         </div>
     </div>
@@ -82,7 +66,7 @@
     $('#inflar').hide();
     $('#desinflar').hide();
     
-    
+    $('#presentarResultado').hide();
     </script>
 </body>
 </html>

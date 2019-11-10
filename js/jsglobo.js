@@ -8,10 +8,12 @@ let secionesJugadas = 0;
 let btnDetenido = 0; 
 
 //id de las etiquetas html
-var numClicksPorPantalla = document.getElementById('click-Veses'); // linea 58
+var numClicksPorPantalla = document.getElementById('click-Veses'); //numero de clicks en la pantalla linea 58
 var globoJuego = document.getElementById('globoJuego'); // lugar donde se imprime el logo por pantalla
 var cronometroP = document.getElementById('tiempoCronometro');
 var idPrintPant = document.getElementById('puntoGanPer'); //id que represtenta la etiqueta p donde se imprime por pantalla los puntos ganados id = puntoGanPer
+var urlPagina = document.getElementById('siguiente').href;
+var presentarResultado = document.getElementById('presentarResultado');
 
 // variables para el tiempo
 var tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
@@ -19,13 +21,20 @@ var min =   0;    // minutos
 var seg =   59;   // segundos
 var mils =  60;   // milesegundos
 
+////////////VALOR DE LAS 3 SESIONES//////////
+var secion1 = ['0',0];
+var secion2 = ['0',0];
+var secion3 = ['0',0];
+var puntosAcumuladoSecciones = 0;
+/////////////////////////////////////////////
+
 function empiezaCronometro2()
 {
     if(secionesJugadas < 3)
     {
         tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
         min =   0;    // minutos
-        seg =   10;   // segundos
+        seg =   20;   // segundos
         mils =  60;   // milesegundos
 
         numClicksPorPantalla.innerHTML = '0'; // regresa a cero cuando empiza otra vez
@@ -34,16 +43,14 @@ function empiezaCronometro2()
         globoJuego.style.fontSize = '10em'; //regresa al globo en el tamaño normal num.toString()
         numeroAlwatorio(); // declara un nuevo numero aleatorio
         contEnPantallaClicks = 0 ; //el numero que se imprime por pantalla regresa a sero
-
-        console.log('> ' + secionesJugadas + ' sesiones jugadas');
         
-        verInflaryDesinflar();
+        console.log('> ' + secionesJugadas + ' sesiones jugadas');
         ejecutaCronometro();
+        verInflaryDesinflar();
     }
     else
     {
-        esconderInflaryDesinflar();
-        //siguientePagina();
+        return;
     }
 }
 
@@ -78,6 +85,7 @@ function ejecutaCronometro()
 {
     if (globoJuego.innerHTML == icoBun || btnDetenido)
     {
+        btnDetenido = 0;
         return;
     }
     if(mils != 0)
@@ -86,7 +94,6 @@ function ejecutaCronometro()
     }
     else if(mils == 0 && seg == 0)
     {
-        ++secionesJugadas;
         puntoGanados();
         esconderInflaryDesinflar();
         return;
@@ -109,25 +116,26 @@ function LeadingZero(Time) {
 
 function esconderInflaryDesinflar()
 {
-    if(secionesJugadas >= 3)
+    if(secionesJugadas >= 2)
     {
-        $('#inflar').slideUp();
-        $('#desinflar').slideUp();
+        $('#inflar').hide();
+        $('#desinflar').hide();
         $('#siguiente').slideDown('show');
+        
     }
     else{
-        $('#inflar').slideUp();
-        $('#desinflar').slideUp();
+        ++secionesJugadas;
+        $('#inflar').hide();
+        $('#desinflar').hide();
         $('#empezar').slideDown('show');
     }
-    
 }
 
 function verInflaryDesinflar()
 {
     $('#inflar').slideDown('show');
     $('#desinflar').slideDown('show');
-    $('#empezar').slideUp();
+    $('#empezar').hide();
 }
 
 //////////////////////////////////////////////////////////
@@ -135,16 +143,21 @@ function verInflaryDesinflar()
 //////////////////////////////////////////////////////////
 function puntoGanados()
 {
+    var numeroPantalla = 0;
     if (globoJuego.innerHTML == icoBun || cronometroP.innerHTML == 'Tiempo: 00:00:00')
     {
-        var numeroPantalla = parseInt(numClicksPorPantalla.innerHTML);
+        numeroPantalla = parseInt(numClicksPorPantalla.innerHTML);
+        //puntosAcumuladoSecciones -= (secionesJugadas == 0) ? 0: numeroPantalla ;
+        puntosAcumuladoSecciones -= numeroPantalla;
         idPrintPant.innerHTML = 'Has perdido ' + multiplicaXdiez(numeroPantalla) + ' puntos';
     }
     else
     {
-        var numeroPantalla = parseInt(numClicksPorPantalla.innerHTML);
+        numeroPantalla = parseInt(numClicksPorPantalla.innerHTML);
+        puntosAcumuladoSecciones += numeroPantalla;
         idPrintPant.innerHTML = 'Has ganado: '  + multiplicaXdiez(numeroPantalla) + ' puntos';
     }
+    valorPorSeciones(numeroPantalla);
 }
 /*Funcion necesaria para que se imprima por pantalla el 0 delante de
     un numero menos a 10
@@ -153,71 +166,94 @@ function multiplicaXdiez(a) {
     return (a < 10 ) ? a*10 : a;
 }
 
+
+/*************DETENER Y GANAR PUNTOS del boton detener********************/
+function detenerBtm(presionaBtnDetener)
+{
+    btnDetenido = parseInt(presionaBtnDetener);
+    puntoGanados();
+    esconderInflaryDesinflar();
+}
+
 ///////////////////////////////////////////////////////////////BOTON DE INFLAR
 /************************************************ */
 //cada vez que se apreta el boton se infla el globo
 /************************************************ */
 function apretandoParaInflar()
 {
-    if(secionesJugadas == 0)
+    if(secionesJugadas < 3 )
     {
-        $('#empezar').slideUp();
         if(contEnPantallaClicks == clickPun_NumeroAleatorio)
         {
-            $('#inflar').slideUp();
-            $('#desinflar').slideUp();
             globoJuego.innerHTML = icoBun;
-            ++secionesJugadas;
-            numeroSeccion3();
-            if(btnDetenido == 0)
-            {
-                btnDetenido = 1;
-            }
-            $('#empezar').slideDown('show');
             puntoGanados();
+            esconderInflaryDesinflar();
             return;
         }
         else
         {
             ++contEnPantallaClicks;
             prinPantallaNumero(contEnPantallaClicks);
+            globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
+            idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
         }
-        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
-        idPrintPant = document.getElementById('puntoGanPer');
-        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
-    }
-    else if(secionesJugadas < 3)
-    {
-        if(contEnPantallaClicks == clickPun_NumeroAleatorio)
-        {
-            $('#inflar').slideUp();
-            $('#desinflar').slideUp();
-            globoJuego.innerHTML = icoBun;
-            ++secionesJugadas;
-            numeroSeccion3();
-            if(btnDetenido == 0)
-            {
-                btnDetenido = 1;
-            }
-            $('#empezar').slideDown('show');
-            puntoGanados();
-            return;
-        }
-        else
-        {
-            ++contEnPantallaClicks;
-            prinPantallaNumero(contEnPantallaClicks);
-        }
-        globoJuego.style.fontSize = '1' + contEnPantallaClicks + 'em'; //num.toString()
-        idPrintPant = document.getElementById('puntoGanPer');
-        idPrintPant.innerHTML = '+'  + multiplicaXdiez(contEnPantallaClicks) + ' puntos'; // este imprime por pantalla si ganas conforme avanza los clicks
-    }
-    else
-    {
-        siguientePagina();
     }
 }
 function prinPantallaNumero(contador)
 {
     numClicksPorPantalla.innerHTML = contador;
+}
+
+////////Guarda el valor por seccines de lo que esta en los puntos ganados o perdidos; lo que se imprime dentro del id:puntoGanPer en el html////
+function valorPorSeciones(numeroPantalla)
+{
+    if(secionesJugadas == 0)
+    {
+        secion1[0] = idPrintPant.innerHTML;
+        secion1[1] = numeroPantalla;
+        console.log('resultado 1 seccion: ' + secion1);
+    }
+    else if(secionesJugadas == 1)
+    {
+        secion2[0] = idPrintPant.innerHTML;
+        secion2[1] = numeroPantalla;
+        console.log('resultado 2 seccion: ' + secion2);
+    }
+    else
+    {
+        secion3[0] = idPrintPant.innerHTML;
+        secion3[1] = numeroPantalla;
+        console.log('resultado 3 seccion: ' + secion3);
+    }
+}
+
+function presentarValorPorPantalla()
+{
+    var loqueEres = '';
+    
+    $('#presentarResultado').slideDown('show');
+    
+    console.log('este es tu ganancias:' + puntosAcumuladoSecciones);
+
+    if(puntosAcumuladoSecciones < 0)
+    {
+        if(secion1[1] > 4 && secion2[1] > 4 && secion3[1] > 4)
+        {
+            loqueEres = '<b>Eres un perdedor pero arriesgado</b>';
+        }
+        else
+        {
+            loqueEres = '<b>Eres un perdedor<b>';
+        }
+    }
+    else if(secion1[1] > 5 && secion2[1] > 5 && secion3[1] > 5)
+    {
+        loqueEres = 'Eres Arriesgado';
+    }
+    else
+    {
+        loqueEres = 'Eres indesiso';
+    }
+    var resultadoPorseccions = 'Sección1 :' + secion1[0] + '<br>Sección2 :' + secion2[0] + '<br>Sección3 :' + secion3[0] + '<br>' + puntosAcumuladoSecciones +'0<br>Resultado: ' + loqueEres;
+    presentarResultado.innerHTML = '<div style="background-color: #fff;width: 300px;box-sizing: border-box;height: auto;padding:15px;text-align: center;">'+ resultadoPorseccions + '</div> ';
 }
