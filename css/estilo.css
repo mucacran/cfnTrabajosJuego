@@ -179,8 +179,13 @@ imprimirà por pantalla el numero de veses que hace clik en el boton inflar*/
     left: 0px;
     font-size: 5em;
     z-index: 99;
+    
 }
-
+.descripcionGlobo
+{
+    line-height: 19px;
+    color: #4b4b4b;
+}
 p
 {
     text-align: justify;
@@ -268,7 +273,7 @@ p
 #click-Veses
 {
     background-color: #e5e5e5;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     -webkit-box-shadow:inset 1px 1px 10px #c8c8c8;
     -moz-box-shadow:inset 1px 1px 10px #c8c8c8;
@@ -310,6 +315,10 @@ p
     margin: 0 auto;
     text-align: center;
 }
+div.resultado p
+{
+    font-size: 1.5em;
+}
 .resultado input
 {
     margin: 0px 0px;
@@ -332,6 +341,7 @@ p
     display: flex;
     align-items: center;
 }
+
 /************************************************************************/
 /* Responsive */
 /***************************************************************************/
@@ -384,7 +394,7 @@ p
         display: flex;
         align-items: center;
         margin: 0 auto;
-        background-color: red;
+        
     }
 }
 
