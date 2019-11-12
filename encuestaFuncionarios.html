@@ -170,13 +170,6 @@
         let idValor2 = [0,0];
         let idValor3 = [0,0];
         let idValor4 = [0,0];
-        
-        //variables dominantes por modulo
-        var modulos = [];
-        modulos[0] = document.getElementById('alinearTypeRadios1').getElementsByTagName('input');
-        modulos[1] = document.getElementById('alinearTypeRadios2').getElementsByTagName('input');
-        modulos[2] = document.getElementById('alinearTypeRadios3').getElementsByTagName('input');
-        modulos[3] = document.getElementById('alinearTypeRadios4').getElementsByTagName('input');
 
         // id selecionados por modulo
         var selecIds1 = '';
@@ -194,7 +187,10 @@
             //var menosde =   sumando.value = 'Menos de $' + v1 + ' mil';
             //var masde =     sumando.value = 'Más de $' + v2 + ' mil';
 
-            if((selecIds1 == 'a2' || selecIds1 == 'a3' || selecIds1 == 'a4') && (selecIds2 == 'b2' || selecIds2 == 'b3' || selecIds2 == 'b4') && (selecIds3 == 'c2' || selecIds3 == 'c3' || selecIds3 == 'c4') && (selecIds4 == 'd2' || selecIds4 == 'd3' || selecIds4 == 'd4'))
+            if( (selecIds1 == 'a2' || selecIds1 == 'a3' || selecIds1 == 'a4') &&
+                (selecIds2 == 'b2' || selecIds2 == 'b3' || selecIds2 == 'b4') &&
+                (selecIds3 == 'c2' || selecIds3 == 'c3' || selecIds3 == 'c4') &&
+                (selecIds4 == 'd2' || selecIds4 == 'd3' || selecIds4 == 'd4')   )
             {
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
             }
@@ -270,7 +266,7 @@
         var min = 2;
         var seg = 59;
         var mils = 59;
-        cronometro();
+        //cronometro();
         function cronometro()
         {
             if(tiempoGlobo==0)
@@ -299,7 +295,7 @@
             else if(min == 0 && seg == 0 && mils == 0)
             {
                 clearTimeout(tiempoGlobo);
-                window.locationf ="encuestaFuncionariosDos.html";
+                window.location = "encuestaFuncionariosDos.html";
                 return;
             }
             else{
