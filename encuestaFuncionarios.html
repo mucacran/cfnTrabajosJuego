@@ -157,7 +157,10 @@
     <div class="resultado">
         <p style="background-color: white;"> VALOR TOTAL</p>
         <input type='text' value='0' disabled id="sumando">
+        <p style="background-color: white;"> TEMPORIZADOR</p>
+        <input type='text' value='03:00:00' disabled id="temporizador">
     </div>
+
 	<script >
         //ids por modulos
         let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4'];
@@ -188,7 +191,6 @@
             var textoFinal = ' mil';
             var sumando   = document.getElementById('sumando');
 
-            
             //var menosde =   sumando.value = 'Menos de $' + v1 + ' mil';
             //var masde =     sumando.value = 'Más de $' + v2 + ' mil';
 
@@ -196,15 +198,14 @@
             {
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
             }
-            else if(selecIds1 == 'a1' || selecIds2 == 'b1' || selecIds3 == 'c1' || selecIds4 == 'd1')
+            else if((selecIds1 == 'a1' && selecIds2 == 'b1' && selecIds3 == 'c1' && selecIds4 == 'd1') || v1 == 0)
             {
                 sumando.value = 'Menos de $' + v2 + ' mil';
             }
             else
             {
                 sumando.value = 'Más de $' + v1 + ' mil';
-            }
-           
+            }         
         }
 
         function irSumando(e,id)
@@ -262,6 +263,54 @@
                     irSumando(inputs[j],idMadre);
                 }
             }
+        }
+        /***************TEMPORIZADOR*************************/
+        var temporizador = document.getElementById('temporizador');
+        var tiempoGlobo = 0;
+        var min = 2;
+        var seg = 59;
+        var mils = 59;
+        cronometro();
+        function cronometro()
+        {
+            if(tiempoGlobo==0)
+            {
+                ejecutaCronometro();
+            }
+            else
+            {
+                tiempoGlobo = 0;
+            }
+        }
+
+        /*Funcion que hace que los */
+        function ejecutaCronometro()
+        {
+            if(mils < 0)
+            {
+                --seg;
+                mils = 59;
+            }
+            else if (seg < 0)
+            {
+                --min;
+                seg = 59;
+            }
+            else if(min == 0 && seg == 0 && mils == 0)
+            {
+                clearTimeout(tiempoGlobo);
+                window.locationf ="encuestaFuncionariosDos.html";
+                return;
+            }
+            else{
+                --mils;
+            }
+
+            temporizador.value = LeadingZero(min) + ':' + LeadingZero(seg) + ':' + LeadingZero(mils);
+            tiempoGlobo = setTimeout("ejecutaCronometro()", 15);//15 es el tiempo de milesegundos para que cuando llegue a sesenta marque un segundo
+        }
+        function LeadingZero(Time) {
+            return (Time < 10) ? "0" + Time : + Time;
         }
 	</script>
 </body>
