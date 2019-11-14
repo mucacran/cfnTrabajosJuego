@@ -94,7 +94,7 @@
                     <p>
                         <b>Especificaciones y Valoración:</b> A continuación elige el valor que consideres adecuado para cada rubro a partir de tus conocimientos, experiencia o estimación personal. Mientras más te acerques al valor real, mayor será tu puntaje.
                     </p>
-				<form class="estadisticaFuncionarios" action="" method="POST" >
+				<form class="estadisticaFuncionarios" action="encuestaFuncionariosDos.html" method="POST" >
                     <div class="contenedores">
                         <p><b>Predio camaronera: </b>
                             11 hectáreas de espejo de agua para engorde, 2 hectáreas de campamento, muros carrozables, reservorio y canal, vías internas, estación de bombeo y rebombeo, casa de hacienda en remodelación, compuertas de ingreso de agua y pesca, red eléctrica, entre otros.
@@ -147,7 +147,7 @@
                         </div>
                     </div>
 					<div class="content-btn"> 
-						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> SIGUIENTE</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" onclick="guardarenLocaleirasiguiente()"><i class="fa fa-gamepad" aria-hidden="true"></i> SIGUIENTE</button>
 					</div>
 				</form>
 			</div>
@@ -172,30 +172,30 @@
         let idValor4 = [0,0];
 
         // id selecionados por modulo
-        var selecIds1 = '';
-        var selecIds2 = '';
-        var selecIds3 = '';
-        var selecIds4 = '';
+        let selecIds1 = '';
+        let selecIds2 = '';
+        let selecIds3 = '';
+        let selecIds4 = '';
+
+        // id de sumas
+        let sumando = document.getElementById('sumando');
+        let temporizador = document.getElementById('temporizador');
 
         function sumaTotal(v1,v2)
         {
             var textoDelate = 'Entre $';
             var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
-            var sumando   = document.getElementById('sumando');
 
             //var menosde =   sumando.value = 'Menos de $' + v1 + ' mil'; (selecIds1 != 'a5' && selecIds2 != 'b5' && selecIds3 != 'c5' && selecIds4 != 'd5')
             //var masde =     sumando.value = 'Más de $' + v2 + ' mil';
 
             if(
-                
-                
                 ((selecIds1 == 'a2' || selecIds1 == 'a3' || selecIds1 == 'a4') ||
-                (selecIds2 == 'b2' || selecIds2 == 'b3' || selecIds2 == 'b4') ||
-                (selecIds3 == 'c2' || selecIds3 == 'c3' || selecIds3 == 'c4') ||
-                (selecIds4 == 'd2' || selecIds4 == 'd3' || selecIds4 == 'd4')) &&
-
-                (selecIds1 != 'a5' && selecIds2 != 'b5' && selecIds3 != 'c5' && selecIds4 != 'd5')
+                 (selecIds2 == 'b2' || selecIds2 == 'b3' || selecIds2 == 'b4') ||
+                 (selecIds3 == 'c2' || selecIds3 == 'c3' || selecIds3 == 'c4') ||
+                 (selecIds4 == 'd2' || selecIds4 == 'd3' || selecIds4 == 'd4')) &&
+                 (selecIds1 != 'a5' && selecIds2 != 'b5' && selecIds3 != 'c5' && selecIds4 != 'd5')
               )
             {
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
@@ -267,12 +267,12 @@
             }
         }
         /***************TEMPORIZADOR*************************/
-        var temporizador = document.getElementById('temporizador');
         var tiempoGlobo = 0;
         var min = 2;
         var seg = 59;
         var mils = 59;
-        //cronometro();
+        
+        cronometro();
         function cronometro()
         {
             if(tiempoGlobo==0)
@@ -285,7 +285,7 @@
             }
         }
 
-        /*Funcion que hace que los */
+        /*++++++++++++++++++++++++Funcion que hace que los***************************/
         function ejecutaCronometro()
         {
             if(mils < 0)
@@ -301,18 +301,42 @@
             else if(min == 0 && seg == 0 && mils == 0)
             {
                 clearTimeout(tiempoGlobo);
+                guardarenLocaleirasiguiente();
                 window.location = "encuestaFuncionariosDos.html";
                 return;
             }
             else{
                 --mils;
             }
-
             temporizador.value = LeadingZero(min) + ':' + LeadingZero(seg) + ':' + LeadingZero(mils);
             tiempoGlobo = setTimeout("ejecutaCronometro()", 15);//15 es el tiempo de milesegundos para que cuando llegue a sesenta marque un segundo
         }
         function LeadingZero(Time) {
             return (Time < 10) ? "0" + Time : + Time;
+        }
+        /////////////////////////////////////////////////
+        function guardarenLocaleirasiguiente()
+        {
+            // id de sumas
+            
+            
+            var idSenalados = [selecIds1,selecIds2,selecIds3,selecIds4,sumando,temporizador];
+            var valoresFormulario = ['Encuesta1-valor1','Encuesta1-valor2','Encuesta1-valor3','Encuesta1-valor4','Encuesta1-sumaTotal','Encuesta2-temporizador'];
+            for (var i = 0; i < idSenalados.length; i++)
+            {
+                
+                if (idSenalados[i] != '')
+                {
+                    localStorage.setItem(valoresFormulario[i], document.getElementById(idSenalados[i].value));
+                    console.log(idSenalados[i].value);
+                }
+                else
+                {
+                    localStorage.setItem(valoresFormulario[i], 'vacio');
+                    
+                }
+            }
+            //window.location = "encuestaFuncionariosDos.html";
         }
 	</script>
 </body>
