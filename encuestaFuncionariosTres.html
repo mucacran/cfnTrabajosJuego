@@ -87,12 +87,12 @@
                             <b>Terreno: </b>
                             630 m2 en Otavalo, sector céntrico.
                         </p>
-                        <div id="alinearTypeRadios1" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="maquinaria" id="a1" data-valor1="35" data-valor2="35"    value="menos de $35 mil" required     > a) menos de $35 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a2" data-valor1="35" data-valor2="45"  value="b) entre $35 mil y $45 mil"  > b) entre $35 mil y $45 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a3" data-valor1="45" data-valor2="55"  value="c) entre $45 mil y $55 mil"  > c) entre $45 mil y $55 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a4" data-valor1="55" data-valor2="65"  value="d) entre $55 mil y $65 mil"  > d) entre $55 mil y $65 mil</label>
-                            <label><input type="radio" name="maquinaria" id="a5" data-valor1="65" data-valor2="65"    value="e) más de $65 mil"                > e) más de $65 mil</label>
+                        <div id="alinearTypeRadios1" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="maquinaria" id="a1" data-valor1="0" data-valor2="35"   value="a) menos de $35 mil" required    > a) menos de $35 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a2" data-valor1="35" data-valor2="45"  value="b) entre $35 mil y $45 mil"      > b) entre $35 mil y $45 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a3" data-valor1="45" data-valor2="55"  value="c) entre $45 mil y $55 mil"      > c) entre $45 mil y $55 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a4" data-valor1="55" data-valor2="65"  value="d) entre $55 mil y $65 mil"      > d) entre $55 mil y $65 mil</label>
+                            <label><input type="radio" name="maquinaria" id="a5" data-valor1="65" data-valor2="0"   value="e) más de $65 mil"               > e) más de $65 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -101,12 +101,12 @@
                             <b>Construcción: </b>
                             construcción de 3 plantas + 1 terraza con 15 habitaciones dobles y 6 habitaciones triples, teniendo una capacidad para 48 personas en 315 m2; remodelación de acabados de 5 habitaciones cuádruples y 2 habitaciones dobles en 200 m2. 
                         </p>
-                        <div id="alinearTypeRadios2" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="capital" id="b1" data-valor1="100" data-valor2="100" value="a) menos de $100 mil" required     > a) menos de $100 mil</label>
-                            <label><input type="radio" name="capital" id="b2" data-valor1="100" data-valor2="200" value="b) entre $100 mil y $200 mil"  > b) entre $100 mil y $200 mil</label>
-                            <label><input type="radio" name="capital" id="b3" data-valor1="200" data-valor2="300" value="c) entre $200 mil y $300 mil"  > c) entre $200 mil y $300 mil</label>
-                            <label><input type="radio" name="capital" id="b4" data-valor1="300" data-valor2="400" value="d) entre $300 mil y $400 mil"  > d) entre $300 mil y $400 mil</label>
-                            <label><input type="radio" name="capital" id="b5" data-valor1="400" data-valor2="400" value="e) más de $400 mil"              > e) más de $400 mil</label>
+                        <div id="alinearTypeRadios2" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="capital" id="b1" data-valor1="0" data-valor2="100"     value="a) menos de $100 mil" required   > a) menos de $100 mil</label>
+                            <label><input type="radio" name="capital" id="b2" data-valor1="100" data-valor2="200"   value="b) entre $100 mil y $200 mil"    > b) entre $100 mil y $200 mil</label>
+                            <label><input type="radio" name="capital" id="b3" data-valor1="200" data-valor2="300"   value="c) entre $200 mil y $300 mil"    > c) entre $200 mil y $300 mil</label>
+                            <label><input type="radio" name="capital" id="b4" data-valor1="300" data-valor2="400"   value="d) entre $300 mil y $400 mil"    > d) entre $300 mil y $400 mil</label>
+                            <label><input type="radio" name="capital" id="b5" data-valor1="400" data-valor2="0"     value="e) más de $400 mil"              > e) más de $400 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -115,12 +115,12 @@
                             <b>Muebles y enseres:</b>
                             21 camas de 2 plazas, 6 camas de 1 ½ plazas, 21 muebles de baño, 1 mueble para cocina.
                         </p>
-                        <div id="alinearTypeRadios3" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="mueble" id="c1" data-valor1="5" data-valor2="5" value="< 5 mil" required     > a) menos de $5 mil</label>
-                            <label><input type="radio" name="mueble" id="c2" data-valor1="5" data-valor2="10" value="entre 5 mil y 6 mil"  > b) entre $5 mil y $10 mil</label>
-                            <label><input type="radio" name="mueble" id="c3" data-valor1="10" data-valor2="15" value="entre 6 mil y 7 mil"  > c) entre $10 mil y $15 mil</label>
-                            <label><input type="radio" name="mueble" id="c4" data-valor1="15" data-valor2="20" value="entre 7 mil y 8 mil"  > d) entre $15 mil y $20 mil</label>
-                            <label><input type="radio" name="mueble" id="c5" data-valor1="20" data-valor2="20" value="> 8 mil"              > e) más de $20 mil</label>
+                        <div id="alinearTypeRadios3" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="mueble" id="c1" data-valor1="0" data-valor2="5" value="a) menos de $5 mil" required     > a) menos de $5 mil</label>
+                            <label><input type="radio" name="mueble" id="c2" data-valor1="5" data-valor2="10" value="b) entre $5 mil y $10 mil"  > b) entre $5 mil y $10 mil</label>
+                            <label><input type="radio" name="mueble" id="c3" data-valor1="10" data-valor2="15" value="c) entre $10 mil y $15 mil"  > c) entre $10 mil y $15 mil</label>
+                            <label><input type="radio" name="mueble" id="c4" data-valor1="15" data-valor2="20" value="d) entre $15 mil y $20 mil"  > d) entre $15 mil y $20 mil</label>
+                            <label><input type="radio" name="mueble" id="c5" data-valor1="20" data-valor2="0" value="e) más de $20 mil"              > e) más de $20 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -129,12 +129,12 @@
                             <b>Equipos:</b>
                             22 televisores Prima de 32’’ LED, 22 lámparas LED XTRATECH recargable USB, teléfono Panasonic inalámbrico, Kit DVR 8 canales con 4 cámaras de seguridad 2.0 mp alcance 20 metros, 1 impresora multifunción EPSON, 1 disco duro 1 TB, 1 flat panel SAMSUNG 24’’ LED, 1 flat panel 19.5’’ LED, 1 regulador de voltaje de 1000 VA 6 tomas, y 1 laptop XTRATECH i.5-7400 Procesador/3.0 GHz/8GB/1TB.
                         </p>
-                        <div id="alinearTypeRadios4" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="equipos" id="d1" data-valor1="5" data-valor2="5" value="< 5 mil" required     > a) menos de $5 mil</label>
-                            <label><input type="radio" name="equipos" id="d2" data-valor1="5" data-valor2="10" value="entre 5 mil y 6 mil"  > b) entre $5 mil y $10 mil</label>
-                            <label><input type="radio" name="equipos" id="d3" data-valor1="10" data-valor2="15" value="entre 6 mil y 7 mil"  > c) entre $10 mil y $15 mil</label>
-                            <label><input type="radio" name="equipos" id="d4" data-valor1="15" data-valor2="20" value="entre 7 mil y 8 mil"  > d) entre $15 mil y $20 mil</label>
-                            <label><input type="radio" name="equipos" id="d5" data-valor1="20" data-valor2="20" value="> 8 mil"              > e) más de $20 mil</label>
+                        <div id="alinearTypeRadios4" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="equipos" id="d1" data-valor1="0" data-valor2="5" value="a) menos de $5 mil" required     > a) menos de $5 mil</label>
+                            <label><input type="radio" name="equipos" id="d2" data-valor1="5" data-valor2="10" value="b) entre $5 mil y $10 mil"  > b) entre $5 mil y $10 mil</label>
+                            <label><input type="radio" name="equipos" id="d3" data-valor1="10" data-valor2="15" value="c) entre $10 mil y $15 mil"  > c) entre $10 mil y $15 mil</label>
+                            <label><input type="radio" name="equipos" id="d4" data-valor1="15" data-valor2="20" value="d) entre $15 mil y $20 mil"  > d) entre $15 mil y $20 mil</label>
+                            <label><input type="radio" name="equipos" id="d5" data-valor1="20" data-valor2="0" value="e) más de $20 mil"              > e) más de $20 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -152,12 +152,12 @@
                         <p>
                             72 Almohadas Suave Estándar (0.70x0.50) y 72 Protectores Impermeables de Almohadas
                         </p>                                                       
-                        <div id="alinearTypeRadios5" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="menaje" id="e1" data-valor1="5" data-valor2="5" value="< 5 mil" required     > a) menos de $5 mil</label>
-                            <label><input type="radio" name="menaje" id="e2" data-valor1="5" data-valor2="10" value="entre 5 mil y 6 mil"  > b) entre $5 mil y $10 mil</label>
-                            <label><input type="radio" name="menaje" id="e3" data-valor1="10" data-valor2="15" value="entre 6 mil y 7 mil"  > c) entre $10 mil y $15 mil</label>
-                            <label><input type="radio" name="menaje" id="e4" data-valor1="15" data-valor2="20" value="entre 7 mil y 8 mil"  > d) entre $15 mil y $20 mil</label>
-                            <label><input type="radio" name="menaje" id="e5" data-valor1="20" data-valor2="20" value="> 8 mil"              > e) más de $20 mil</label>
+                        <div id="alinearTypeRadios5" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="menaje" id="e1" data-valor1="0" data-valor2="5" value="a) menos de $5 mil" required     > a) menos de $5 mil</label>
+                            <label><input type="radio" name="menaje" id="e2" data-valor1="5" data-valor2="10" value="b) entre $5 mil y $10 mil"  > b) entre $5 mil y $10 mil</label>
+                            <label><input type="radio" name="menaje" id="e3" data-valor1="10" data-valor2="15" value="c) entre $10 mil y $15 mil"  > c) entre $10 mil y $15 mil</label>
+                            <label><input type="radio" name="menaje" id="e4" data-valor1="15" data-valor2="20" value="d) entre $15 mil y $20 mil"  > d) entre $15 mil y $20 mil</label>
+                            <label><input type="radio" name="menaje" id="e5" data-valor1="20" data-valor2="0" value="e) más de $20 mil"              > e) más de $20 mil</label>
                         </div>
                     </div>
                     <div class="contenedores">
@@ -166,16 +166,16 @@
                             <b> Capital de Trabajo Operativo/Administrativo:</b>
                             suministros y servicios (agua, electricidad, telefonía, combustible, insumos de limpieza e internet); mano de obra directa (personal de limpieza, cocina); mano de obra indirecta (recepcionista); mantenimiento y seguros (activos fijos operativos); otros (uniformes), etc. Se considera un factor caja de 39 días.
                         </p>                                                     
-                        <div id="alinearTypeRadios6" onclick="todosLosSeleccionados(this.childNodes,this.id)">
-                            <label><input type="radio" name="trabajo" id="f1" data-valor1="5" data-valor2="5" value="< 5 mil" required     > a) menos de $5 mil</label>
-                            <label><input type="radio" name="trabajo" id="f2" data-valor1="5" data-valor2="6" value="entre 5 mil y 6 mil"  > b) entre $5 mil y $6 mil</label>
-                            <label><input type="radio" name="trabajo" id="f3" data-valor1="6" data-valor2="7" value="entre 6 mil y 7 mil"  > c) entre $6 mil y $7 mil</label>
-                            <label><input type="radio" name="trabajo" id="f4" data-valor1="7" data-valor2="8" value="entre 7 mil y 8 mil"  > d) entre $7 mil y $8 mil</label>
-                            <label><input type="radio" name="trabajo" id="f5" data-valor1="8" data-valor2="8" value="> 8 mil"              > e) más de $8 mil</label>
+                        <div id="alinearTypeRadios6" onclick="todosLosSeleccionados(this.getElementsByTagName('input'),this.id)">
+                            <label><input type="radio" name="trabajo" id="f1" data-valor1="0" data-valor2="5" value="a) menos de $5 mil" required> a) menos de $5 mil</label>
+                            <label><input type="radio" name="trabajo" id="f2" data-valor1="5" data-valor2="6" value="b) entre $5 mil y $6 mil"  > b) entre $5 mil y $6 mil</label>
+                            <label><input type="radio" name="trabajo" id="f3" data-valor1="6" data-valor2="7" value="c) entre $6 mil y $7 mil"  > c) entre $6 mil y $7 mil</label>
+                            <label><input type="radio" name="trabajo" id="f4" data-valor1="7" data-valor2="8" value="d) entre $7 mil y $8 mil"  > d) entre $7 mil y $8 mil</label>
+                            <label><input type="radio" name="trabajo" id="f5" data-valor1="8" data-valor2="0" value="e) más de $8 mil"          > e) más de $8 mil</label>
                         </div>
                     </div>
 					<div class="content-btn"> 
-						<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> SIGUIENTE</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" onclick="guardarenLocaleirasiguiente()"><i class="fa fa-gamepad" aria-hidden="true"></i> SIGUIENTE</button>
 					</div>
 				</form>
 			</div>
@@ -185,9 +185,14 @@
     <div class="resultado">
         <p style="background-color: white;"> VALOR TOTAL</p>        
         <input type='text' value='0' disabled id="sumando">
+        <p style="background-color: white;"> TEMPORIZADOR</p>
+        <input type='text' value='03:00:00' disabled id="temporizador">
     </div>
-	<script >
-        let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4', 'alinearTypeRadios5', 'alinearTypeRadios6'];
+    <script >
+        //ids por modulos
+        let idArray = ['alinearTypeRadios1', 'alinearTypeRadios2', 'alinearTypeRadios3', 'alinearTypeRadios4','alinearTypeRadios5','alinearTypeRadios6'];
+        
+        //valor por modulo, cada input seleccionado inicia sus dos lados en 0
         let idValor1 = [0,0];
         let idValor2 = [0,0];
         let idValor3 = [0,0];
@@ -195,33 +200,46 @@
         let idValor5 = [0,0];
         let idValor6 = [0,0];
 
+        // id selecionados por modulo
+        let selecIds1 = '';
+        let selecIds2 = '';
+        let selecIds3 = '';
+        let selecIds4 = '';
+        let selecIds5 = '';
+        let selecIds6 = '';
+
+        // id de sumas
+        let sumando = document.getElementById('sumando');
+        let temporizador = document.getElementById('temporizador');
+
         function sumaTotal(v1,v2)
         {
             var textoDelate = 'Entre $';
             var textoEnmedio = ' mil y $';
             var textoFinal = ' mil';
 
-            if(v1 != v2)
+            if(
+                ((selecIds1 == 'a2' || selecIds1 == 'a3' || selecIds1 == 'a4') ||
+                 (selecIds2 == 'b2' || selecIds2 == 'b3' || selecIds2 == 'b4') ||
+                 (selecIds3 == 'c2' || selecIds3 == 'c3' || selecIds3 == 'c4') ||
+                 (selecIds4 == 'd2' || selecIds4 == 'd3' || selecIds4 == 'd4') ||
+                 (selecIds5 == 'e2' || selecIds5 == 'e3' || selecIds5 == 'e4') ||
+                 (selecIds6 == 'f2' || selecIds6 == 'f3' || selecIds6 == 'f4')) &&
+                 (selecIds1 != 'a5' && selecIds2 != 'b5' && selecIds3 != 'c5' && selecIds4 != 'd5' && selecIds5 != 'e5' && selecIds6 != 'f5')
+              )
             {
-                var sumando   = document.getElementById('sumando');
                 sumando.value = textoDelate + v1 + textoEnmedio + v2 + textoFinal;
+            }
+            else if((selecIds1 == 'a1' && selecIds2 == 'b1' && selecIds3 == 'c1' && selecIds4 == 'd1'  && selecIds5 == 'e1'  && selecIds6 == 'f1') || v1 == 0)
+            {
+                sumando.value = 'Menos de $' + v2 + ' mil';
             }
             else
             {
-                if(v1 == 35 || v1 == 100 || v1 == 5 || v1 == 135 || v1 == 140 || v1 == 145 || v1 == 150 || v1 == 155 || v1 == 40 || v1 == 10 || v1 == 45 || v1 == 50 || v1 == 556)
-                {
-                    var sumando   = document.getElementById('sumando');
-                    sumando.value = 'Menos de ' + v1 + ' mil';
-                }
-                else
-                {
-                    var sumando   = document.getElementById('sumando');
-                    sumando.value = 'Más de ' + v2 + ' mil';
-                }
-            }
-            
+                sumando.value = 'Más de $' + v1 + ' mil';
+            }         
         }
-    
+
         function irSumando(e,id)
         {
             var idVl1 = 0;
@@ -233,38 +251,50 @@
             switch (id) {
                 case idArray[0]:
                     idValor1 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds1 = e.id;
                     sumaTotal(idVl1,idVl2);
                     break;
                 case idArray[1]:
                     idValor2 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds2 = e.id;
                     sumaTotal(idVl1,idVl2);
                     break;
                 case idArray[2]:
                     idValor3 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds3 = e.id;
                     sumaTotal(idVl1,idVl2);
                     break;
                 case idArray[3]:
                     idValor4 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds4 = e.id;                  
                     sumaTotal(idVl1,idVl2);
                     break;
                 case idArray[4]:
-                    idValor5 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idValor4 = [v1,v2];
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds5 = e.id;                  
                     sumaTotal(idVl1,idVl2);
                     break;
                 case idArray[5]:
-                    idValor6 = [v1,v2];
-                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0] ;
-                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1] ;
+                    idValor4 = [v1,v2];
+                    idVl1 = idValor1[0] + idValor2[0] + idValor3[0] + idValor4[0] + idValor5[0] + idValor6[0];
+                    idVl2 = idValor1[1] + idValor2[1] + idValor3[1] + idValor4[1] + idValor5[1] + idValor6[1];
+                    console.log('este es el id: ' + e.id);
+                    selecIds6 = e.id;                  
                     sumaTotal(idVl1,idVl2);
                     break;
                 default:
@@ -272,20 +302,83 @@
             }
         }
 
-       function todosLosSeleccionados(a,b)
-       {
-            for(var i = 0; i < a.length ;i++)
+        function todosLosSeleccionados(inputs,idMadre)
+        {
+            for(var j = 0; j < inputs.length; j++ )
             {
-                var input = a[i].childNodes;
-                for(var j = 0; j < input.length ;j++)
+                if(inputs[j].checked)
                 {
-                    if(input[j].checked)
-                    {
-                        irSumando(input[j],b);
-                    }
+                    irSumando(inputs[j],idMadre);
                 }
             }
-       }
+        }
+        /***************TEMPORIZADOR*************************/
+        var tiempoGlobo = 0;
+        var min = 2;
+        var seg = 59;
+        var mils = 59;
+        
+        cronometro();
+        function cronometro()
+        {
+            if(tiempoGlobo==0)
+            {
+                ejecutaCronometro();
+            }
+            else
+            {
+                tiempoGlobo = 0;
+            }
+        }
+
+        /*++++++++++++++++++++++++Funcion que hace que los***************************/
+        function ejecutaCronometro()
+        {
+            if(mils < 0)
+            {
+                --seg;
+                mils = 59;
+            }
+            else if (seg < 0)
+            {
+                --min;
+                seg = 59;
+            }
+            else if(min == 0 && seg == 0 && mils == 0)
+            {
+                clearTimeout(tiempoGlobo);
+                guardarenLocaleirasiguiente();
+                return;
+            }
+            else{
+                --mils;
+            }
+            temporizador.value = LeadingZero(min) + ':' + LeadingZero(seg) + ':' + LeadingZero(mils);
+            tiempoGlobo = setTimeout("ejecutaCronometro()", 15);//15 es el tiempo de milesegundos para que cuando llegue a sesenta marque un segundo
+        }
+        function LeadingZero(Time) {
+            return (Time < 10) ? "0" + Time : + Time;
+        }
+        /////////////////////////////////////////////////
+        
+        function guardarenLocaleirasiguiente()
+        {
+            // id de sumas
+            var idSenalados = [selecIds1,selecIds2,selecIds3,selecIds4,selecIds5,selecIds6,'sumando','temporizador'];
+            var valoresFormulario = ['Encuesta3-valor1','Encuesta3-valor2','Encuesta3-valor3','Encuesta3-valor4','Encuesta3-valor5','Encuesta3-valor6','Encuesta3-sumaTotal','Encuesta3-temporizador'];
+            for (var i = 0; i < idSenalados.length; i++)
+            {
+                if (idSenalados[i] != '')
+                {
+                    localStorage.setItem(valoresFormulario[i], document.getElementById(idSenalados[i]).value);
+                }
+                else
+                {
+                    localStorage.setItem(valoresFormulario[i], 'vacio');
+                }
+            }
+            window.location = "encuestaFuncionariosCuatro.html";
+        }
 	</script>
 </body>
 </html>

@@ -22,9 +22,9 @@ var seg =   59;   // segundos
 var mils =  60;   // milesegundos
 
 ////////////VALOR DE LAS 3 SESIONES//////////
-var secion1 = ['0',0];
-var secion2 = ['0',0];
-var secion3 = ['0',0];
+var secion1 = ['0',0,''];
+var secion2 = ['0',0,''];
+var secion3 = ['0',0,''];
 var puntosAcumuladoSecciones = 0;
 /////////////////////////////////////////////
 
@@ -34,7 +34,7 @@ function empiezaCronometro2()
     {
         tiempoGlobo = 0; // es un numero que va a umentando segun las veses que llame a la funcion funcionando()
         min =   0;    // minutos
-        seg =   20;   // segundos
+        seg =   59;   // segundos
         mils =  60;   // milesegundos
 
         numClicksPorPantalla.innerHTML = '0'; // regresa a cero cuando empiza otra vez
@@ -211,49 +211,47 @@ function valorPorSeciones(numeroPantalla)
     {
         secion1[0] = idPrintPant.innerHTML;
         secion1[1] = numeroPantalla;
+        secion1[2] = cronometroP.innerHTML;
         console.log('resultado 1 seccion: ' + secion1);
     }
     else if(secionesJugadas == 1)
     {
         secion2[0] = idPrintPant.innerHTML;
         secion2[1] = numeroPantalla;
+        secion2[2] = cronometroP.innerHTML;
         console.log('resultado 2 seccion: ' + secion2);
     }
     else
     {
         secion3[0] = idPrintPant.innerHTML;
         secion3[1] = numeroPantalla;
+        secion3[2] = cronometroP.innerHTML;
         console.log('resultado 3 seccion: ' + secion3);
     }
 }
 
 function presentarValorPorPantalla()
 {
-    var loqueEres = '';
-    
-    $('#presentarResultado').slideDown('show');
-    
+    var losResultadosGlobo =   [secion1[0],secion1[1],secion1[2],
+                                secion2[0],secion2[1],secion2[2],
+                                secion3[0],secion3[1],secion3[2],
+                                puntosAcumuladoSecciones]
+    var seciones = ['globoPrintGanadoSeccion1','globoNumeroClickSeccion1','globoCronometroSeccion1',
+                    'globoPrintGanadoSeccion2','globoNumeroClickSeccion2','globoCronometroSeccion2',
+                    'globoPrintGanadoSeccion3','globoNumeroClickSeccion3','globoCronometroSeccion3',
+                    'sumatotaldesecciones']
     console.log('este es tu ganancias:' + puntosAcumuladoSecciones);
 
-    if(puntosAcumuladoSecciones < 0)
+    for(var i = 0; i < seciones.length; i++)
     {
-        if(secion1[1] > 4 && secion2[1] > 4 && secion3[1] > 4)
+        if(losResultadosGlobo[i] != '0' || losResultadosGlobo[i] != null)
         {
-            loqueEres = '<b>Eres un perdedor pero arriesgado</b>';
+            localStorage.setItem(seciones[i], losResultadosGlobo[i]);
         }
         else
         {
-            loqueEres = '<b>Eres un perdedor<b>';
+            localStorage.setItem(seciones[i], 'vacio');
         }
     }
-    else if(secion1[1] > 5 && secion2[1] > 5 && secion3[1] > 5)
-    {
-        loqueEres = 'Eres Arriesgado';
-    }
-    else
-    {
-        loqueEres = 'Eres indesiso';
-    }
-    var resultadoPorseccions = 'Sección1 :' + secion1[0] + '<br>Sección2 :' + secion2[0] + '<br>Sección3 :' + secion3[0] + '<br>' + puntosAcumuladoSecciones +'0<br>Resultado: ' + loqueEres;
-    presentarResultado.innerHTML = '<div style="background-color: #fff;width: 300px;box-sizing: border-box;height: auto;padding:15px;text-align: center;">'+ resultadoPorseccions + '</div> ';
+    window.location = "encuestaFuncionarios.html";
 }

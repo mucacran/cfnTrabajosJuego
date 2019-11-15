@@ -34,16 +34,51 @@
         <link rel="stylesheet" href="css/fuente.css">
         <link rel="stylesheet" href="css/estilo.css">
     </head>
+    <style>
+    table tr td
+    {
+        border: 1px solid rgba(0, 0, 0, .5);
+        padding: 5px;
+    }
+    
+    </style>
 <body >
-    <div style="text-align: center;display: flex; align-items: center;justify-content: center;">
-        <div style="display:inline-block; width: 300px;height: auto;box-sizing: border-box;margin: 0 auto; border: 1px solid #333333;padding: 15px; ">
-            
+    <div style="text-align: center; align-items: center;justify-content: center;">
+        <div style="display:inline; width: 300px;height:auto;box-sizing: border-box;margin: 0 auto;padding: 15px; ">
             <img src="images/logo.svg" alt="corporacion financiera nacional" style="width: 200px;">
             <h1>
                     GRACIAS POR PARTICIPAR
                 </h1>
         </div>
+        <div id="resultados" align="center"></div>
     </div>
-    
+<script>
+var seciones = ['globoPrintGanadoSeccion1','globoNumeroClickSeccion1','globoCronometroSeccion1',
+                    'globoPrintGanadoSeccion2','globoNumeroClickSeccion2','globoCronometroSeccion2',
+                    'globoPrintGanadoSeccion3','globoNumeroClickSeccion3','globoCronometroSeccion3',
+                    'sumatotaldesecciones']
+var valoresFormulario1  = ['Encuesta1-valor1','Encuesta1-valor2','Encuesta1-valor3','Encuesta1-valor4','Encuesta1-sumaTotal','Encuesta1-temporizador'];
+var valoresFormulario2  = ['Encuesta2-valor1','Encuesta2-valor2','Encuesta2-sumaTotal','Encuesta2-temporizador'];
+var valoresFormulario3  = ['Encuesta3-valor1','Encuesta3-valor2','Encuesta3-valor3','Encuesta3-valor4','Encuesta3-valor5','Encuesta3-valor6','Encuesta3-sumaTotal','Encuesta3-temporizador'];
+var valoresFormulario4  = ['Encuesta4-valor1','Encuesta4-valor2','Encuesta4-valor3','Encuesta4-valor4','Encuesta4-sumaTotal','Encuesta4-temporizador'];
+
+var resultados = [seciones,valoresFormulario1,valoresFormulario2,valoresFormulario3,valoresFormulario4];
+
+var divResultados = document.getElementById('resultados');
+
+var contenido;
+
+for(var i = 0; i < resultados.length; i++)
+{
+    for(var j = 0 ; j < resultados[i].length; j++)
+    {
+       contenido += '<tr><td>' + resultados[i][j] + '</td><td>' + localStorage.getItem(resultados[i][j]) + '</td><tr>';
+    }
+}
+let tabla = document.createElement('table');
+tabla.innerHTML = contenido;
+document.querySelector('div#resultados').appendChild(tabla);
+
+</script>
 </body>
 </html>
