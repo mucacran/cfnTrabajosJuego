@@ -53,16 +53,17 @@
         <div id="resultados" align="center"></div>
     </div>
 <script>
-var seciones = ['globoPrintGanadoSeccion1','globoNumeroClickSeccion1','globoCronometroSeccion1',
-                    'globoPrintGanadoSeccion2','globoNumeroClickSeccion2','globoCronometroSeccion2',
-                    'globoPrintGanadoSeccion3','globoNumeroClickSeccion3','globoCronometroSeccion3',
-                    'sumatotaldesecciones']
+var index = ['index-Nombre','index-Edad','index-Experiencia','index-Trabajo','index-Instruccion'];
+var seciones =     ['globo1-PrintGanado','globo1-NumeroClick','globo1-Cronometro',
+                    'globo2-PrintGanado','globo2-NumeroClick','globo2-Cronometro',
+                    'globo3-PrintGanado','globo3-NumeroClick','globo3-Cronometro',
+                    'globo-sumatotaldesecciones'];
 var valoresFormulario1  = ['Encuesta1-valor1','Encuesta1-valor2','Encuesta1-valor3','Encuesta1-valor4','Encuesta1-sumaTotal','Encuesta1-temporizador'];
 var valoresFormulario2  = ['Encuesta2-valor1','Encuesta2-valor2','Encuesta2-sumaTotal','Encuesta2-temporizador'];
 var valoresFormulario3  = ['Encuesta3-valor1','Encuesta3-valor2','Encuesta3-valor3','Encuesta3-valor4','Encuesta3-valor5','Encuesta3-valor6','Encuesta3-sumaTotal','Encuesta3-temporizador'];
 var valoresFormulario4  = ['Encuesta4-valor1','Encuesta4-valor2','Encuesta4-valor3','Encuesta4-valor4','Encuesta4-sumaTotal','Encuesta4-temporizador'];
 
-var resultados = [seciones,valoresFormulario1,valoresFormulario2,valoresFormulario3,valoresFormulario4];
+var resultados = [index,seciones,valoresFormulario1,valoresFormulario2,valoresFormulario3,valoresFormulario4];
 
 var divResultados = document.getElementById('resultados');
 

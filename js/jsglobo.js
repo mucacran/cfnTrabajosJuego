@@ -236,10 +236,10 @@ function presentarValorPorPantalla()
                                 secion2[0],secion2[1],secion2[2],
                                 secion3[0],secion3[1],secion3[2],
                                 puntosAcumuladoSecciones]
-    var seciones = ['globoPrintGanadoSeccion1','globoNumeroClickSeccion1','globoCronometroSeccion1',
-                    'globoPrintGanadoSeccion2','globoNumeroClickSeccion2','globoCronometroSeccion2',
-                    'globoPrintGanadoSeccion3','globoNumeroClickSeccion3','globoCronometroSeccion3',
-                    'sumatotaldesecciones']
+    var seciones = ['globo1-PrintGanado','globo1-NumeroClick','globo1-Cronometro',
+                    'globo2-PrintGanado','globo2-NumeroClick','globo2-Cronometro',
+                    'globo3-PrintGanado','globo3-NumeroClick','globo3-Cronometro',
+                    'globo-sumatotaldesecciones']
     console.log('este es tu ganancias:' + puntosAcumuladoSecciones);
 
     for(var i = 0; i < seciones.length; i++)

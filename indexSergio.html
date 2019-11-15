@@ -141,7 +141,7 @@
 									<!-- <span class="input-group-addon"><i class="fa fa-sort-desc fa-fw"></i></span> -->
 								</div>
 								<div class="content-btn" > 
-									<button type="button" class="btn btn-primary btn-lg btn-block" onclick="guardarVariables()"><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
+									<button type="submit" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-gamepad" aria-hidden="true"></i> JUGAR</button>
 								</div>
 							</div>
 						</div>
@@ -150,16 +150,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		function guardarVariables()
-		{
-			localStorage.setItem('index-Nombre',document.getElementById('nombre').value);
-			localStorage.setItem('index-Edad',document.getElementById('edad').value);
-			localStorage.setItem('index-Experiencia',document.getElementById('experiencia').value);
-			localStorage.setItem('index-Trabajo',document.getElementById('trabajo').value);
-			localStorage.setItem('index-Instruccion',document.getElementById('instruccion').value);
-			window.location = "globo.html";
-		}
-	</script>
+	
 </body>
 </html>
