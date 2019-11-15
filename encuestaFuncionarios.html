@@ -315,28 +315,24 @@
             return (Time < 10) ? "0" + Time : + Time;
         }
         /////////////////////////////////////////////////
+        
         function guardarenLocaleirasiguiente()
         {
             // id de sumas
-            
-            
-            var idSenalados = [selecIds1,selecIds2,selecIds3,selecIds4,sumando,temporizador];
+            var idSenalados = [selecIds1,selecIds2,selecIds3,selecIds4,'sumando','temporizador'];
             var valoresFormulario = ['Encuesta1-valor1','Encuesta1-valor2','Encuesta1-valor3','Encuesta1-valor4','Encuesta1-sumaTotal','Encuesta2-temporizador'];
             for (var i = 0; i < idSenalados.length; i++)
             {
-                
                 if (idSenalados[i] != '')
                 {
-                    localStorage.setItem(valoresFormulario[i], document.getElementById(idSenalados[i].value));
-                    console.log(idSenalados[i].value);
+                    localStorage.setItem(valoresFormulario[i], document.getElementById(idSenalados[i]).value);
                 }
                 else
                 {
                     localStorage.setItem(valoresFormulario[i], 'vacio');
-                    
                 }
             }
-            //window.location = "encuestaFuncionariosDos.html";
+            window.location = "encuestaFuncionariosDos.html";
         }
 	</script>
 </body>
