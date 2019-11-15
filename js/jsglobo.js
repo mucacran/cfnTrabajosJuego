@@ -22,9 +22,9 @@ var seg =   59;   // segundos
 var mils =  60;   // milesegundos
 
 ////////////VALOR DE LAS 3 SESIONES//////////
-var secion1 = ['0',0,''];
-var secion2 = ['0',0,''];
-var secion3 = ['0',0,''];
+var secion1 = ['0',0,'',0];
+var secion2 = ['0',0,'',0];
+var secion3 = ['0',0,'',0];
 var puntosAcumuladoSecciones = 0;
 /////////////////////////////////////////////
 
@@ -212,6 +212,7 @@ function valorPorSeciones(numeroPantalla)
         secion1[0] = idPrintPant.innerHTML;
         secion1[1] = numeroPantalla;
         secion1[2] = cronometroP.innerHTML;
+        secion1[3] = clickPun_NumeroAleatorio;
         console.log('resultado 1 seccion: ' + secion1);
     }
     else if(secionesJugadas == 1)
@@ -219,6 +220,7 @@ function valorPorSeciones(numeroPantalla)
         secion2[0] = idPrintPant.innerHTML;
         secion2[1] = numeroPantalla;
         secion2[2] = cronometroP.innerHTML;
+        secion2[3] = clickPun_NumeroAleatorio;
         console.log('resultado 2 seccion: ' + secion2);
     }
     else
@@ -226,19 +228,20 @@ function valorPorSeciones(numeroPantalla)
         secion3[0] = idPrintPant.innerHTML;
         secion3[1] = numeroPantalla;
         secion3[2] = cronometroP.innerHTML;
+        secion3[3] = clickPun_NumeroAleatorio;
         console.log('resultado 3 seccion: ' + secion3);
     }
 }
 
 function presentarValorPorPantalla()
 {
-    var losResultadosGlobo =   [secion1[0],secion1[1],secion1[2],
-                                secion2[0],secion2[1],secion2[2],
-                                secion3[0],secion3[1],secion3[2],
+    var losResultadosGlobo =   [secion1[0],secion1[1],secion1[2],secion1[3],
+                                secion2[0],secion2[1],secion2[2],secion2[3],
+                                secion3[0],secion3[1],secion3[2],secion3[3],
                                 puntosAcumuladoSecciones]
-    var seciones = ['globo1-PrintGanado','globo1-NumeroClick','globo1-Cronometro',
-                    'globo2-PrintGanado','globo2-NumeroClick','globo2-Cronometro',
-                    'globo3-PrintGanado','globo3-NumeroClick','globo3-Cronometro',
+    var seciones = ['globo1-PrintGanado','globo1-NumeroClick','globo1-Cronometro','globo1-NumAleatorio',
+                    'globo2-PrintGanado','globo2-NumeroClick','globo2-Cronometro','globo2-NumAleatorio',
+                    'globo3-PrintGanado','globo3-NumeroClick','globo3-Cronometro','globo3-NumAleatorio',
                     'globo-sumatotaldesecciones']
     console.log('este es tu ganancias:' + puntosAcumuladoSecciones);
 
